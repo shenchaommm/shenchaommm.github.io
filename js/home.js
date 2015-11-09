@@ -54,14 +54,14 @@ function addClass(element,value){
 	var cards;
 	var cardsParent;
 function pullTouchstart(e){
-	
+	e.preventDefault();
 	e=e||e.touches[0];
 	x=e.clientX;
 	y=e.clientY;
 	this.addEventListener("touchmove",pullMove,false);
 	}
 function pullstart(e){
-	
+	e.preventDefault();
 	e=e||e.touches[0];
 	x=e.clientX;
 	y=e.clientY;
