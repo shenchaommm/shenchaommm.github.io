@@ -72,7 +72,9 @@ function pullstart(e){
 	this.addEventListener("touchmove",pullMove,false);
 	}
 function pullMove(e){
-	var touch=e||e.touches[0];
+	var touch=e;
+	if(e.touches)
+		touch=e.touches[0];
 	var ty=touch.pageY;
 	var tx=touch.pageX;
 	var envelop=document.getElementById("envelop");
