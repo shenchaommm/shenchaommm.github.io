@@ -53,6 +53,7 @@ function addClass(element,value){
 	var cardsParent;
 function pullstart(e){
 	e.preventDefault();
+	e=e||e.touches[0];
 	x=e.clientX;
 	y=e.clientY;
 	if(e.target.id=="envelop")
@@ -60,6 +61,7 @@ function pullstart(e){
 	this.addEventListener("touchmove",pullMove,false);
 	}
 function pullMove(e){
+	e=e||e.touches[0];
 	var ty=e.clientY;
 	var tx=e.clientX;
 	var envelop=document.getElementById("envelop");
@@ -71,6 +73,7 @@ function pullMove(e){
 	}
 	var backState;
 function pullEnd(e){
+	e=e||e.touches[0];
 		var envelop=document.getElementById("envelop");
 		this.removeEventListener("mousemove",pullMove,false);
 		if(envelop.offsetTop>window.innerHeight*0.6){
