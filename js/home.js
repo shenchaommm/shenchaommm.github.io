@@ -78,7 +78,7 @@ function pullMove(e){
 	var ty=touch.pageY;
 	var tx=touch.pageX;
 	var envelop=document.getElementById("envelop");
-	var dis=envelop.offsetTop-y+e.pageY;
+	var dis=envelop.offsetTop-y+touch.pageY;
 	if(iy<=dis)
 	envelop.style.top = dis+"px";
 	x=tx;
