@@ -58,6 +58,8 @@ function pullTouchstart(e){
 	var touch=e.touches[0];
 	x=touch.pageX;
 	y=touch.pageY;
+	var envelop=document.getElementById("envelop");
+	envelop.innerText=x+" "+y;
 	this.addEventListener("touchmove",pullMove,false);
 	}
 function pullstart(e){
@@ -79,6 +81,7 @@ function pullMove(e){
 	envelop.style.top = dis+"px";
 	x=tx;
 	y=ty;
+	cards[0].innerText=x+" "+y;
 	}
 	var backState;
 function pullEnd(e){
