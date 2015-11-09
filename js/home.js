@@ -30,10 +30,12 @@ function addClass(element,value){
 	function init(){
 		var invitation=document.getElementById("invitation");
 		invitation.addEventListener("mousedown",pullstart,false);
-		invitation.addEventListener("touchstart",pullstart,false);
+		//invitation.addEventListener("touchstart",pullstart,false);
 		invitation.addEventListener("mouseup",pullEnd,false);
-		invitation.addEventListener("touchend",pullEnd,false);
+		//invitation.addEventListener("touchend",pullEnd,false);
 		var envelop=document.getElementById("envelop");
+		envelop.addEventListener("touchstart",pullTouchstart,false);
+		envelop.addEventListener("touchend",pullEnd,false);
 		iy=envelop.offsetTop;
 		cards=document.getElementsByClassName("card");
 		cardsParent=document.getElementsByClassName("cardP");
@@ -51,10 +53,16 @@ function addClass(element,value){
 	var iy,y;
 	var cards;
 	var cardsParent;
+function pullTouchstart(e){
+	
+	e=e||e.touches[0];
+	x=e.clientX;
+	y=e.clientY;
+	this.addEventListener("touchmove",pullMove,false);
+	}
 function pullstart(e){
 	
 	e=e||e.touches[0];
-	e.preventDefault();
 	x=e.clientX;
 	y=e.clientY;
 	if(e.target.id=="envelop")
