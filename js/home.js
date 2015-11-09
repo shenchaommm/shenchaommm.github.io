@@ -30,7 +30,9 @@ function addClass(element,value){
 	function init(){
 		var invitation=document.getElementById("invitation");
 		invitation.addEventListener("mousedown",pullstart,false);
+		invitation.addEventListener("touchstart",pullstart,false);
 		invitation.addEventListener("mouseup",pullEnd,false);
+		invitation.addEventListener("touchend",pullEnd,false);
 		var envelop=document.getElementById("envelop");
 		iy=envelop.offsetTop;
 		cards=document.getElementsByClassName("card");
@@ -55,6 +57,7 @@ function pullstart(e){
 	y=e.clientY;
 	if(e.target.id=="envelop")
 	this.addEventListener("mousemove",pullMove,false);
+	this.addEventListener("touchmove",pullMove,false);
 	}
 function pullMove(e){
 	var ty=e.clientY;
