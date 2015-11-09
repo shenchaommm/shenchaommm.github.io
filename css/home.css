@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin:0;
+	padding:0;
+	overflow-x:hidden;
+/*	overflow-y:hidden;
+*/	}
+.cardP{
+	height:100vh;
+	width:100vw;
+	display:none;
+}
+#invitation{
+	display:block;
+	background-color:red;
+	overflow:hidden;
+	}
+#invitation>.card{
+	position:absolute;
+	top:20%;
+	left:20%;
+	height:70%;
+	width:60%;
+	background-color:yellow;
+	
+	}
+#envelop{
+	width:70%;
+	height:70%;
+	position:relative;
+	background-color:white;
+	top:28%;
+	left:15%;
+	}
+.card{
+	position:absolute;
+	top:20%;
+	left:20%;
+	height:70%;
+	width:60%;
+	background-color:yellow;
+	box-shadow:1px 1px 5px 2px black;
+	}
+.image{
+	background-color:red;
+	max-height:80%;
+	max-width:80%;
+	position:absolute;
+	transition:all 0.5s ease-in-out;
+	-webkit-transition:all 0.5s ease-in-out;
+	}
+#image{
+	width:100%;
+	left:0;
+	box-shadow:none;
+	overflow:visible;
+	}
+#pic .Show{
+
+	}
+.Show>img{
+	
+	}
+#allmapPic{
+	width:100%;
+	
+	}
+#allmap {
+	overflow: hidden;
+	margin:0;
+	font-family:"微软雅黑";
+	}
