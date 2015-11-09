@@ -52,8 +52,9 @@ function addClass(element,value){
 	var cards;
 	var cardsParent;
 function pullstart(e){
-	e.preventDefault();
+	
 	e=e||e.touches[0];
+	e.preventDefault();
 	x=e.clientX;
 	y=e.clientY;
 	if(e.target.id=="envelop")
