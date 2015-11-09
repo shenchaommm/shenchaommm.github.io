@@ -54,11 +54,11 @@ function addClass(element,value){
 	var cards;
 	var cardsParent;
 function pullTouchstart(e){
-	alert("touchstart");
+	alert(this);
 	e.preventDefault();
 	var touch=e.touches[0];
-	x=touch.clientX;
-	y=touch.clientY;
+	x=touch.pageX;
+	y=touch.pageY;
 	this.addEventListener("touchmove",pullMove,false);
 	}
 function pullstart(e){
@@ -72,10 +72,10 @@ function pullstart(e){
 	}
 function pullMove(e){
 	var touch=e||e.touches[0];
-	var ty=touch.clientY;
-	var tx=touch.clientX;
+	var ty=touch.pageY;
+	var tx=touch.pageX;
 	var envelop=document.getElementById("envelop");
-	var dis=envelop.offsetTop-y+e.clientY;
+	var dis=envelop.offsetTop-y+e.pageY;
 	if(iy<=dis)
 	envelop.style.top = dis+"px";
 	x=tx;
