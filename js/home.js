@@ -54,7 +54,6 @@ function addClass(element,value){
 	var cards;
 	var cardsParent;
 function pullTouchstart(e){
-	alert(this);
 	e.preventDefault();
 	var touch=e.touches[0];
 	x=touch.pageX;
