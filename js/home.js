@@ -54,10 +54,11 @@ function addClass(element,value){
 	var cards;
 	var cardsParent;
 function pullTouchstart(e){
+	alert("touchstart");
 	e.preventDefault();
-	e=e||e.touches[0];
-	x=e.clientX;
-	y=e.clientY;
+	var touch=e.touches[0];
+	x=touch.clientX;
+	y=touch.clientY;
 	this.addEventListener("touchmove",pullMove,false);
 	}
 function pullstart(e){
@@ -70,9 +71,9 @@ function pullstart(e){
 	this.addEventListener("touchmove",pullMove,false);
 	}
 function pullMove(e){
-	e=e||e.touches[0];
-	var ty=e.clientY;
-	var tx=e.clientX;
+	var touch=e||e.touches[0];
+	var ty=touch.clientY;
+	var tx=touch.clientX;
 	var envelop=document.getElementById("envelop");
 	var dis=envelop.offsetTop-y+e.clientY;
 	if(iy<=dis)
@@ -82,7 +83,7 @@ function pullMove(e){
 	}
 	var backState;
 function pullEnd(e){
-	e=e||e.touches[0];
+	var touch=e||e.touches[0];
 		var envelop=document.getElementById("envelop");
 		this.removeEventListener("mousemove",pullMove,false);
 		if(envelop.offsetTop>window.innerHeight*0.6){
