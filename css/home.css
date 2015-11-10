@@ -34,7 +34,7 @@ body{
 	left:15%;
 	}
 .card{
-	position:fixed;
+	position:absolute;
 	top:20%;
 	left:20%;
 	height:70%;

@@ -215,6 +215,11 @@ function goBack(e){
 	
 	
 //}
+	$(cards[n+1]).css("position","fixed");
+	$(cards[n]).css("position","absolute");
+	$(cards[n]).css("top",100*(n)+20+"vh");
+	$(cards[n+2]).css("position","absolute");
+	$(cards[n+2]).css("top",100*(n+2)-10+"vh");
 	//$(cards[n+1]).animate({top:Math.round(0.3*px+wy*n+0.9*wy)},10);
 	$(cards[n+1]).css("top",Math.round(0.3*px+wy*n+0.9*wy)-scrolltop+"px");
 	
