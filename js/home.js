@@ -117,8 +117,10 @@ function showCards(){
 		
 		}
 	initPic();
-	
-	
+	window.addEventListener("touchstart",scrollStart,false);
+	window.addEventListener("touchend",scrollEnd,false);
+	window.addEventListener("mousedown",scrollStart,false);
+	window.addEventListener("mouseup",scrollEnd,false);
 	
 	}
 function initPic(){
@@ -201,8 +203,32 @@ function goBack(e){
   
   
   }
-
-  $(window).scroll(function(e) {
+  var scrollY=0;
+  
+function scrollStart(e){
+	e.preventDefault();
+	var touch=e;
+	if(e.touches)
+		touch=e.touches[0];
+	this.addEventListener("touchmove",scrolling,false);
+	this.addEventListener("mousemove",scrolling,false);
+	scrollY=touch.pageY;
+	}
+function scrollEnd(e){
+	this.removeEventListener("touchmove",scrolling,false);
+	this.removeEventListener("mousemove",scrolling,false);
+	}
+function scrolling(e){
+	var touch=e;
+	if(e.touches)
+		touch=e.touches[0];
+	var tempY=$(window).scrollTop()-touch.pageY+scrollY;
+	$(window).scrollTop(tempY);
+	//$('html,body').animate({scrollTop:$(this.parentNode).offset().top});
+	scrollY=touch.pageY;
+	
+	}
+  /*$(window).scroll(function(e) {
     var scrolltop=$(window).scrollTop();
 		if(showpic==true && (scrolltop>(picH1+wy/4)|| scrolltop<(picH1-wy/4))){
 			closePicture();
@@ -214,9 +240,9 @@ function goBack(e){
 //indow.onscroll=function(){
 	
 	
-//}	//$(cards[n+1]).animate({top:Math.round(0.3*px+wy*n+0.9*wy)},10);
-	//$(cards[n+1]).css("top",Math.round(0.3*px+wy*n+0.9*wy)-scrolltop+"px");
-	cards[n+1].style.transform="translate(0,"+Math.round(0.3*px)+"px)";
+//}
+	//$(cards[n+1]).animate({top:Math.round(0.3*px+wy*n+0.9*wy)},10);
+	$(cards[n+1]).css("top",Math.round(0.3*px+wy*n+0.9*wy)+"px");
 	
-})
+})*/
 
