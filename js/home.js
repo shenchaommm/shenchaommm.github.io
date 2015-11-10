@@ -201,17 +201,32 @@ function goBack(e){
   
   
   }
+<<<<<<< HEAD
   $(window).scroll(function(e) {
     var scrolltop=$(window).scrollTop();
+=======
+  var timer;
+window.onscroll=function(){
+	
+	var scrolltop=document.documentElement.scrollTop||document.body.scrollTop;
+>>>>>>> origin/master
 		if(showpic==true && (scrolltop>(picH1+wy/4)|| scrolltop<(picH1-wy/4))){
 			closePicture();
 		}
 	
 	var n=parseInt((scrolltop)/wy);
+	$(cards[n+1]).stop(true,true);
 	var px=(scrolltop%wy)
+<<<<<<< HEAD
 	$(cards[n+1]).css("top",Math.round(0.3*px+wy*n+0.9*wy)+"px");
 });
 //indow.onscroll=function(){
 	
 	
 //}
+=======
+	$(cards[n+1]).animate({top:Math.round(0.3*px+wy*n+0.9*wy)},10);
+	//cards[n+1].style.top=Math.round(0.3*px+wy*n+0.9*wy)+"px";
+	
+}
+>>>>>>> origin/master
