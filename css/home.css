@@ -35,7 +35,7 @@ body{
 	}
 	
 	#envelop>div{
-		background-color:red;
+		background-color:CornflowerBlue;
 		width:100%;
 		position:absolute;
 		left:0;
@@ -43,12 +43,16 @@ body{
 		
 		}
 	#envelop>div:nth-child(1){
-		height:80%;
+		height:90%;
 		border-top-right-radius:100%;
 		}
 		#envelop>div:nth-child(2){
 		height:100%;
 		border-top-left-radius:100%;
+		background-image:url(../pic/SJH.png);
+		background-size:40%;
+		background-repeat:no-repeat;
+		background-position:90% 90%;
 		}
 .card{
 	position:absolute;
