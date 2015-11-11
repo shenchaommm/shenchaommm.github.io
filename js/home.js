@@ -113,15 +113,15 @@ function showCards(){
 		var deg=Math.round((Math.random()-Math.random())*30);
 		if(i>1)
 		cards[i].style.transform="rotate("+deg+"deg)";
-		cards[i].style.top=100*i-10+"vh";
+		cardsParent[i].style.top=100*i-10+"vh";
 		
 		}
 	initPic();
-	window.addEventListener("touchstart",scrollStart,false);
-	window.addEventListener("touchend",scrollEnd,false);
-	window.addEventListener("mousedown",scrollStart,false);
-	window.addEventListener("mouseup",scrollEnd,false);
-	
+$(window).stellar();
+	//window.addEventListener("touchstart",scrollStart,false);
+	//window.addEventListener("touchend",scrollEnd,false);
+	//window.addEventListener("mousedown",scrollStart,false);
+	//window.addEventListener("mouseup",scrollEnd,false);
 	}
 function initPic(){
 	var picture=document.getElementById("image");
@@ -246,3 +246,5 @@ function scrolling(e){
 	
 })*/
 
+      
+    
