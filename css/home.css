@@ -11,10 +11,10 @@ body{
 	height:100vh;
 	width:100vw;
 	display:none;
+	transform-origin:center center;
 }
 #invitation{
 	display:block;
-	background-color:red;
 	overflow:hidden;
 	}
 #invitation>.card{
@@ -27,13 +27,29 @@ body{
 	z-index:2;
 	}
 #envelop{
-	width:70%;
+	width:62%;
 	height:70%;
 	position:relative;
-	background-color:white;
-	top:28%;
-	left:15%;
+	top:22%;
+	left:19%;
 	}
+	
+	#envelop>div{
+		background-color:red;
+		width:100%;
+		position:absolute;
+		left:0;
+		bottom:0;
+		
+		}
+	#envelop>div:nth-child(1){
+		height:80%;
+		border-top-right-radius:100%;
+		}
+		#envelop>div:nth-child(2){
+		height:100%;
+		border-top-left-radius:100%;
+		}
 .card{
 	position:absolute;
 	top:20%;
@@ -83,6 +99,7 @@ body{
 		perspective: 1px; 
 		-webkit-perspective: 1px; 
 		}
+		
 		.viewBox>div.cardP:nth-child(2n){
 			transform: translate3D(0, 0, -1px) scale(2);
 			z-index:-1;

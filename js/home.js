@@ -111,10 +111,12 @@ function showCards(){
 		cardsParent[i].style.display="block";
 		//cards[i].style.zIndex=cards.length-i;
 		var deg=Math.round((Math.random()-Math.random())*30);
-		if(i>1)
+		if(i>1){
 		cards[i].style.transform="rotate("+deg+"deg)";
-		cardsParent[i].style.top=100*i-10+"vh";
-		
+		cardsParent[i].style.top=140*i-20+"vh";
+		}else {
+		cardsParent[i].style.top=100*i+20+"vh";
+			}
 		}
 	initPic();
 $(window).stellar();
