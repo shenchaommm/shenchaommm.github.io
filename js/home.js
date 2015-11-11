@@ -109,7 +109,7 @@ function beginShow(){
 function showCards(){
 	for(var i=1;i<cards.length;i++){
 		cardsParent[i].style.display="block";
-		cards[i].style.zIndex=cards.length-i;
+		//cards[i].style.zIndex=cards.length-i;
 		var deg=Math.round((Math.random()-Math.random())*30);
 		if(i>1)
 		cards[i].style.transform="rotate("+deg+"deg)";

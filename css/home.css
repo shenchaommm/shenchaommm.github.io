@@ -24,7 +24,7 @@ body{
 	height:70%;
 	width:60%;
 	background-color:yellow;
-	
+	z-index:2;
 	}
 #envelop{
 	width:70%;
@@ -84,5 +84,5 @@ body{
 		}
 		.viewBox>div.cardP:nth-child(2n){
 			transform: translate3D(0, 0, -1px) scale(2);
-			
+			z-index:-1;
 			}
