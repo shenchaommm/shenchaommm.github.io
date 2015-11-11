@@ -133,7 +133,7 @@ function initPic(){
 			images[i].style.left=picW*0.5-0.5*images[i].offsetWidth+"px";
 			var deg=Math.round((Math.random()-Math.random())*30);
 			images[i].style.transform="rotate("+deg+"deg)";
-
+ 
 			
 			}
 			picture.style.overflowX="visible";
