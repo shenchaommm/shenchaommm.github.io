@@ -126,11 +126,11 @@ function showCards(){
 	//window.addEventListener("mouseup",scrollEnd,false);
 	}
 function divrotateleft(){
-	images[0].style.transform="rotateY("+180+"deg)";
+	$(this).animate({transform:"rotateY("+180+"deg)"},200);
 	
 	}
 function divrotateleft(){
-	images[0].style.transform="rotateY(-"+180+"deg)";
+	$(this).animate({transform:"rotateY(-"+180+"deg)"},200);
 	
 	}
 function initPic(){
