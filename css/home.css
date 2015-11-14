@@ -24,27 +24,34 @@ body{
 	left:20%;
 	height:70%;
 	width:60%;
-	background-color:yellow;
 	z-index:2;
+	background-color:transparent;
+	box-shadow:none;
 	}
-#invitation>.card>div.cardfront{
-	width:100%;
+#invitation>.card>div{
+	background-color:yellow;
+		width:100%;
 	height:100%;
 	position:absolute;
+			backface-visibility:hidden;
+			transition:transform 0.5s ease-in-out;
+			box-shadow:1px 1px 5px 2px black;
+
+	}
+#invitation>.card>div.cardfront{
 	background-image:url(../pic/logo.png);
 	background-repeat:no-repeat;
 	background-size:50%;
 	background-position:center center;
+
+
 	}
 #invitation>.card>div.cardback{
-	width:100%;
-	height:100%;
-	position:absolute;
 	background-repeat:no-repeat;
 	background-position:center center;
 	-webkit-transform:rotate3D(0,0,180);
 	transform:rotateY(180deg);
-	backface-visibility:hidden;
+
 	}
 #envelop{
 	width:62%;
@@ -185,11 +192,11 @@ body{
 		overflow-x:hidden;
 		transform-style: preserve-3d;
 		-webkit-transform-style: preserve-3d;
-		perspective: 1px; 
-		-webkit-perspective: 1px; 
+		perspective: 1500; 
+		-webkit-perspective: 1500; 
 		}
 		
 		.viewBox>div.cardP:nth-child(2n){
-			transform: translate3D(0, 0, -1px) scale(2);
+			transform: translate3D(0, 0, -1500px) scale(2);
 			z-index:-1;
 			}

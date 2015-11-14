@@ -117,9 +117,19 @@ function showCards(){
 			}
 		}
 	initPic();
-	$(cards[0]).bind("swipe",divrotate);
-	$(cards[0]).bind("swipeleft",divrotateleft);
-	$(cards[0]).bind("swiperight",divrotateright);
+	//$("#invitationCard").on("swipe",divrotate);
+	$("#invitationCard").on("swipeleft",function(){
+		var div=this.children;
+		div[0].style.transform="rotateY("+180+"deg)";
+				div[1].style.transform="rotateY("+0+"deg)";
+
+	});
+	$("#invitationCard").on("swiperight",function(){
+		var div=this.children;
+		div[0].style.transform="rotateY("+0+"deg)";
+				div[1].style.transform="rotateY("+180+"deg)";
+		
+		});
 	//window.addEventListener("touchstart",scrollStart,false);
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);
