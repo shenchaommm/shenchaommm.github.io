@@ -117,11 +117,21 @@ function showCards(){
 			}
 		}
 	initPic();
-$(window).stellar();
+	cards[0].on("swipe",divrotate,false);
+	cards[0].on("swipeleft",divrotateleft,false);
+	cards[0].on("swiperight",divrotateright,false);
 	//window.addEventListener("touchstart",scrollStart,false);
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);
 	//window.addEventListener("mouseup",scrollEnd,false);
+	}
+function divrotateleft(){
+	images[0].style.transform="rotateY("+180+"deg)";
+	
+	}
+function divrotateleft(){
+	images[0].style.transform="rotateY(-"+180+"deg)";
+	
 	}
 function initPic(){
 	var picture=document.getElementById("image");
