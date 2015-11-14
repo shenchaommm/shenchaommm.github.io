@@ -117,9 +117,9 @@ function showCards(){
 			}
 		}
 	initPic();
-	$(cards[0]).on("swipe",divrotate,false);
-	$(cards[0]).on("swipeleft",divrotateleft,false);
-	$(cards[0]).on("swiperight",divrotateright,false);
+	$(cards[0]).on("swipe",divrotate);
+	$(cards[0]).on("swipeleft",divrotateleft);
+	$(cards[0]).on("swiperight",divrotateright);
 	//window.addEventListener("touchstart",scrollStart,false);
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);
