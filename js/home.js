@@ -126,6 +126,7 @@ function showCards(){
 	//window.addEventListener("mouseup",scrollEnd,false);
 	}
 function divrotateleft(){
+	
 	$(this).animate({transform:"rotateY("+180+"deg)"},200);
 	
 	}
