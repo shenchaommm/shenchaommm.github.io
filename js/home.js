@@ -117,20 +117,22 @@ function showCards(){
 			}
 		}
 	initPic();
-	cards[0].on("swipe",divrotate,false);
-	cards[0].on("swipeleft",divrotateleft,false);
-	cards[0].on("swiperight",divrotateright,false);
+	$(cards[0]).on("swipe",divrotate,false);
+	$(cards[0]).on("swipeleft",divrotateleft,false);
+	$(cards[0]).on("swiperight",divrotateright,false);
 	//window.addEventListener("touchstart",scrollStart,false);
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);
 	//window.addEventListener("mouseup",scrollEnd,false);
 	}
 function divrotateleft(){
-	
+	alert("left");
 	$(this).animate({transform:"rotateY("+180+"deg)"},200);
 	
 	}
 function divrotateleft(){
+		alert("right");
+
 	$(this).animate({transform:"rotateY(-"+180+"deg)"},200);
 	
 	}
