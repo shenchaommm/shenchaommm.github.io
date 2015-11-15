@@ -116,8 +116,8 @@ function showCards(){
 			}
 		}
 	var viewBox=document.getElementById("viewBox");
+	viewBox.style.overflowY="auto";
 	viewBox.addEventListener("scroll",vbscrolling,false);
-	initMap();
 	initPic();
 	//$("#invitationCard").on("swipe",divrotate);
 	$("#invitationCard").on("swipeleft",function(){
@@ -140,8 +140,7 @@ function showCards(){
 function initMap(){
 		var map = new BMap.Map("allmap");    // 创建Map实例
     var poi = new BMap.Point(120.880927,29.991904);
-	map.centerAndZoom(poi, 16);
-    map.enableScrollWheelZoom();
+	map.centerAndZoom(poi, 14);
 	var marker = new BMap.Marker(poi);
   	map.addOverlay(marker);
 	
