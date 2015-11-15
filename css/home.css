@@ -194,12 +194,12 @@ body{
 		overflow-x:hidden;
 		transform-style: preserve-3d;
 		-webkit-transform-style: preserve-3d;
-		perspective: 500px; 
-		-webkit-perspective: 500px; 
+		perspective: 100px; 
+		-webkit-perspective: 100px; 
 		}
 		
 		.viewBox>div.cardP:nth-child(2n){
-			transform: translate3D(0, 0, -500px) scale(2);
-			-webkit-transform: translate3D(0, 0, -500px) scale(2);
+			transform: translate3D(0, 0, -100px) scale(2);
+			-webkit-transform: translate3D(0, 0, -100px) scale(2);
 			z-index:-1;
 			}
