@@ -120,7 +120,7 @@ function showCards(){
 	//$("#invitationCard").on("swipe",divrotate);
 	$("#invitationCard").on("swipeleft",function(){
 		var div=this.children;
-		div[0].style.transform="rotateY("+180+"deg)";
+		div[0].style.transform="rotateY(-"+180+"deg)";
 				div[1].style.transform="rotateY("+0+"deg)";
 
 	});
