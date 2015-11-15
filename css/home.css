@@ -226,6 +226,10 @@ div.cardfront>h2:nth-child(2){
 	
 	}
 #allmap {
+	position:relative;
+	height:80%;
+	padding:5%
+	width:90%;
 	overflow: hidden;
 	margin:0;
 	font-family:"微软雅黑";

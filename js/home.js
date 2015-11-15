@@ -42,8 +42,6 @@ function addClass(element,value){
 		cards[0].style.zIndex=cardsParent.length;
 		envelop.style.zIndex=cardsParent.length+1;
 		wy=window.innerHeight;
-		var allmapPic=document.getElementById("allmapPic");
-		allmapPic.addEventListener("click",showBaiduMap,false);
 		window.addEventListener('popstate',goBack, false);
 		backState=new Array();
 		
@@ -119,6 +117,7 @@ function showCards(){
 		}
 	var viewBox=document.getElementById("viewBox");
 	viewBox.addEventListener("scroll",vbscrolling,false);
+	initMap();
 	initPic();
 	//$("#invitationCard").on("swipe",divrotate);
 	$("#invitationCard").on("swipeleft",function(){
@@ -137,6 +136,15 @@ function showCards(){
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);
 	//window.addEventListener("mouseup",scrollEnd,false);
+	}
+function initMap(){
+		var map = new BMap.Map("allmap");    // 创建Map实例
+    var poi = new BMap.Point(120.880927,29.991904);
+	map.centerAndZoom(poi, 16);
+    map.enableScrollWheelZoom();
+	var marker = new BMap.Marker(poi);
+  	map.addOverlay(marker);
+	
 	}
 function divrotateleft(){
 	alert("left");
