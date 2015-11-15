@@ -196,7 +196,7 @@ div.cardfront>h2:nth-child(2){
 	}
 .image{
 	background-color:red;
-	max-height:80vh;
+	max-height:60vh;
 	max-width:80vw;
 	}
 #image{
@@ -207,7 +207,7 @@ div.cardfront>h2:nth-child(2){
 	background-color:transparent;
 	}
 #image>div{
-	padding:1em;
+	padding:1vh;
 	background-color:gray;
 	box-shadow:2px 2px 5px black;
 	position:absolute;

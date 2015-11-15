@@ -184,7 +184,7 @@ function initShowPic(){
 	for(var i=0;i<images.length;i++){
 			var parent=images[i].parentNode;
 			parent.style.top=picH*0.5-0.5*images[i].offsetHeight+"px";
-			parent.style.left=left+"px";
+			parent.style.left=left+15*(i+1)+"px";
 			parent.style.transform="rotate("+0+"deg)";
 
 			left+=parent.offsetWidth;
