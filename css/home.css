@@ -28,6 +28,10 @@ body{
 	background-color:transparent;
 	box-shadow:none;
 	 
+		transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		perspective: 100px; 
+		-webkit-perspective: 100px; 
 
 	}
 #invitation>.card>div{
