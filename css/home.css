@@ -30,8 +30,6 @@ body{
 	 
 		transform-style: preserve-3d;
 		-webkit-transform-style: preserve-3d;
-		perspective: 1000px; 
-		-webkit-perspective: 1000px; 
 
 	}
 #invitation>.card>div{
@@ -198,12 +196,12 @@ body{
 		overflow-x:hidden;
 		transform-style: preserve-3d;
 		-webkit-transform-style: preserve-3d;
-		perspective: 100px; 
-		-webkit-perspective: 100px; 
+		perspective: 1000px; 
+		-webkit-perspective: 1000px; 
 		}
 		
 		.viewBox>div.cardP:nth-child(2n){
-			transform: translate3D(0, 0, -100px) scale(2);
-			-webkit-transform: translate3D(0, 0, -100px) scale(2);
+			transform: translate3D(0, 0, -1000px) scale(2);
+			-webkit-transform: translate3D(0, 0, -1000px) scale(2);
 			z-index:-1;
 			}
