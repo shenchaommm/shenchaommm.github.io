@@ -107,6 +107,7 @@ function beginShow(){
 function showCards(){
 	for(var i=1;i<cards.length;i++){
 		cardsParent[i].style.display="block";
+		cardsParent[i].style.opacity=1;
 		//cards[i].style.zIndex=cards.length-i;
 		var deg=Math.round((Math.random()-Math.random())*30);
 		if(i>1){
@@ -116,6 +117,8 @@ function showCards(){
 		cardsParent[i].style.top=100*i+20+"vh";
 			}
 		}
+	var viewBox=document.getElementById("viewBox");
+	viewBox.addEventListener("scroll",vbscrolling,false);
 	initPic();
 	//$("#invitationCard").on("swipe",divrotate);
 	$("#invitationCard").on("swipeleft",function(){
@@ -152,10 +155,11 @@ function initPic(){
 		picW=picture.offsetWidth;
 		var images=picture.getElementsByTagName("img");
 		for(var i=0;i<images.length;i++){
-			images[i].style.top=picH*0.5-0.5*images[i].offsetHeight+"px";
-			images[i].style.left=picW*0.5-0.5*images[i].offsetWidth+"px";
+			var parent=images[i].parentNode;
+			parent.style.top=picH*0.5-0.5*images[i].offsetHeight+"px";
+			parent.style.left=picW*0.5-0.5*images[i].offsetWidth+"px";
 			var deg=Math.round((Math.random()-Math.random())*30);
-			images[i].style.transform="rotate("+deg+"deg)";
+			parent.style.transform="rotate("+deg+"deg)";
  
 			
 			}
@@ -171,12 +175,12 @@ function initShowPic(){
 	var images=picture.getElementsByTagName("img");
 	var left=0;
 	for(var i=0;i<images.length;i++){
-		
-			images[i].style.top=picH*0.5-0.5*images[i].offsetHeight+"px";
-			images[i].style.left=left+"px";
-			images[i].style.transform="rotate("+0+"deg)";
+			var parent=images[i].parentNode;
+			parent.style.top=picH*0.5-0.5*images[i].offsetHeight+"px";
+			parent.style.left=left+"px";
+			parent.style.transform="rotate("+0+"deg)";
 
-			left+=images[i].offsetWidth;
+			left+=parent.offsetWidth;
 			}
 	picture.style.overflowX="scroll";
 	picture.removeEventListener("click",showPicture,false);
@@ -184,7 +188,7 @@ function initShowPic(){
 function showPicture(e){
 	if(showpic==true) return;
 	picH1=this.parentNode.offsetTop;
-	$('html,body').animate({scrollTop:$(this.parentNode).offset().top},{ duration: 300, complete: function(){
+	$('.viewBox').animate({scrollTop:picH1},{ duration: 300, complete: function(){
 		
 		showpic=true;
 		
@@ -251,23 +255,22 @@ function scrolling(e){
 	scrollY=touch.pageY;
 	
 	}
-  /*$(window).scroll(function(e) {
-    var scrolltop=$(window).scrollTop();
+ function vbscrolling(e) {
+    var scrolltop=$(".viewBox").scrollTop();
 		if(showpic==true && (scrolltop>(picH1+wy/4)|| scrolltop<(picH1-wy/4))){
 			closePicture();
 		}
 	
-	var n=parseInt((scrolltop)/wy);
-	var px=(scrolltop%wy)
+	//var n=parseInt((scrolltop)/wy);
+	//var px=(scrolltop%wy)
 
 //indow.onscroll=function(){
 	
 	
 //}
 	//$(cards[n+1]).animate({top:Math.round(0.3*px+wy*n+0.9*wy)},10);
-	$(cards[n+1]).css("top",Math.round(0.3*px+wy*n+0.9*wy)+"px");
+	//$(cards[n+1]).css("top",Math.round(0.3*px+wy*n+0.9*wy)+"px");
 	
-})*/
-
+}
       
     

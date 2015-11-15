@@ -11,12 +11,17 @@ body{
 	position:absolute;
 	height:100vh;
 	width:100vw;
-	display:none;
+	opacity:0;
 	transform-origin:center center;
+	transition:top 0.5s ease-in-out 1s;
+	-webkit-transition:top 0.5s ease-in-out 1s;
+	top:0vh;
+	
 }
 #invitation{
 	display:block;
 	overflow:hidden;
+	opacity:1;
 	}
 #invitation>.card{
 	position:absolute;
@@ -78,7 +83,7 @@ div.cardfront>h2:nth-child(2){
 	padding:0em 1em;
 	}
 .cardback>p:nth-child(1){
-	font-size:2em;
+	font-size:1.5em;
 	text-align:center;
 	
 	
@@ -184,20 +189,31 @@ div.cardfront>h2:nth-child(2){
 	width:60%;
 	background-color:yellow;
 	box-shadow:1px 1px 5px 2px black;
+	transform:rotate(0deg);
+	transition:transform 0.5s ease-in-out;
+	-webkit-transition:transform 0.5s ease-in-out,
+
 	}
 .image{
 	background-color:red;
-	max-height:80%;
-	max-width:80%;
-	position:absolute;
-	transition:all 0.5s ease-in-out;
-	-webkit-transition:all 0.5s ease-in-out;
+	max-height:80vh;
+	max-width:80vw;
 	}
 #image{
 	width:100%;
 	left:0;
 	box-shadow:none;
 	overflow:visible;
+	background-color:transparent;
+	}
+#image>div{
+	padding:1em;
+	background-color:gray;
+	box-shadow:2px 2px 5px black;
+	position:absolute;
+			transition:all 0.5s ease-in-out;
+	-webkit-transition:all 0.5s ease-in-out;
+
 	}
 #pic .Show{
 
