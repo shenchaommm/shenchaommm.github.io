@@ -132,6 +132,8 @@ function showCards(){
 				div[1].style.transform="rotateY("+180+"deg)";
 		
 		});
+	var nav=document.getElementById("nav");
+	nav.style.opacity=0.5;
 	//window.addEventListener("touchstart",scrollStart,false);
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);

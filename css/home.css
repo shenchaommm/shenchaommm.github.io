@@ -7,6 +7,37 @@ body{
 	background-color:#6495ED;
 /*	overflow-y:hidden;
 */	}
+.nav{
+	width:250vw;
+	position:absolute;
+	top:-50vh;
+	left:-75vw;
+	transform: translate3D(0, 0, -1500px);
+	-webkit-transform: translate3D(0, 0, -1500px);
+	z-index:-2;
+	opacity:0;
+	transition:all 0.5s linear 1s;
+	}
+.nav>div:nth-child(1){
+	height:180vh;
+	}
+.nav>div{
+	height:140vh;
+	font-size:5em;
+			writing-mode:tb-rl;
+		-webkit-writing-mode:vertical-rl;
+	color:white;
+	}
+.nav>div:nth-child(2n){
+	}
+.nav>div:last-child{
+	height:100vh;
+	}
+	
+.background{
+	z-index:-3;
+	
+	}
 .cardP{
 	position:absolute;
 	height:100vh;
@@ -108,7 +139,7 @@ div.cardfront>h2:nth-child(2){
 		}
 	#envelop>div:nth-child(1){
 		height:89%;
-		border-top-right-radius:100% 50%;
+		border-top-right-radius:100% 100%;
 		}
 	.picWedding{
 		position:absolute;
@@ -153,11 +184,11 @@ div.cardfront>h2:nth-child(2){
 				
 				}
 		#envelop>div:nth-child(2){
-		height:94%;
-		border-top-left-radius:100%;
+		height:96%;
+		border-top-left-radius:100% 50%;
 		background-size:40%;
 		background-repeat:no-repeat;
-		background-position:90% 90%;
+		background-position:100% 100%;
 		}
 	.invitation{
 		font-weight:bolder;
