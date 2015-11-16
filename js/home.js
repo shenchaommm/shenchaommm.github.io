@@ -103,6 +103,7 @@ function beginShow(){
 	
 	}
 function showCards(){
+	$("#viewBox").css("-webkit-overflow-scrolling", "touch");
 	for(var i=1;i<cards.length;i++){
 		cardsParent[i].style.display="block";
 		cardsParent[i].style.opacity=1;

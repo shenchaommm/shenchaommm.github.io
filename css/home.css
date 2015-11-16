@@ -297,7 +297,7 @@ div.cardfront>h2:nth-child(2){
 		transform-style: preserve-3d;
 		-webkit-transform-style: preserve-3d;
 		perspective: 1000px; 
-		-webkit-perspective: 1000px; 
+		-webkit-perspective: 1000px;
 		}
 		
 		.viewBox>div.cardP:nth-child(2n){
