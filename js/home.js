@@ -134,11 +134,27 @@ function showCards(){
 		});
 	var nav=document.getElementById("nav");
 	nav.style.opacity=0.5;
+	initTime();
 	//window.addEventListener("touchstart",scrollStart,false);
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);
 	//window.addEventListener("mouseup",scrollEnd,false);
 	}
+	function initTime(){
+		var d=new Date();
+		var Now=d.getTime();
+		d.setFullYear(2016,1,21);
+		d.setHours(0,0,0,0);
+		var theDay=d.getTime();
+		var days=(theDay-Now)/3600000/24;
+		var timeDay=document.getElementById("timeDay");
+		if(days<1){
+			timeDay.innerText=parseInt(days*24)+"小时";
+		}else{
+			timeDay.innerText=parseInt(days)+"天";
+		}
+		
+		}
 function initMap(){
 		var map = new BMap.Map("allmap");    // 创建Map实例
     var poi = new BMap.Point(120.880927,29.991904);
