@@ -117,7 +117,7 @@ function showCards(){
 		}
 	var viewBox=document.getElementById("viewBox");
 	//document.body.style.overflowY="scroll";
-	//viewBox.style.overflowY="scroll";
+	viewBox.style.overflowY="scroll";
 	//viewBox.addEventListener("scroll",vbscrolling,false);
 	initPic();
 	//viewBox.style.WebKitOverflowScrolling="touch";
@@ -143,12 +143,6 @@ function showCards(){
 	//window.addEventListener("mousedown",scrollStart,false);
 	//window.addEventListener("mouseup",scrollEnd,false);
 
-			$('#viewBox').stellar({
-				horizontalScrolling: false,
-				scrollProperty: 'transform',
-				positionProperty: 'transform',
-				verticalOffset: -100
-			});
 	}
 	function initTime(){
 		var d=new Date();
