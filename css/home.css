@@ -14,8 +14,8 @@ body{
 	position:absolute;
 	top:-50vh;
 	left:-75vw;
-	transform: translate3D(0, 0, -1500px);
-	-webkit-transform: translate3D(0, 0, -1500px);
+	transform:translateZ(-1500px);
+	-webkit-transform: translateZ(-1500px);
 	z-index:-2;
 	opacity:0;
 	transition:all 0.5s linear 1s;
@@ -306,8 +306,8 @@ div.cardfront>h2:nth-child(2){
 		}
 		
 		.viewBox>div.cardP:nth-child(2n){
-			transform: translate3D(0, 0, -1000px) scale(2);
-			-webkit-transform: translate3D(0, 0, -1000px) scale(2);
+			transform: translateZ(-1000px) scale(2);
+			-webkit-transform: translateZ(-1000px) scale(2);
 			z-index:-1;
 			}
 .scrollable{-webkit-transform:translate3d(0,0,0)}.scrollability-scrollbar{position:absolute;top:0;right:2px;width:7px;height:1px;z-index:2147483647;opacity:0;-webkit-transform:translate3d(0,0,0);-webkit-box-sizing:border-box;-webkit-transform-origin:top left;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAABCAYAAADuHp8EAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAC5JREFUeNpi/P//vyQDAwMjKytr2Z8/f9gYIICRAQH+Q/n/WVhYfgNBJ4gNEGAAhVUOGMTI0TwAAAAASUVORK5CYII=") no-repeat}
