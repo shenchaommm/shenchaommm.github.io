@@ -4,10 +4,9 @@ body{
 	margin:0;
 	padding:0;
 	background-color:#6495ED;
-	overflow-y:hidden;
+	overflow:hidden;
 	width:100vw;
 	height:100vh;
-	-webkit-overflow-scrolling:touch;
 	}
 .nav{
 	width:250vw;
@@ -292,7 +291,7 @@ div.cardfront>h2:nth-child(2){
 	text-decoration:none;
 	}
 	.viewBox{
-		position: relative;
+		position:absolute;
 		height:600vh;
 		width:100vw;
 		overflow-y:hidden;
