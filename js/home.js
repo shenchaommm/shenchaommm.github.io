@@ -103,7 +103,6 @@ function beginShow(){
 	
 	}
 function showCards(){
-	$("#viewBox").css("-webkit-overflow-scrolling", "touch");
 	for(var i=1;i<cards.length;i++){
 		cardsParent[i].style.display="block";
 		cardsParent[i].style.opacity=1;
@@ -117,9 +116,12 @@ function showCards(){
 			}
 		}
 	var viewBox=document.getElementById("viewBox");
-	viewBox.style.overflowY="auto";
+	document.body.style.overflowY="scroll";
+	//viewBox.style.overflowY="scroll";
 	viewBox.addEventListener("scroll",vbscrolling,false);
 	initPic();
+	//viewBox.style.WebKitOverflowScrolling="touch";
+	//$("#viewBox").css("-webkit-overflow-scrolling", "touch");
 	//$("#invitationCard").on("swipe",divrotate);
 	$("#invitationCard").on("swipeleft",function(){
 		var div=this.children;
@@ -140,6 +142,12 @@ function showCards(){
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);
 	//window.addEventListener("mouseup",scrollEnd,false);
+	
+	$(function(){
+		$.stellar({
+
+			});
+			});
 	}
 	function initTime(){
 		var d=new Date();

@@ -4,7 +4,8 @@ body{
 	margin:0;
 	padding:0;
 	background-color:#6495ED;
-/*	overflow-y:hidden;
+	overflow-y:hidden;
+	-webkit-overflow-scrolling:touch;
 */	}
 .nav{
 	width:250vw;
@@ -290,18 +291,12 @@ div.cardfront>h2:nth-child(2){
 	}
 	.viewBox{
 		position: relative;
-		height:100vh;
+		height:600vh;
 		width:100vw;
-		overflow-y:hidden;
 		overflow-x:hidden;
-		transform-style: preserve-3d;
-		-webkit-transform-style: preserve-3d;
-		perspective: 1000px; 
-		-webkit-perspective: 1000px;
+		overflow-y:hidden;
 		}
 		
 		.viewBox>div.cardP:nth-child(2n){
-			transform: translate3D(0, 0, -1000px) scale(2);
-			-webkit-transform: translate3D(0, 0, -1000px) scale(2);
 			z-index:-1;
 			}
