@@ -117,7 +117,7 @@ function showCards(){
 		}
 	var viewBox=document.getElementById("viewBox");
 	//document.body.style.overflowY="scroll";
-	viewBox.style.overflowY="scroll";
+	viewBox.style.overflowY="auto";
 	//viewBox.addEventListener("scroll",vbscrolling,false);
 	initPic();
 	//viewBox.style.WebKitOverflowScrolling="touch";
