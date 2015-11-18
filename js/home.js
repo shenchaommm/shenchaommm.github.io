@@ -150,7 +150,6 @@ function showCards(){
 	}
 var st,ix,iy;
 function slideStart(e){
-	e.preventDefault();
 	var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
