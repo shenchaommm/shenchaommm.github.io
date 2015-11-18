@@ -7,13 +7,14 @@
 <link rel="stylesheet" type="text/css" href="css/home.css"/>
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="js/events.min.js"></script>
-
+<script type="text/javascript" src="js/swiper.min.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=rX67n9XF54MqLvRG1ritZF84"></script>
 <script type="text/javascript" src="js/home.js"></script>
 </head>
 
 <body>
-<div id="viewBox" class="viewBox">
+<div class="swiper-container">
+<div id="viewBox" class="swiper-wrapper">
 <div class="background" id="background"></div>
 
 <div class="nav" id="nav">
@@ -25,7 +26,7 @@
 <div>Tip</div>
 </div>
 
-<div class="cardP home blase" id="invitation">
+<div class="cardP home swiper-slide" id="invitation">
 	<div class="card" id="invitationCard">
     <div class="cardfront">
     <h2>
@@ -37,7 +38,7 @@
     Welcome to Shen&Jieer's wedding</h2>
     </div>
     <div class="cardback">
-    <p>送呈<span id="guest"></span>台启</p><p>谨定于<span>2016</span>年公历<span>2月21日</span>农历<span>正月十四</span>为<span id="master"></span>举行结婚典礼敬备喜宴，恭请<span></span>光临。<br /><span></span>敬邀<p>
+    <p>送呈<span id="guest"></span>台启</p><p>谨定于<span>2016</span>年公历<span>2月21日</span>农历<span>正月十四</span>为<span id="master"></span>举行结婚典礼敬备喜宴，恭请<span></span>光临。<br /><span></span>敬邀</p>
     <p>席设：<span>本宅</span><br />时间：<span>下午5点</span></p>
     </div>
     </div>
@@ -56,7 +57,7 @@
     </div>
     </div>
 </div>
-<div class="cardP blase" id="pic"  data-depth="0.00" data-stellar-ratio="0.9">
+<div class="cardP swiper-slide" id="pic"  data-depth="0.00" data-stellar-ratio="0.9">
 	<div class="card" id="image">
             <div><img class="image" src="pic/hsz/j1.jpg"/></div>
             <div><img class="image" src="pic/hsz/j2.jpg"/></div>
@@ -66,7 +67,7 @@
             <div><img class="image" src="pic/hsz/j6.jpg"/></div>
     </div>
 </div>
-<div class="cardP" id="map" data-depth="0.50">
+<div class="cardP swiper-slide" id="map" data-depth="0.50">
 	<div class="card">
     	<a class="mapview" href="http://api.map.baidu.com/marker?location=29.991904,120.880927&title=沈超家&content=上虞梁湖外梁湖村江坎头69号&output=html " target="_blank"></a>
         <div >
@@ -75,21 +76,22 @@
         </div>
     </div>
 </div>
-<div class="cardP" id="feedback">
+<div class="cardP swiper-slide" id="feedback">
 	<div class="card">
     <form>
     
     </form>
     </div>
 </div>
-<div class="cardP" id="time">
+<div class="cardP swiper-slide" id="time">
 	<div class="card">
     <div ><span id="timeDay"></span></div>
     </div>
 </div>
-<div class="cardP" id="tip">
+<div class="cardP swiper-slide" id="tip">
 	<div class="card">
     </div>
+</div>
 </div>
 </div>
 </body>

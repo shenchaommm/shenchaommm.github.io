@@ -110,14 +110,14 @@ function showCards(){
 		var deg=Math.round((Math.random()-Math.random())*30);
 		if(i>1){
 		cards[i].style.transform="rotate("+deg+"deg)";
-		cardsParent[i].style.top=140*i-20+"vh";
+		cardsParent[i].style.top=100*i+"vh";
 		}else {
-		cardsParent[i].style.top=100*i+20+"vh";
+		cardsParent[i].style.top=100*i+"vh";
 			}
 		}
 	var viewBox=document.getElementById("viewBox");
 	//document.body.style.overflowY="scroll";
-	viewBox.style.overflowY="auto";
+	//viewBox.style.overflowY="auto";
 	//viewBox.addEventListener("scroll",vbscrolling,false);
 	initPic();
 	//viewBox.style.WebKitOverflowScrolling="touch";
@@ -142,6 +142,12 @@ function showCards(){
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);
 	//window.addEventListener("mouseup",scrollEnd,false);
+	var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: false,
+	freeMode:true,
+      })
 
 	}
 	function initTime(){
