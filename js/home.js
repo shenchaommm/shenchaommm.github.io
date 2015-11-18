@@ -110,15 +110,19 @@ function showCards(){
 		var deg=Math.round((Math.random()-Math.random())*30);
 		if(i>1){
 		cards[i].style.transform="rotate("+deg+"deg)";
-		cardsParent[i].style.top=100*i+"vh";
+		cardsParent[i].style.top=140*i+"vh";
 		}else {
-		cardsParent[i].style.top=100*i+"vh";
+		cardsParent[i].style.top=140*i+"vh";
 			}
 		}
 	var viewBox=document.getElementById("viewBox");
 	//document.body.style.overflowY="scroll";
 	//viewBox.style.overflowY="auto";
-	//viewBox.addEventListener("scroll",vbscrolling,false);
+	viewBox.addEventListener("touchstart",slideStart,false);
+	viewBox.addEventListener("touchend",slideEnd,false);
+	viewBox.addEventListener("mousedown",slideStart,false);
+	viewBox.addEventListener("mouseup",slideEnd,false);
+	viewBox.addEventListener("scroll",vbscrolling,false);
 	initPic();
 	//viewBox.style.WebKitOverflowScrolling="touch";
 	//$("#viewBox").css("-webkit-overflow-scrolling", "touch");
@@ -142,12 +146,52 @@ function showCards(){
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);
 	//window.addEventListener("mouseup",scrollEnd,false);
-	var mySwiper = new Swiper ('.swiper-container', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: false,
-	freeMode:true,
-      })
+
+	}
+var st,ix,iy;
+function slideStart(e){
+	e.preventDefault();
+	var touch=e;
+	if(e.touches)
+		touch=e.touches[0];
+	ix=touch.pageX;
+	iy=touch.pageY;
+	st=this.scrollTop;
+	this.addEventListener("touchmove",slideMove,false);
+	this.addEventListener("mousemove",slideMove,false);
+	}
+function slideMove(e){
+	var touch=e;
+	if(e.touches)
+		touch=e.touches[0];
+	this.scrollTop+=iy-touch.pageY;
+	ix=touch.pageX;
+	iy=touch.pageY;
+	}
+function slideEnd(e){
+	var touch=e;
+	if(e.touches)
+		touch=e.touches[0];
+		var scrollt=this.scrollTop;
+		if(st-scrollt>50){
+			//scroll to pre
+			var tip=document.getElementById("tip");
+			if(st>tip.offsetTop){
+				$(this).animate({scrollTop:tip.offsetTop},500);
+			}else{
+			$(this).animate({scrollTop:st-1.4*wy},500);}
+			
+			}
+		else if(scrollt-st>50){
+			//scroll to next
+			$(this).animate({scrollTop:st+1.4*wy},500);
+		}else{
+			
+			$(this).animate({scrollTop:st},500);
+			}
+		
+	this.removeEventListener("touchmove",slideMove,false);
+	this.removeEventListener("mousemove",slideMove,false);
 
 	}
 	function initTime(){
@@ -223,7 +267,7 @@ function initShowPic(){
 function showPicture(e){
 	if(showpic==true) return;
 	picH1=this.parentNode.offsetTop;
-	$('.viewBox').animate({scrollTop:picH1},{ duration: 300, complete: function(){
+	$('#viewBox').animate({scrollTop:picH1},{ duration: 300, complete: function(){
 		
 		showpic=true;
 		
@@ -291,7 +335,7 @@ function scrolling(e){
 	
 	}
  function vbscrolling(e) {
-    var scrolltop=$(".viewBox").scrollTop();
+    var scrolltop=$("#viewBox").scrollTop();
 		if(showpic==true && (scrolltop>(picH1+wy/4)|| scrolltop<(picH1-wy/4))){
 			closePicture();
 		}
