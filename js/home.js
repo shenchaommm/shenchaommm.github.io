@@ -243,7 +243,8 @@ function initPic(){
 			
 			}
 			picture.style.overflowX="visible";
-	picture.addEventListener("click",showPicture,false);
+	//picture.addEventListener("click",showPicture,false);
+	$(picture).on("tap",showPicture);
 	
 	}
 	var showpic=false;
@@ -262,7 +263,8 @@ function initShowPic(){
 			left+=parent.offsetWidth;
 			}
 	picture.style.overflowX="scroll";
-	picture.removeEventListener("click",showPicture,false);
+	//picture.removeEventListener("click",showPicture,false);
+	$(picture).off("tap",showPicture);
 	}
 function showPicture(e){
 	if(showpic==true) return;
