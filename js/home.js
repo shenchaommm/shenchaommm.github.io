@@ -148,9 +148,8 @@ function showCards(){
 	//window.addEventListener("mouseup",scrollEnd,false);
 
 	}
-var st,ix,iy;
+var st,ix,iy,isstart=false;
 function slideStart(e){
-	e.preventDefault();
 	$(this).stop(true,true);
 	var touch=e;
 	if(e.touches)
@@ -158,6 +157,7 @@ function slideStart(e){
 	ix=touch.pageX;
 	iy=touch.pageY;
 	st=this.scrollTop;
+	isstart=true;
 	this.addEventListener("touchmove",slideMove,false);
 	this.addEventListener("mousemove",slideMove,false);
 	}
@@ -165,11 +165,25 @@ function slideMove(e){
 	var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
+	if(isstart==true){
+		if(Math.abs(ix-touch.pageX)>Math.abs(iy-touch.pageY)){
+			this.removeEventListener("touchmove",slideMove,false);
+			this.removeEventListener("mousemove",slideMove,false);
+
+			isstart=false;
+			return;
+			}
+		else if(Math.abs(ix-touch.pageX)<=Math.abs(iy-touch.pageY))
+			isstart=false;
+		
+		}
+	e.preventDefault();
 	this.scrollTop+=iy-touch.pageY;
 	ix=touch.pageX;
 	iy=touch.pageY;
 	}
 function slideEnd(e){
+	isstart=false;
 	var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
