@@ -179,6 +179,7 @@ function slideEnd(e){
 	var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
+		
 		/*var scrollt=this.scrollTop;
 		if(st-scrollt>50){
 			//scroll to pre
@@ -204,9 +205,10 @@ function slideEnd(e){
 function diyscrollTo(from,to,mode){
 	if(mode==0){
 	for(var i=0;i<cardsParent.length;i++){
-	$(cardsParent[i]).css({"transform":"translateY("+(1-0.1*i)*to+"px)","-webkit-transform":"translateY("+(1-0.1*i)*to+"px)"});
+		var top=$(cardsParent[i]).offset().top;
+	$(cardsParent[i]).css("top",to-from+top+"px");
 		}
-	$("#nav").css({"transform":"translateY("+0.5*to+"px)","-webkit-transform":"translateY("+0.5*to+"px)"});
+	$("#nav").css("top",0.5*to+"px");
 	}else{
 	for(var i=0;i<cardsParent.length;i++){
 	$(cardsParent[i]).animate({  textindent: to }, {
