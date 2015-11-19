@@ -44,6 +44,11 @@ function addClass(element,value){
 		wy=window.innerHeight;
 		window.addEventListener('popstate',goBack, false);
 		backState=new Array();
+		var background=document.getElementById("background");
+		var bc=background.children;
+		for(var i=0;i<bc.length;i++){
+			bc[i].style.backgroundImage="url(pic/hsz/j"+(i+1)+".jpg)";
+			}
 		
 		
 	}
@@ -284,7 +289,7 @@ function initShowPic(){
 function showPicture(e){
 	if(showpic==true) return;
 	picH1=this.parentNode.offsetTop;
-	$('#viewBox').animate({scrollTop:picH1},{ duration: 300, complete: function(){
+	$('#viewBox').animate({scrollTop:picH1},{ duration: 600, complete: function(){
 		
 		showpic=true;
 		

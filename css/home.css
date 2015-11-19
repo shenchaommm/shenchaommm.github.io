@@ -9,6 +9,21 @@ body{
 	height:100vh;
 	-webkit-overflow-scrolling:touch;
 	}
+.background{
+	width:100vw;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:-3;
+	}
+.background>div{
+	width:100vw;
+	height:140vh;
+	background-size:cover;
+	background-attachment:fixed;
+	background-position:center center;
+	}
+
 .nav{
 	width:250vw;
 	position:absolute;
@@ -29,6 +44,7 @@ body{
 			writing-mode:tb-rl;
 		-webkit-writing-mode:vertical-rl;
 	color:white;
+	text-shadow:1px 1px 4px black;
 	}
 .nav>div:nth-child(2n){
 	}
