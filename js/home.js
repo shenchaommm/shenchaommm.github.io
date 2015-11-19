@@ -148,7 +148,7 @@ function showCards(){
 	//window.addEventListener("mouseup",scrollEnd,false);
 
 	}
-var st,ix,iy;
+var st=0,ix,iy;
 function slideStart(e){
 	e.preventDefault();
 	$(this).stop(true,true);
@@ -157,7 +157,7 @@ function slideStart(e){
 		touch=e.touches[0];
 	ix=touch.pageX;
 	iy=touch.pageY;
-	st=this.scrollTop;
+	//st=this.scrollTop;
 	this.addEventListener("touchmove",slideMove,false);
 	this.addEventListener("mousemove",slideMove,false);
 	}
@@ -165,7 +165,13 @@ function slideMove(e){
 	var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
-	this.scrollTop+=iy-touch.pageY;
+	st=st-iy+touch.pageY;
+	if(st>0)st=0;
+	translate=st;
+	diyscrollTo(translate,0);
+	//this.scrollTop+=iy-touch.pageY;
+	//$(this).css({"transform":"translateY("+translate+"px)","-webkit-transform":"translateY("+translate+"px)"});
+	
 	ix=touch.pageX;
 	iy=touch.pageY;
 	}
@@ -173,7 +179,7 @@ function slideEnd(e){
 	var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
-		var scrollt=this.scrollTop;
+		/*var scrollt=this.scrollTop;
 		if(st-scrollt>50){
 			//scroll to pre
 			var tip=document.getElementById("tip");
@@ -189,11 +195,29 @@ function slideEnd(e){
 		}else{
 			
 			$(this).animate({scrollTop:st},500);
-			}
+			}*/
 		
 	this.removeEventListener("touchmove",slideMove,false);
 	this.removeEventListener("mousemove",slideMove,false);
 
+	}
+function diyscrollTo(scrollTop,mode){
+	if(mode==0){
+	for(var i=0;i<cardsParent.length;i++){
+	$(cardsParent[i]).css({"transform":"translateY("+(1-0.1*i)*scrollTop+"px)","-webkit-transform":"translateY("+(1-0.1*i)*scrollTop+"px)"});
+		}
+	$("#nav").css({"transform":"translateY("+0.5*scrollTop+"px)","-webkit-transform":"translateY("+0.5*scrollTop+"px)"});
+	}else{
+	for(var i=0;i<cardsParent.length;i++){
+	$(cardsParent[i]).css({"transform":"translateY("+(1-0.1*i)*scrollTop+"px)","-webkit-transform":"translateY("+(1-0.1*i)*scrollTop+"px)"});
+		}
+	$("#nav").css({"transform":"translateY("+0.5*scrollTop+"px)","-webkit-transform":"translateY("+0.5*scrollTop+"px)"});
+		}
+	
+	
+	
+	
+	
 	}
 	function initTime(){
 		var d=new Date();

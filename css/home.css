@@ -10,21 +10,18 @@ body{
 	-webkit-overflow-scrolling:touch;
 	}
 .nav{
-	width:250vw;
+	width:100vw;
 	position:absolute;
-	top:-50vh;
-	left:-75vw;
-	transform:translateZ(-1500px);
-	-webkit-transform: translateZ(-1500px);
+	top:0vh;
+	left:0vw;
 	z-index:-2;
 	opacity:0;
-	transition:all 0.5s linear 1s;
 	}
 .nav>div:nth-child(1){
-	height:180vh;
+	height:80vh;
 	}
 .nav>div{
-	height:150vh;
+	height:50vh;
 	font-size:5em;
 			writing-mode:tb-rl;
 		-webkit-writing-mode:vertical-rl;
@@ -46,8 +43,8 @@ body{
 	width:100vw;
 	opacity:0;
 	transform-origin:center center;
-	transition:top 0.5s ease-in-out 1s;
-	-webkit-transition:top 0.5s ease-in-out 1s;
+	transition:top 0.5s ease-in-out 1s, transform 0.5s linear;
+	-webkit-transition:top 0.5s ease-in-out 1s, transform 0.5s linear;
 	top:0vh;
 	
 }
@@ -299,14 +296,14 @@ div.cardfront>h2:nth-child(2){
 		width:100%;
 		overflow-y:hidden;
 		overflow-x:hidden;
-		transform-style: preserve-3d;
+/*		transform-style: preserve-3d;
 		-webkit-transform-style: preserve-3d;
 		perspective: 1000px; 
-		-webkit-perspective: 1000px;
+		-webkit-perspective: 1000px;*/
 		}
 		
-		.viewBox>div.cardP:nth-child(2n){
+/*		.viewBox>div.cardP:nth-child(2n){
 			transform: translateZ(-1000px) scale(2);
 			-webkit-transform: translateZ(-1000px) scale(2);
 			z-index:-1;
-			}
+			}*/
