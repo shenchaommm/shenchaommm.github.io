@@ -43,8 +43,8 @@ body{
 	width:100vw;
 	opacity:0;
 	transform-origin:center center;
-	transition:top 0.5s ease-in-out 1s, transform 0.1s linear;
-	-webkit-transition:top 0.5s ease-in-out 1s, transform 0.1s linear;
+	transition:top 0.5s ease-in-out 1s;
+	-webkit-transition:top 0.5s ease-in-out 1s;
 	top:0vh;
 	
 }

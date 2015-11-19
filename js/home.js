@@ -165,10 +165,10 @@ function slideMove(e){
 	var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
+	var bst=st;
 	st=st-iy+touch.pageY;
 	if(st>0)st=0;
-	translate=st;
-	diyscrollTo(translate,0);
+	diyscrollTo(bst,st,0);
 	//this.scrollTop+=iy-touch.pageY;
 	//$(this).css({"transform":"translateY("+translate+"px)","-webkit-transform":"translateY("+translate+"px)"});
 	
@@ -201,23 +201,35 @@ function slideEnd(e){
 	this.removeEventListener("mousemove",slideMove,false);
 
 	}
-function diyscrollTo(scrollTop,mode){
+function diyscrollTo(from,to,mode){
 	if(mode==0){
 	for(var i=0;i<cardsParent.length;i++){
-	$(cardsParent[i]).css({"transform":"translateY("+(1-0.1*i)*scrollTop+"px)","-webkit-transform":"translateY("+(1-0.1*i)*scrollTop+"px)"});
+	$(cardsParent[i]).css({"transform":"translateY("+(1-0.1*i)*to+"px)","-webkit-transform":"translateY("+(1-0.1*i)*to+"px)"});
 		}
-	$("#nav").css({"transform":"translateY("+0.5*scrollTop+"px)","-webkit-transform":"translateY("+0.5*scrollTop+"px)"});
+	$("#nav").css({"transform":"translateY("+0.5*to+"px)","-webkit-transform":"translateY("+0.5*to+"px)"});
 	}else{
 	for(var i=0;i<cardsParent.length;i++){
-	$(cardsParent[i]).css({"transform":"translateY("+(1-0.1*i)*scrollTop+"px)","-webkit-transform":"translateY("+(1-0.1*i)*scrollTop+"px)"});
-		}
-	$("#nav").css({"transform":"translateY("+0.5*scrollTop+"px)","-webkit-transform":"translateY("+0.5*scrollTop+"px)"});
-		}
+	$(cardsParent[i]).animate({  textindent: to }, {
+   		duration:500,
+   		step: function(now,fx) {
+        	fx.start=from;//你可以尝试修改start,end值，来看rotate的变化
+        	fx.end=to;        
+      		$(this).css({"transform":"translateY("+(1-0.1*i)*now+"px)","-webkit-transform":"translateY("+(1-0.1*i)*now+"px)"});
+   		}
+	});
+	}
+	$("#nav").animate({  textindent: to }, {
+   		duration:500,
+   		step: function(now,fx) {
+        	fx.start=from;//你可以尝试修改start,end值，来看rotate的变化
+        	fx.end=to;        
+      		$(this).css({"transform":"translateY("+0.5*to+"px)","-webkit-transform":"translateY("+0.5*to+"px)"});
+   		}
+	});
+	st=to;
 	
 	
-	
-	
-	
+	}
 	}
 	function initTime(){
 		var d=new Date();
