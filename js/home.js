@@ -48,6 +48,7 @@ function addClass(element,value){
 		var bc=background.children;
 		for(var i=0;i<bc.length;i++){
 			bc[i].style.backgroundImage="url(pic/hsz/j"+(i+1)+".jpg)";
+			$(bc[i]).css("background-attachment","fixed");
 			}
 		
 		
