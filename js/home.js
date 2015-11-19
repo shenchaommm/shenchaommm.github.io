@@ -290,10 +290,10 @@ function showPicture(e){
 		
 		}});
 	initShowPic();
-	$(this).on("touchstart",picStartScroll);
-	$(this).on("touchend",picEndScroll);
-	$(this).on("mousedown",picStartScroll);
-	$(this).on("mouseup",picEndScroll);
+	//$(this).on("touchstart",picStartScroll);
+	//$(this).on("touchend",picEndScroll);
+	//$(this).on("mousedown",picStartScroll);
+	//$(this).on("mouseup",picEndScroll);
 
 	//this.parentNode.scrollIntoView();
 	//this.class="show";
@@ -304,10 +304,10 @@ function closePicture(){
 	showpic=false;
 	//picture.class="card";
 	initPic();
-	$(picture).off("touchstart",picStartScroll);
-	$(picture).off("touchend",picEndScroll);
-		$(this).off("mousedown",picStartScroll);
-	$(this).off("mouseup",picEndScroll);
+	//$(picture).off("touchstart",picStartScroll);
+	//$(picture).off("touchend",picEndScroll);
+		//$(this).off("mousedown",picStartScroll);
+	//$(this).off("mouseup",picEndScroll);
 
 	}
 var px;
@@ -320,7 +320,7 @@ function picStartScroll(e){
 	$(this).on("mousemove",picScrolling);
 	}
 function picScrolling(e){
-		var touch=e;
+	var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
 	var sl=$(this).scrollLeft();
