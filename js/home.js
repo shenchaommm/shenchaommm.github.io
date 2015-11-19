@@ -148,7 +148,7 @@ function showCards(){
 	//window.addEventListener("mouseup",scrollEnd,false);
 
 	}
-var st=0,ix,iy;
+var st,ix,iy;
 function slideStart(e){
 	e.preventDefault();
 	$(this).stop(true,true);
@@ -157,7 +157,7 @@ function slideStart(e){
 		touch=e.touches[0];
 	ix=touch.pageX;
 	iy=touch.pageY;
-	//st=this.scrollTop;
+	st=this.scrollTop;
 	this.addEventListener("touchmove",slideMove,false);
 	this.addEventListener("mousemove",slideMove,false);
 	}
@@ -165,13 +165,7 @@ function slideMove(e){
 	var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
-	var bst=st;
-	st=st-iy+touch.pageY;
-	if(st>0)st=0;
-	diyscrollTo(bst,st,0);
-	//this.scrollTop+=iy-touch.pageY;
-	//$(this).css({"transform":"translateY("+translate+"px)","-webkit-transform":"translateY("+translate+"px)"});
-	
+	this.scrollTop+=iy-touch.pageY;
 	ix=touch.pageX;
 	iy=touch.pageY;
 	}
@@ -179,8 +173,7 @@ function slideEnd(e){
 	var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
-		
-		/*var scrollt=this.scrollTop;
+		var scrollt=this.scrollTop;
 		if(st-scrollt>50){
 			//scroll to pre
 			var tip=document.getElementById("tip");
@@ -196,42 +189,11 @@ function slideEnd(e){
 		}else{
 			
 			$(this).animate({scrollTop:st},500);
-			}*/
+			}
 		
 	this.removeEventListener("touchmove",slideMove,false);
 	this.removeEventListener("mousemove",slideMove,false);
 
-	}
-function diyscrollTo(from,to,mode){
-	if(mode==0){
-	for(var i=0;i<cardsParent.length;i++){
-		var top=$(cardsParent[i]).offset().top;
-	$(cardsParent[i]).css("top",to-from+top+"px");
-		}
-	$("#nav").css("top",0.5*to+"px");
-	}else{
-	for(var i=0;i<cardsParent.length;i++){
-	$(cardsParent[i]).animate({  textindent: to }, {
-   		duration:500,
-   		step: function(now,fx) {
-        	fx.start=from;//你可以尝试修改start,end值，来看rotate的变化
-        	fx.end=to;        
-      		$(this).css({"transform":"translateY("+(1-0.1*i)*now+"px)","-webkit-transform":"translateY("+(1-0.1*i)*now+"px)"});
-   		}
-	});
-	}
-	$("#nav").animate({  textindent: to }, {
-   		duration:500,
-   		step: function(now,fx) {
-        	fx.start=from;//你可以尝试修改start,end值，来看rotate的变化
-        	fx.end=to;        
-      		$(this).css({"transform":"translateY("+0.5*to+"px)","-webkit-transform":"translateY("+0.5*to+"px)"});
-   		}
-	});
-	st=to;
-	
-	
-	}
 	}
 	function initTime(){
 		var d=new Date();
@@ -347,8 +309,8 @@ function picScrolling(e){
 		var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
-
-	this.scrollLeft+=px-touch.pageX;
+	var sl=$(this).scrollLeft();
+	$(this).scrollLeft(sl+px-touch.pageX);
 	px=touch.pageX;
 	}
 function picEndScroll(e){
