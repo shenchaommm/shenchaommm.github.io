@@ -233,9 +233,9 @@ div.cardfront>h2:nth-child(2){
 .card{
 	position:absolute;
 	top:20%;
-	left:20%;
+	left:15%;
 	height:70%;
-	width:60%;
+	width:70%;
 	background-color:yellow;
 	box-shadow:1px 1px 5px 2px black;
 	transform:rotate(0deg);
@@ -265,6 +265,74 @@ div.cardfront>h2:nth-child(2){
 	-webkit-transition:all 0.5s ease-in-out;
 
 	}
+#map>.card{
+	background-color:#F0F0F0;
+	}
+.map{
+	width:calc(100% - 2em);
+	height:calc(100% - 8em);
+	padding:1em;	
+	}
+	.map>a{
+		display:block;
+		width:100%;
+		height:100%;
+		background-image:url(../pic/map1.png);
+		background-position:center;
+		background-repeat:no-repeat;
+		
+		}
+	.adr{
+		display:block;
+		height:2em;
+		line-height:2em;
+		text-align:center;
+		width:100%;
+		padding:0px;
+		margin:0px;
+		}
+	.navi{
+		height:4em;
+		width:100%;
+		}
+		.navi>div{
+			width:50%;
+			float:left;
+			text-align:center;
+			}
+		.navi>div>a{
+			height:90%;
+			width:90%;
+			display:block;
+			position:relative;	
+			margin:auto;
+			border-radius:5px;	
+			}
+		div#navi{
+			height:100%;
+			line-height:4em;
+			}
+		div#navi>a{
+			
+			background-color:#09F;
+			}
+		div#callm{
+			height:50%;
+			line-height:2em;
+
+			}
+		div#callm>a{
+			
+			background-color:#3F0;
+			}
+		div#callw{
+			height:50%;
+			line-height:2em;
+			}
+		div#callw>a{
+			
+			background-color:pink;
+			}
 #pic .Show{
 
 	}
@@ -278,7 +346,7 @@ div.cardfront>h2:nth-child(2){
 #allmap {
 	position:relative;
 	height:80%;
-	padding:5%
+	padding:5%;
 	width:90%;
 	overflow: hidden;
 	margin:0;
@@ -295,17 +363,16 @@ div.cardfront>h2:nth-child(2){
 	background-position:center center;
 	
 	}
-.adr{
-	padding-left:5%;
-	}
-.adr>a{
-	padding:1%;
-	padding-left:1%;
-	background-color:#09F;
-	border-radius:4px;
-	box-shadow:1px 1px 3px black;
-	color:white;
-	text-decoration:none;
+#audio{
+	display:block;
+	position:absolute;
+	top:0px;
+	width:2em;
+	height:2em;
+	right:0px;
+	border-bottom-left-radius:2em;
+	background-color:gray;
+	box-shadow:1px 1px 5px black;
 	}
 	.viewBox{
 		margin:0px;

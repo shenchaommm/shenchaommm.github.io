@@ -33,6 +33,8 @@ function addClass(element,value){
 		//invitation.addEventListener("touchstart",pullstart,false);
 		invitation.addEventListener("mouseup",pullEnd,false);
 		//invitation.addEventListener("touchend",pullEnd,false);
+		var audio=document.getElementById("audio");
+		audio.addEventListener("click",audioPlay,false);
 		var envelop=document.getElementById("envelop");
 		envelop.addEventListener("touchstart",pullTouchstart,false);
 		envelop.addEventListener("touchend",pullEnd,false);
@@ -48,7 +50,7 @@ function addClass(element,value){
 		var bc=background.children;
 		for(var i=0;i<bc.length;i++){
 			bc[i].style.backgroundImage="url(pic/hsz/j"+(i+1)+".jpg)";
-			$(bc[i]).css("background-attachment","fixed");
+			//$(bc[i]).css("background-attachment","fixed");
 			}
 		
 		
@@ -57,6 +59,19 @@ function addClass(element,value){
 	var iy,y;
 	var cards;
 	var cardsParent;
+function audioPlay(e){
+	var audio=this.getElementsByTagName("audio")[0];
+	if(audio.paused)audio.play();
+	else audio.pause();
+	
+	}
+var audioNum=1;
+function audioNext(){
+	var audio=document.getElementById("audioPlay");
+	audioNum++;
+	if(audioNum>10)audioNum=1;
+	audio.src="music/"+audioNum+".mp3";
+	}
 function pullTouchstart(e){
 	e.preventDefault();
 	var touch=e.touches[0];
@@ -113,7 +128,7 @@ function showCards(){
 		cardsParent[i].style.display="block";
 		cardsParent[i].style.opacity=1;
 		//cards[i].style.zIndex=cards.length-i;
-		var deg=Math.round((Math.random()-Math.random())*30);
+		var deg=Math.round((Math.random()-Math.random())*20);
 		if(i>1){
 		cards[i].style.transform="rotate("+deg+"deg)";
 		cardsParent[i].style.top=140*i+"vh";
@@ -185,6 +200,7 @@ function slideMove(e){
 		}
 	e.preventDefault();
 	this.scrollTop+=iy-touch.pageY;
+	//$("#background").scrollTop($("#background").scrollTop()+iy-touch.pageY);
 	ix=touch.pageX;
 	iy=touch.pageY;
 	}
@@ -199,6 +215,7 @@ function slideEnd(e){
 			var tip=document.getElementById("tip");
 			if(st>tip.offsetTop){
 				$(this).animate({scrollTop:tip.offsetTop},500);
+				//$("#background").animate({scrollTop:tip.offsetTop},500);
 			}else{
 			$(this).animate({scrollTop:st-1.4*wy},500);}
 			
