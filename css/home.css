@@ -367,12 +367,13 @@ div.cardfront>h2:nth-child(2){
 	text-align:center;
 	}
 #time p{
-	padding:0.5em;
+	padding-left:0.5em;
+	padding-right:0.5em;
 	
 	}
 .timeLogo{
-	height:9.5em;
-	width:8em;
+	height:5em;
+	width:4em;
 	position:relative;
 	margin-left:auto;
 	margin-right:auto;
@@ -394,6 +395,9 @@ div.cardfront>h2:nth-child(2){
 .time>span{
 	font-size:3em;
 	text-shadow:1px 1px 5px black;
+	}
+.timeText{
+	font-size:0.8em;
 	}
 #audio{
 	display:block;
