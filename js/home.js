@@ -240,10 +240,11 @@ function slideEnd(e){
 		var theDay=d.getTime();
 		var days=(theDay-Now)/3600000/24;
 		var timeDay=document.getElementById("timeDay");
+		
 		if(days<1){
-			timeDay.innerText=parseInt(days*24)+"小时";
+			timeDay.innerHTML="<span>"+parseInt(days*24)+"</span>"+"小时";
 		}else{
-			timeDay.innerText=parseInt(days)+"天";
+			timeDay.innerHTML="<span>"+parseInt(days)+"</span>"+"天";
 		}
 		
 		}

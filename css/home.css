@@ -363,6 +363,38 @@ div.cardfront>h2:nth-child(2){
 	background-position:center center;
 	
 	}
+#time{
+	text-align:center;
+	}
+#time p{
+	padding:0.5em;
+	
+	}
+.timeLogo{
+	height:9.5em;
+	width:8em;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:2em;
+		background-image:url(../pic/logo.png);
+		background-size:100% 100%;
+		}
+.time{
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	width:6em;
+	height:4em;
+	background-color:pink;
+	color:white;
+	line-height:4em;
+	box-shadow:1px 1px 5px black;
+	}
+.time>span{
+	font-size:3em;
+	text-shadow:1px 1px 5px black;
+	}
 #audio{
 	display:block;
 	position:absolute;
@@ -393,3 +425,10 @@ div.cardfront>h2:nth-child(2){
 			-webkit-transform: translateZ(-1000px) scale(2);
 			z-index:-1;
 			}
+.footer{
+	position:absolute;
+	height:20%;
+	width:100%;
+	background-color:skyblue;
+	top:840vh;
+	}
