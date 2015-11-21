@@ -371,6 +371,11 @@ div.cardfront>h2:nth-child(2){
 	padding-right:0.5em;
 	
 	}
+#time>.card{
+			background-image:url(../pic/logo.png);
+			background-repeat:no-repeat;
+			background-position:center center;
+	}
 .timeLogo{
 	height:5em;
 	width:4em;
@@ -378,7 +383,6 @@ div.cardfront>h2:nth-child(2){
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:2em;
-		background-image:url(../pic/logo.png);
 		background-size:100% 100%;
 		}
 .time{
