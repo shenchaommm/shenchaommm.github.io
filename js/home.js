@@ -162,6 +162,7 @@ function showCards(){
 		});
 	var nav=document.getElementById("nav");
 	nav.style.opacity=0.5;
+	$("#day").on("tap",showDay);
 	initTime();
 	//window.addEventListener("touchstart",scrollStart,false);
 	//window.addEventListener("touchend",scrollEnd,false);
@@ -334,6 +335,21 @@ function closePicture(){
 	//$(this).off("mouseup",picEndScroll);
 
 	}
+var showDayState=false,dayH1;
+function showDay(){
+	if(showDayState==false){
+		dayH1=this.parentNode.offsetTop;
+		showDayState=true;
+		$("#timeFoot").css("bottom","-6em");
+	}else{
+		closeDay();	
+	}
+	}
+function closeDay(){
+		showDayState=false;
+	$("#timeFoot").css("bottom","0em");
+	
+	}
 var px;
 function picStartScroll(e){
 	var touch=e;
@@ -410,6 +426,9 @@ function scrolling(e){
     var scrolltop=$("#viewBox").scrollTop();
 		if(showpic==true && (scrolltop>(picH1+wy/4)|| scrolltop<(picH1-wy/4))){
 			closePicture();
+		}
+		if(showDayState==true && (scrolltop>(dayH1+wy/4)|| scrolltop<(dayH1-wy/4))){
+			closeDay();
 		}
 	
 	//var n=parseInt((scrolltop)/wy);
