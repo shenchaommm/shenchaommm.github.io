@@ -372,9 +372,14 @@ div.cardfront>h2:nth-child(2){
 	
 	}
 #time>.card{
-			background-image:url(../pic/logo.png);
+	overflow:hidden;
 			background-repeat:no-repeat;
 			background-position:center center;
+	}
+#time>.card>div{
+	position:absolute;
+	width:100%;
+	box-shadow:0px 0px 6px black;
 	}
 .timeLogo{
 	height:5em;
@@ -385,24 +390,43 @@ div.cardfront>h2:nth-child(2){
 	margin-top:2em;
 		background-size:100% 100%;
 		}
-.time{
-	position:relative;
+.timeTextHead{
 	margin-left:auto;
 	margin-right:auto;
 	width:6em;
-	height:4em;
+	height:10em;
 	background-color:pink;
-	color:white;
-	line-height:4em;
+	line-height:2em;
 	box-shadow:1px 1px 5px black;
+	top:0px;
+	left:0px;
 	}
-.time>span{
-	font-size:3em;
-	text-shadow:1px 1px 5px black;
+.timeTextFoot{
+	margin-left:auto;
+	margin-right:auto;
+	width:6em;
+	height:calc(100% - 20em);
+	background-color:pink;
+	line-height:2em;
+	box-shadow:1px 1px 5px black;
+	bottom:0px;
+	left:0px;
 	}
-.timeText{
-	font-size:0.8em;
+.time{
+	margin-left:auto;
+	margin-right:auto;
+	width:6em;
+	height:10em;
+	line-height:2em;
+	box-shadow:1px 1px 5px black;
+	top:10em;
+	left:0px;
 	}
+.time>p{
+	font-size:2em;
+	}
+
+
 #audio{
 	display:block;
 	position:absolute;
