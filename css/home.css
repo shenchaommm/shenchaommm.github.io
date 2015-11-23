@@ -407,9 +407,9 @@ div.cardfront>h2:nth-child(2){
 	left:0px;
 	transition:all 0.5s ease-in-out;
 				background-repeat:no-repeat;
-			background-position:10% center;
+			background-position:center center;
 			background-image:url(../pic/SJH.png);
-			background-size:auto 60%;
+			background-size:auto 80%;
 	}
 .time{
 	margin-left:auto;
