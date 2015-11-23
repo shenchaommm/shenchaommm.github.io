@@ -395,6 +395,9 @@ div.cardfront>h2:nth-child(2){
 	top:0px;
 	left:0px;
 	}
+.timeTextHead>p{
+	font-size:0.8em;
+	}
 .timeTextFoot{
 	margin-left:auto;
 	margin-right:auto;
@@ -412,7 +415,7 @@ div.cardfront>h2:nth-child(2){
 	left:0px;
 	}
 .time>p{
-	font-size:2em;
+	font-size:1.8em;
 	}
 
 
