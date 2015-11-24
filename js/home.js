@@ -178,6 +178,9 @@ function showCards(){
 var st,ix,iy,isstart=false;
 function slideStart(e){
 	$(this).stop(true,true);
+	$("#background").stop(true,true);
+	$("#nav").stop(true,true);
+
 	var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
@@ -208,7 +211,7 @@ function slideMove(e){
 	if(Math.abs(touch.pageY-iy)>50){
 		var plus=(touch.pageY-iy)/Math.abs(touch.pageY-iy);
 			//cardsParent[i].style.top=cardsParent[i].offsetTop+plus*wy+"px";
-		$(this).animate({scrollTop:this.scrollTop-plus*wy},800);
+		$(this).animate({scrollTop:$(this).scrollTop()-plus*wy},800);
 			this.removeEventListener("touchmove",slideMove,false);
 			this.removeEventListener("mousemove",slideMove,false);
 		$("#background").animate({scrollTop:$("#background").scrollTop()-1.4*plus*wy},800);
