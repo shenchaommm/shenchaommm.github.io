@@ -25,12 +25,10 @@ body{
 	}
 
 .nav{
-	width:250vw;
+	width:100vw;
 	position:absolute;
-	top:-50vh;
-	left:-75vw;
-	transform:translateZ(-1500px);
-	-webkit-transform: translateZ(-1500px);
+	top:0vh;
+	left:0vw;
 	z-index:-2;
 	opacity:0;
 	transition:all 0.5s linear 1s;
@@ -65,7 +63,6 @@ body{
 	transition:top 0.5s ease-in-out 1s;
 	-webkit-transition:top 0.5s ease-in-out 1s;
 	top:0vh;
-	
 }
 #invitation{
 	display:block;
@@ -442,17 +439,17 @@ div.cardfront>h2:nth-child(2){
 		width:100%;
 		overflow-y:hidden;
 		overflow-x:hidden;
-		transform-style: preserve-3d;
+/*		transform-style: preserve-3d;
 		-webkit-transform-style: preserve-3d;
 		perspective: 1000px; 
-		-webkit-perspective: 1000px;
+		-webkit-perspective: 1000px;*/
 		}
 		
-		.viewBox>div.cardP:nth-child(2n){
+/*		.viewBox>div.cardP:nth-child(2n){
 			transform: translateZ(-1000px) scale(2);
 			-webkit-transform: translateZ(-1000px) scale(2);
 			z-index:-1;
-			}
+			}*/
 .footer{
 	position:absolute;
 	height:20%;

@@ -29,7 +29,7 @@ function addClass(element,value){
 	addLoadEvent(init);
 	function init(){
 		var invitation=document.getElementById("invitation");
-		invitation.addEventListener("mousedown",pullstart,false);
+		invitation.addEventListener("mousedown",pullstart,false);																												
 		//invitation.addEventListener("touchstart",pullstart,false);
 		invitation.addEventListener("mouseup",pullEnd,false);
 		//invitation.addEventListener("touchend",pullEnd,false);
@@ -48,6 +48,7 @@ function addClass(element,value){
 		backState=new Array();
 		var background=document.getElementById("background");
 		var bc=background.children;
+		currentCard=0;
 		for(var i=0;i<bc.length;i++){
 			bc[i].style.backgroundImage="url(pic/hsz/j"+(i+1)+".jpg)";
 			//$(bc[i]).css("background-attachment","fixed");
@@ -55,6 +56,7 @@ function addClass(element,value){
 		
 		
 	}
+	var currentCard;
 	var wy;
 	var iy,y;
 	var cards;
@@ -129,12 +131,14 @@ function showCards(){
 		cardsParent[i].style.opacity=1;
 		//cards[i].style.zIndex=cards.length-i;
 		var deg=Math.round((Math.random()-Math.random())*20);
-		if(i>1){
-		cards[i].style.transform="rotate("+deg+"deg)";
-		cardsParent[i].style.top=140*i+"vh";
-		}else {
-		cardsParent[i].style.top=140*i+"vh";
+		if(i>=1){
+			cards[i].style.transform="rotate("+deg+"deg)";
+			if(i%2==0){
+				cardsParent[i].style.top=100*i+"vh";
+			}else {
+				cardsParent[i].style.top=(100*(i-1)+80)+"vh";
 			}
+		}
 		}
 	var viewBox=document.getElementById("viewBox");
 	//document.body.style.overflowY="scroll";
@@ -218,12 +222,12 @@ function slideEnd(e){
 				$(this).animate({scrollTop:tip.offsetTop},500);
 				//$("#background").animate({scrollTop:tip.offsetTop},500);
 			}else{
-			$(this).animate({scrollTop:st-1.4*wy},500);}
+			$(this).animate({scrollTop:st-wy},500);}
 			
 			}
 		else if(scrollt-st>50){
 			//scroll to next
-			$(this).animate({scrollTop:st+1.4*wy},500);
+			$(this).animate({scrollTop:st+wy},500);
 		}else{
 			
 			$(this).animate({scrollTop:st},500);
