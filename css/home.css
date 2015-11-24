@@ -229,7 +229,7 @@ div.cardfront>h2:nth-child(2){
 			}
 		
 .card{
-	position:absolute;
+	position:relative;
 	top:20%;
 	left:15%;
 	height:70%;
@@ -242,7 +242,6 @@ div.cardfront>h2:nth-child(2){
 
 	}
 .image{
-	background-color:red;
 	max-height:60vh;
 	max-width:80vw;
 	}
@@ -250,7 +249,6 @@ div.cardfront>h2:nth-child(2){
 	width:100%;
 	left:0;
 	box-shadow:none;
-	overflow:visible;
 	background-color:transparent;
 	-webkit-overflow-scrolling:touch;
 	}
@@ -259,7 +257,7 @@ div.cardfront>h2:nth-child(2){
 	background-color:gray;
 	box-shadow:2px 2px 5px black;
 	position:absolute;
-			transition:all 0.5s ease-in-out;
+	transition:all 0.5s ease-in-out;
 	-webkit-transition:all 0.5s ease-in-out;
 
 	}
@@ -333,9 +331,6 @@ div.cardfront>h2:nth-child(2){
 			}
 #pic .Show{
 
-	}
-.Show>img{
-	
 	}
 #allmapPic{
 	width:100%;
