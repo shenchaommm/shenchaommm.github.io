@@ -209,6 +209,8 @@ function slideMove(e){
 		var plus=(touch.pageY-iy)/Math.abs(touch.pageY-iy);
 			//cardsParent[i].style.top=cardsParent[i].offsetTop+plus*wy+"px";
 		$(this).animate({scrollTop:this.scrollTop-plus*wy},500);
+			this.removeEventListener("touchmove",slideMove,false);
+			this.removeEventListener("mousemove",slideMove,false);
 	}
 	//$("#background").scrollTop($("#background").scrollTop()+iy-touch.pageY);
 	}
