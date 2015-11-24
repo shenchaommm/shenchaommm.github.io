@@ -207,9 +207,8 @@ function slideMove(e){
 	e.preventDefault();
 	if(Math.abs(touch.pageY-iy)>50){
 		var plus=(touch.pageY-iy)/Math.abs(touch.pageY-iy);
-		for(var i=0;i<cardsParent.length;i++){
-			cardsParent[i].style.top=cardsParent[i].offsetTop+plus*wy+"px";
-		}
+			//cardsParent[i].style.top=cardsParent[i].offsetTop+plus*wy+"px";
+		$(this).animate({scrollTop:this.scrollTop-plus*wy},500);
 	}
 	//$("#background").scrollTop($("#background").scrollTop()+iy-touch.pageY);
 	}
