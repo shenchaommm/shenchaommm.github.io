@@ -285,7 +285,7 @@ function initPic(){
 			parent.style.top=picH*0.5-0.5*images[i].offsetHeight+"px";
 			parent.style.left=picW*0.5-0.5*images[i].offsetWidth+"px";
 			var deg=Math.round((Math.random()-Math.random())*30);
-			parent.style.transform="rotate("+deg+"deg)";
+			//parent.style.transform="rotate("+deg+"deg)";
  
 			
 			}
