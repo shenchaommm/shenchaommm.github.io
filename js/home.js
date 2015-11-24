@@ -138,7 +138,7 @@ function showCards(){
 		if(i%2==0){
 				cardsParent[i].style.top=100*i+"vh";
 		}else {
-				cardsParent[i].style.top=(100*(i-1)+80)+"vh";
+				cardsParent[i].style.top=(100*(i-1)+90)+"vh";
 		}
 		}
 	var viewBox=document.getElementById("viewBox");
@@ -208,9 +208,11 @@ function slideMove(e){
 	if(Math.abs(touch.pageY-iy)>50){
 		var plus=(touch.pageY-iy)/Math.abs(touch.pageY-iy);
 			//cardsParent[i].style.top=cardsParent[i].offsetTop+plus*wy+"px";
-		$(this).animate({scrollTop:this.scrollTop-plus*wy},500);
+		$(this).animate({scrollTop:this.scrollTop-plus*wy},800);
 			this.removeEventListener("touchmove",slideMove,false);
 			this.removeEventListener("mousemove",slideMove,false);
+		$("#background").animate({scrollTop:$("#background").scrollTop()-1.4*plus*wy},800);
+		$("#nav").animate({scrollTop:$("#nav").scrollTop()-0.8*plus*wy},800);
 	}
 	//$("#background").scrollTop($("#background").scrollTop()+iy-touch.pageY);
 	}

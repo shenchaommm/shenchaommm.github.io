@@ -10,11 +10,13 @@ body{
 	-webkit-overflow-scrolling:touch;
 	}
 .background{
+	height:100vh;
 	width:100vw;
 	position:absolute;
 	top:0px;
 	left:0px;
 	z-index:-3;
+	overflow:hidden;
 	}
 .background>div{
 	width:100vw;
@@ -26,18 +28,18 @@ body{
 
 .nav{
 	width:100vw;
+	height:100vh;
 	position:absolute;
 	top:0vh;
 	left:0vw;
 	z-index:-2;
 	opacity:0;
 	transition:all 0.5s linear 1s;
-	}
-.nav>div:nth-child(1){
-	height:180vh;
+	-webkit-transition:all 0.5s linear 1s;
+	overflow:hidden;
 	}
 .nav>div{
-	height:150vh;
+	height:80vh;
 	font-size:5em;
 			writing-mode:tb-rl;
 		-webkit-writing-mode:vertical-rl;
@@ -50,10 +52,6 @@ body{
 	height:100vh;
 	}
 	
-.background{
-	z-index:-3;
-	
-	}
 .cardP{
 	position:absolute;
 	height:100vh;
@@ -440,10 +438,10 @@ div.cardfront>h2:nth-child(2){
 			-webkit-transform: translateZ(-1000px) scale(2);
 			z-index:-1;
 			}*/
-.footer{
+/*.footer{
 	position:absolute;
 	height:20%;
 	width:100%;
 	background-color:skyblue;
-	top:840vh;
-	}
+	top:600vh;
+	}*/
