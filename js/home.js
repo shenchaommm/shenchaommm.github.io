@@ -183,7 +183,7 @@ function slideStart(e){
 
 	var touch=e;
 	if(e.touches)
-		touch=e.touches[0];
+	touch=e.touches[0];
 	ix=touch.pageX;
 	iy=touch.pageY;
 	st=this.scrollTop;

@@ -3,10 +3,9 @@
 body{
 	margin:0;
 	padding:0;
-	background-color:#6495ED;
-	overflow:auto;
 	width:100vw;
 	height:100vh;
+	overflow:hidden;
 	-webkit-overflow-scrolling:touch;
 	}
 .background{
@@ -427,6 +426,8 @@ div.cardfront>h2:nth-child(2){
 		margin:0px;
 		padding:0px;
 		position:relative;
+		top:0px;
+		left:0px;
 		height:100%;
 		width:100%;
 		overflow:hidden;
