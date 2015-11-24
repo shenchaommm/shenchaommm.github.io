@@ -425,7 +425,7 @@ div.cardfront>h2:nth-child(2){
 	.viewBox{
 		margin:0px;
 		padding:0px;
-		position:relative;
+		position:absolute;
 		top:0px;
 		left:0px;
 		height:100%;
