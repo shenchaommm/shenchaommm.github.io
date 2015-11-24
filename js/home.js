@@ -131,13 +131,14 @@ function showCards(){
 		cardsParent[i].style.opacity=1;
 		//cards[i].style.zIndex=cards.length-i;
 		var deg=Math.round((Math.random()-Math.random())*20);
-		if(i>=1){
+		if(i>1){
 			cards[i].style.transform="rotate("+deg+"deg)";
-			if(i%2==0){
+			
+		}
+		if(i%2==0){
 				cardsParent[i].style.top=100*i+"vh";
-			}else {
+		}else {
 				cardsParent[i].style.top=(100*(i-1)+80)+"vh";
-			}
 		}
 		}
 	var viewBox=document.getElementById("viewBox");
