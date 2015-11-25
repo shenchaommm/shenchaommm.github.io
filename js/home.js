@@ -28,6 +28,9 @@ function addClass(element,value){
 	
 	addLoadEvent(init);
 	function init(){
+		var ww=window.innerWidth;
+		var wh=window.innerHeight;
+		$("body").css({"width":ww+"px","height":wh+"px"});
 		var invitation=document.getElementById("invitation");
 		invitation.addEventListener("mousedown",pullstart,false);																												
 		//invitation.addEventListener("touchstart",pullstart,false);
