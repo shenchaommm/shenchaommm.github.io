@@ -29,8 +29,8 @@ function addClass(element,value){
 	addLoadEvent(init);
 	function init(){
 		var ww=window.innerWidth;
-		var wh=window.innerHeight;
-		$("body").css({"width":ww+"px","height":wh+"px"});
+		wy=window.innerHeight;
+		$("body").css({"width":ww+"px","height":wy+"px"});
 		var invitation=document.getElementById("invitation");
 		invitation.addEventListener("mousedown",pullstart,false);																												
 		//invitation.addEventListener("touchstart",pullstart,false);
@@ -46,7 +46,6 @@ function addClass(element,value){
 		cardsParent=document.getElementsByClassName("cardP");
 		cards[0].style.zIndex=cardsParent.length;
 		envelop.style.zIndex=cardsParent.length+1;
-		wy=window.innerHeight;
 		window.addEventListener('popstate',goBack, false);
 		backState=new Array();
 		var background=document.getElementById("background");
@@ -139,9 +138,9 @@ function showCards(){
 			
 		}
 		if(i%2==0){
-				cardsParent[i].style.top=100*i+"vh";
+				cardsParent[i].style.top=i*wy+"px";
 		}else {
-				cardsParent[i].style.top=(100*(i-1)+90)+"vh";
+				cardsParent[i].style.top=(wy*(i-0.1))+"px";
 		}
 		}
 	var viewBox=document.getElementById("viewBox");
