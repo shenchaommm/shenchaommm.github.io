@@ -31,6 +31,7 @@ function addClass(element,value){
 		var ww=window.innerWidth;
 		wy=window.innerHeight;
 		$("body").css({"width":ww+"px","height":wy+"px"});
+		$(".image").css({"max-height":0.6*wy+"px","max-width":0.8*ww+"px"});
 		var invitation=document.getElementById("invitation");
 		invitation.addEventListener("mousedown",pullstart,false);																												
 		//invitation.addEventListener("touchstart",pullstart,false);
@@ -49,20 +50,23 @@ function addClass(element,value){
 		window.addEventListener('popstate',goBack, false);
 		backState=new Array();
 		var background=document.getElementById("background");
-		var bc=background.children;
-		currentCard=0;
-		for(var i=0;i<bc.length;i++){
-			bc[i].style.backgroundImage="url(pic/hsz/j"+(i+1)+".jpg)";
+		var nav=document.getElementById("nav");
+		navArray=nav.children;
+		backgroundArray=background.children;
+		currentNum=0;
+		for(var i=0;i<backgroundArray.length;i++){
+			backgroundArray[i].style.backgroundImage="url(pic/hsz/j"+(i+1)+".jpg)";
 			//$(bc[i]).css("background-attachment","fixed");
 			}
 		
 		
 	}
-	var currentCard;
 	var wy;
 	var iy,y;
 	var cards;
 	var cardsParent;
+	var backgroundArray;
+	var navArray;
 function audioPlay(e){
 	var audio=this.getElementsByTagName("audio")[0];
 	if(audio.paused)audio.play();
@@ -70,6 +74,7 @@ function audioPlay(e){
 	
 	}
 var audioNum=1;
+
 function audioNext(){
 	var audio=document.getElementById("audioPlay");
 	audioNum++;
@@ -178,6 +183,7 @@ function showCards(){
 
 	}
 var st,ix,iy,isstart=false;
+var currentNum=0;
 function slideStart(e){
 	$(this).stop(true,true);
 	$("#background").stop(true,true);
@@ -213,11 +219,18 @@ function slideMove(e){
 	if(Math.abs(touch.pageY-iy)>50){
 		var plus=(touch.pageY-iy)/Math.abs(touch.pageY-iy);
 			//cardsParent[i].style.top=cardsParent[i].offsetTop+plus*wy+"px";
-		$(this).animate({scrollTop:$(this).scrollTop()-plus*wy},800);
+		currentNum=currentNum-plus;
+		if(currentNum<0)currentNum=0;
+		if(currentNum>cards.length)currentNum=cards.length;
+		if(currentNum==cards.length){
+			$(this).animate({scrollTop:6*wy+"px"},800);
+			return;
+			}
+		$(this).animate({scrollTop:cardsParent[currentNum].offsetTop+"px"},800);
 			this.removeEventListener("touchmove",slideMove,false);
 			this.removeEventListener("mousemove",slideMove,false);
-		$("#background").animate({scrollTop:$("#background").scrollTop()-1.4*plus*wy},800);
-		$("#nav").animate({scrollTop:$("#nav").scrollTop()-0.8*plus*wy},800);
+		$("#background").animate({scrollTop:backgroundArray[currentNum].offsetTop+"px"},800);
+		$("#nav").animate({scrollTop:navArray[currentNum].offsetTop+"px"},800);
 	}
 	//$("#background").scrollTop($("#background").scrollTop()+iy-touch.pageY);
 	}
