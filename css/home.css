@@ -236,7 +236,6 @@ div.cardfront>h2:nth-child(2){
 #image>div{
 	padding:1vh;
 	background-color:gray;
-	box-shadow:2px 2px 5px black;
 	position:absolute;
 	transition:all 0.5s ease-in-out;
 	-webkit-transition:all 0.5s ease-in-out;
@@ -329,7 +328,6 @@ div.cardfront>h2:nth-child(2){
 #map>.card{
 	}
 .mapview{
-	box-shadow:2px 2px 5px black;
 	margin:3%;
 	display:block;
 	height:80%;
@@ -359,7 +357,6 @@ div.cardfront>h2:nth-child(2){
 	height:6em;
 	background-color:pink;
 	line-height:1em;
-	box-shadow:0px 0px 5px black;
 	left:0px;
 	}
 .timeTextHead>h3{
@@ -375,7 +372,6 @@ div.cardfront>h2:nth-child(2){
 	margin-right:auto;
 	height:calc(100% - 11em);
 	background-color:pink;
-	box-shadow:0px 0px 5px black;
 	bottom:0px;
 	left:0px;
 	transition:all 0.5s ease-in-out;
@@ -430,8 +426,50 @@ div.cardfront>h2:nth-child(2){
 */			}
 .footer{
 	position:absolute;
-	height:20%;
+	height:40%;
 	width:100%;
 	background-color:skyblue;
-	top:600vh;
+	top:600%;
+	box-shadow:2px 2px 4px black;
+	}
+.footer>div{
+	float:left;
+	}
+.timeDay>p{
+	margin-top:-0.5em;
+	color:#FFF;
+	text-shadow:0px 0px 2px black;
+	}
+
+div.timeDay{
+	float:none;
+	position:absolute;
+	top:-4.5em;
+	left:1em;
+	height:4em;
+	width:6em;
+	background-color:skyblue;
+	line-height:2em;
+	text-align:center;
+	box-shadow:2px 2px 4px black;
+	border-radius:2px;
+	}
+.timeDay>span{
+	width:100%;
+	display:block;
+	font-size:0.5em;
+	}
+.qrcode{
+	margin:0.5em;
+	height:4em;
+	}
+.qrcode>img{
+	height:100%;
+	}
+.powered{
+	color:white;
+	}
+.powered>p{
+	font-size:0.8em;
+	opacity:0.5;
 	}
