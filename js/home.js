@@ -161,7 +161,13 @@ function showCards(){
 	//viewBox.style.WebKitOverflowScrolling="touch";
 	//$("#viewBox").css("-webkit-overflow-scrolling", "touch");
 	//$("#invitationCard").on("swipe",divrotate);
-	$("#invitationCard").on("swipeleft",function(){
+	var invitationCard=document.getElementById("invitationCard");
+	invitationCard.addEventListener("touchstart",swipeStart,false);
+	invitationCard.addEventListener("touchend",swipeEnd,false);
+	invitationCard.addEventListener("mousedown",swipeStart,false);
+	invitationCard.addEventListener("mouseup",swipeEnd,false);
+
+/*	$("#invitationCard").on("swipeleft",function(){
 		var div=this.children;
 		div[0].style.transform="rotateY(-"+180+"deg)";
 				div[1].style.transform="rotateY("+0+"deg)";
@@ -172,7 +178,7 @@ function showCards(){
 		div[0].style.transform="rotateY("+0+"deg)";
 				div[1].style.transform="rotateY("+180+"deg)";
 		
-		});
+		});*/
 	var nav=document.getElementById("nav");
 	nav.style.opacity=0.5;
 	$("#day").on("tap",showDay);
@@ -183,7 +189,50 @@ function showCards(){
 	//window.addEventListener("mouseup",scrollEnd,false);
 
 	}
-var st,ix,iy,isstart=false;
+var sx,sy;
+function swipeStart(e){
+	var touch=e;
+	if(e.touches)
+	touch=e.touches[0];
+	sx=touch.pageX;
+	sy=touch.pageY;
+	this.addEventListener("touchmove",swipeMove,false);
+	this.addEventListener("mousemove",swipeMove,false);
+	}
+function swipeMove(e){
+	var touch=e;
+	if(e.touches)
+	touch=e.touches[0];
+
+	if(Math.abs(sx-touch.pageX)>Math.abs(sy-touch.pageY)){
+		if(sx-touch.pageX>30){
+			var div=this.children;
+			div[0].style.transform="rotateY(-"+180+"deg)";
+			div[1].style.transform="rotateY("+0+"deg)";
+			this.removeEventListener("touchmove",swipeMove,false);
+			this.removeEventListener("mousemove",swipeMove,false);
+
+		}else if(sx-touch.pageX<-30){
+			var div=this.children;
+			div[0].style.transform="rotateY("+0+"deg)";
+			div[1].style.transform="rotateY("+180+"deg)";
+			this.removeEventListener("touchmove",swipeMove,false);
+			this.removeEventListener("mousemove",swipeMove,false);
+
+		}else{
+			}
+		
+		}else{
+			this.removeEventListener("touchmove",swipeMove,false);
+			this.removeEventListener("mousemove",swipeMove,false);
+			}
+	}
+function swipeEnd(e){
+	this.removeEventListener("touchmove",swipeMove,false);
+	this.removeEventListener("mousemove",swipeMove,false);
+
+	}
+var st,bst,nst,ix,iy,isstart=false;
 var currentNum=0;
 function slideStart(e){
 	$(this).stop(true,true);
@@ -195,6 +244,8 @@ function slideStart(e){
 	touch=e.touches[0];
 	ix=touch.pageX;
 	iy=touch.pageY;
+	bst=$("#background").scrollTop();
+	nst=$("#nav").scrollTop();
 	st=this.scrollTop;
 	isstart=true;
 	this.addEventListener("touchmove",slideMove,false);
@@ -217,22 +268,26 @@ function slideMove(e){
 		
 		}
 	e.preventDefault();
-	if(Math.abs(touch.pageY-iy)>50){
+	//if(Math.abs(touch.pageY-iy)>50){
 		var plus=(touch.pageY-iy)/Math.abs(touch.pageY-iy);
 			//cardsParent[i].style.top=cardsParent[i].offsetTop+plus*wy+"px";
-		currentNum=currentNum-plus;
-		if(currentNum<0)currentNum=0;
-		if(currentNum>cards.length)currentNum=cards.length;
-		if(currentNum==cards.length){
+		//currentNum=currentNum-plus;
+		//if(currentNum<0)currentNum=0;
+		//if(currentNum>cards.length)currentNum=cards.length;
+		/*if(currentNum==cards.length){
 			$(this).animate({scrollTop:6*wy+"px"},800);
 			return;
-			}
-		$(this).animate({scrollTop:cardsParent[currentNum].offsetTop+"px"},800);
-			this.removeEventListener("touchmove",slideMove,false);
+			}*/
+		
+		$(this).scrollTop(st+(iy-touch.pageY));
+/*			this.removeEventListener("touchmove",slideMove,false);
 			this.removeEventListener("mousemove",slideMove,false);
-		$("#background").animate({scrollTop:backgroundArray[currentNum].offsetTop+"px"},800);
-		$("#nav").animate({scrollTop:navArray[currentNum].offsetTop+"px"},800);
-	}
+			*/	
+		if($(this).scrollTop()<6*wy){
+		$("#background").scrollTop(bst+1.4*(iy-touch.pageY));
+		$("#nav").scrollTop(nst+0.8*(iy-touch.pageY));
+		}
+	//}
 	//$("#background").scrollTop($("#background").scrollTop()+iy-touch.pageY);
 	}
 function slideEnd(e){
@@ -240,27 +295,40 @@ function slideEnd(e){
 	var touch=e;
 	if(e.touches)
 		touch=e.touches[0];
-		/*var scrollt=this.scrollTop;
+		var scrollt=this.scrollTop;
 		if(st-scrollt>50){
 			//scroll to pre
-			var tip=document.getElementById("tip");
+			currentNum--;
+			/*var tip=document.getElementById("tip");
 			if(st>tip.offsetTop){
 				$(this).animate({scrollTop:tip.offsetTop},500);
 				//$("#background").animate({scrollTop:tip.offsetTop},500);
 			}else{
-			$(this).animate({scrollTop:st-wy},500);}
+			$(this).animate({scrollTop:st-wy},500);}*/
 			
 			}
 		else if(scrollt-st>50){
 			//scroll to next
-			$(this).animate({scrollTop:st+wy},500);
-		}else{
+						currentNum++;
+
+/*			$(this).animate({scrollTop:st+wy},500);
+*/		}else{
 			
-			$(this).animate({scrollTop:st},500);
-			}*/
-		
-	this.removeEventListener("touchmove",slideMove,false);
+			/*$(this).animate({scrollTop:st},500);*/
+			}
+			this.removeEventListener("touchmove",slideMove,false);
 	this.removeEventListener("mousemove",slideMove,false);
+
+			if(currentNum<0)currentNum=0;
+		if(currentNum>cards.length)currentNum=cards.length;
+		if(currentNum==cards.length){
+			$(this).animate({scrollTop:6*wy+"px"},800);
+			return;
+			}
+			$(this).animate({scrollTop:cardsParent[currentNum].offsetTop+"px"},800);
+			$("#background").animate({scrollTop:backgroundArray[currentNum].offsetTop+"px"},800);
+			$("#nav").animate({scrollTop:navArray[currentNum].offsetTop+"px"},800);
+
 
 	}
 	function initTime(){
