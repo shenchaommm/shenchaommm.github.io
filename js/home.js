@@ -164,7 +164,7 @@ function showCards(){
 	$("#invitationCard").on("swipeleft",function(){
 		var div=this.children;
 		div[0].style.transform="rotateY(-"+180+"deg)";
-				div[1].style.transform="rotate3d("+0+"deg)";
+				div[1].style.transform="rotateY("+0+"deg)";
 
 	});
 	$("#invitationCard").on("swiperight",function(){
