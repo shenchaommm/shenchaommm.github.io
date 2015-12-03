@@ -140,7 +140,7 @@ function showCards(){
 		//cards[i].style.zIndex=cards.length-i;
 		var deg=Math.round((Math.random()-Math.random())*20);
 		if(i>1){
-			cards[i].style.transform="rotate("+deg+"deg)";
+			$(cards[i]).css({"transform":"rotate("+deg+"deg)","-webkit-transform":"rotate("+deg+"deg)"});
 			
 		}
 		if(i%2==0){
@@ -207,15 +207,15 @@ function swipeMove(e){
 	if(Math.abs(sx-touch.pageX)>Math.abs(sy-touch.pageY)){
 		if(sx-touch.pageX>30){
 			var div=this.children;
-			div[0].style.transform="rotateY(-"+180+"deg)";
-			div[1].style.transform="rotateY("+0+"deg)";
+			$(div[0]).css({"transform":"rotateY(-"+180+"deg)","-webkit-transform":"rotateY(-"+180+"deg)"});
+			$(div[1]).css({"transform":"rotateY("+0+"deg)","-webkit-transform":"rotateY("+0+"deg)"});
 			this.removeEventListener("touchmove",swipeMove,false);
 			this.removeEventListener("mousemove",swipeMove,false);
 
 		}else if(sx-touch.pageX<-30){
 			var div=this.children;
-			div[0].style.transform="rotateY("+0+"deg)";
-			div[1].style.transform="rotateY("+180+"deg)";
+			$(div[0]).css({"transform":"rotateY("+0+"deg)","-webkit-transform":"rotateY("+0+"deg)"});
+			$(div[1]).css({"transform":"rotateY("+180+"deg)","-webkit-transform":"rotateY("+180+"deg)"});
 			this.removeEventListener("touchmove",swipeMove,false);
 			this.removeEventListener("mousemove",swipeMove,false);
 
@@ -247,6 +247,10 @@ function slideStart(e){
 	bst=$("#background").scrollTop();
 	nst=$("#nav").scrollTop();
 	st=this.scrollTop;
+	if(st>5*wy){
+		bst=1.4*st;
+		nst=0.8*st;
+		}
 	isstart=true;
 	this.addEventListener("touchmove",slideMove,false);
 	this.addEventListener("mousemove",slideMove,false);
@@ -283,7 +287,7 @@ function slideMove(e){
 /*			this.removeEventListener("touchmove",slideMove,false);
 			this.removeEventListener("mousemove",slideMove,false);
 			*/	
-		if($(this).scrollTop()<6*wy){
+		if($(this).scrollTop()<5*wy){
 		$("#background").scrollTop(bst+1.4*(iy-touch.pageY));
 		$("#nav").scrollTop(nst+0.8*(iy-touch.pageY));
 		}
@@ -355,17 +359,7 @@ function initMap(){
   	map.addOverlay(marker);
 	
 	}
-function divrotateleft(){
-	alert("left");
-	$(this).animate({transform:"rotateY("+180+"deg)"},200);
-	
-	}
-function divrotateleft(){
-		alert("right");
 
-	$(this).animate({transform:"rotateY(-"+180+"deg)"},200);
-	
-	}
 function initPic(){
 	var picture=document.getElementById("image");
 		picH=picture.offsetHeight;
