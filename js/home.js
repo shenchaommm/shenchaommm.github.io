@@ -58,8 +58,9 @@ function addClass(element,value){
 			backgroundArray[i].style.backgroundImage="url(pic/hsz/j"+(i+1)+".jpg)";
 			//$(bc[i]).css("background-attachment","fixed");
 			}
-		
-		
+		var fz = parseInt($("body").css("font-size"));
+		$("#mapPic").css({"height":0.7*wy-8*fz+"px","width":0.7*ww-2*fz+"px"});
+		$("#timeFoot").css("height",0.7*wy-11*fz+"px");
 	}
 	var wy;
 	var iy,y;
@@ -162,7 +163,6 @@ function showCards(){
 	//$("#invitationCard").on("swipe",divrotate);
 	$("#invitationCard").on("swipeleft",function(){
 		var div=this.children;
-		alert("left");
 		div[0].style.transform="rotate3d(-"+180+"deg)";
 				div[1].style.transform="rotate3d("+0+"deg)";
 

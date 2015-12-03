@@ -234,7 +234,7 @@ div.cardfront>h2:nth-child(2){
 	-webkit-overflow-scrolling:touch;
 	}
 #image>div{
-	padding:1vh;
+	padding:0.2em;
 	background-color:gray;
 	position:absolute;
 	transition:all 0.5s ease-in-out;
@@ -245,8 +245,8 @@ div.cardfront>h2:nth-child(2){
 	background-color:#F0F0F0;
 	}
 .map{
-	width:calc(100% - 2em);
-	height:calc(100% - 8em);
+	/*width:calc(100% - 2em);
+	height:calc(100% - 8em);*/
 	padding:1em;	
 	}
 	.map>a{
@@ -370,8 +370,8 @@ div.cardfront>h2:nth-child(2){
 	position:absolute;
 	margin-left:auto;
 	margin-right:auto;
-	height:calc(100% - 11em);
-	background-color:pink;
+/*	height:calc(100% - 11em);
+*/	background-color:pink;
 	bottom:0px;
 	left:0px;
 	transition:all 0.5s ease-in-out;
@@ -426,7 +426,7 @@ div.cardfront>h2:nth-child(2){
 */			}
 .footer{
 	position:absolute;
-	height:40%;
+	height:5em;
 	width:100%;
 	background-color:skyblue;
 	top:600%;
@@ -472,4 +472,5 @@ div.timeDay{
 .powered>p{
 	font-size:0.8em;
 	opacity:0.5;
+	margin:0px;
 	}
