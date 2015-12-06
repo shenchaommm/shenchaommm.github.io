@@ -37,11 +37,12 @@ body{
 	overflow:hidden;
 	}
 .nav>div{
-	height:80%;
+	height:60%;
 	writing-mode:tb-rl;
 	-webkit-writing-mode:vertical-rl;
 	color:white;
 	text-shadow:1px 1px 4px black;
+	text-align:center;
 	}
 .nav>div:last-child{
 	height:100%;
@@ -430,7 +431,7 @@ div.cardfront>h2:nth-child(2){
 	height:5em;
 	width:100%;
 	background-color:skyblue;
-	top:600%;
+	top:510%;
 	box-shadow:2px 2px 4px black;
 	}
 .footer>div{
