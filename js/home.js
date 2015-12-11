@@ -54,7 +54,7 @@ function addClass(element,value){
 		navArray=nav.children;
 		backgroundArray=background.children;
 		currentNum=0;
-		for(var i=0;i<backgroundArray.length;i++){
+		for(var i=1;i<backgroundArray.length;i++){
 			backgroundArray[i].style.backgroundImage="url(pic/hsz/j"+(i+1)+".jpg)";
 			//$(bc[i]).css("background-attachment","fixed");
 			}
