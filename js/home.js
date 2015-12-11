@@ -183,6 +183,9 @@ function showCards(){
 	nav.style.opacity=0.5;
 	$("#day").on("tap",showDay);
 	initTime();
+	Scrollbackground=$("#background");
+	Scrollnav=$("#nav");
+	Scrolldiv=$("#viewBox");
 	//window.addEventListener("touchstart",scrollStart,false);
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);
@@ -233,19 +236,20 @@ function swipeEnd(e){
 
 	}
 var st,bst,nst,ix,iy,isstart=false;
+var Scrollbackground,Scrollnav,Scrolldiv;
 var currentNum=0;
 function slideStart(e){
-	$(this).stop(true,true);
-	$("#background").stop(true,true);
-	$("#nav").stop(true,true);
+	Scrolldiv.stop(true,true);
+	Scrollbackground.stop(true,true);
+	Scrollnav.stop(true,true);
 
 	var touch=e;
 	if(e.touches)
 	touch=e.touches[0];
 	ix=touch.pageX;
 	iy=touch.pageY;
-	bst=$("#background").scrollTop();
-	nst=$("#nav").scrollTop();
+	bst=Scrollbackground.scrollTop();
+	nst=Scrollnav.scrollTop();
 	st=this.scrollTop;
 	if(st>5*wy){
 		bst=1.4*st;
@@ -283,13 +287,13 @@ function slideMove(e){
 			return;
 			}*/
 		
-		$(this).scrollTop(st+(iy-touch.pageY));
+		Scrolldiv.scrollTop(st+(iy-touch.pageY));
 /*			this.removeEventListener("touchmove",slideMove,false);
 			this.removeEventListener("mousemove",slideMove,false);
 			*/	
-		if($(this).scrollTop()<5*wy){
-		$("#background").scrollTop(bst+1.4*(iy-touch.pageY));
-		$("#nav").scrollTop(nst+0.8*(iy-touch.pageY));
+		if(Scrolldiv.scrollTop()<5*wy){
+		Scrollbackground.scrollTop(bst+1.4*(iy-touch.pageY));
+		Scrollnav.scrollTop(nst+0.8*(iy-touch.pageY));
 		}
 	//}
 	//$("#background").scrollTop($("#background").scrollTop()+iy-touch.pageY);
@@ -326,12 +330,12 @@ function slideEnd(e){
 			if(currentNum<0)currentNum=0;
 		if(currentNum>cards.length)currentNum=cards.length;
 		if(currentNum==cards.length){
-			$(this).animate({scrollTop:6*wy+"px"},800);
+			Scrolldiv.animate({scrollTop:6*wy+"px"},800);
 			return;
 			}
-			$(this).animate({scrollTop:cardsParent[currentNum].offsetTop+"px"},800);
-			$("#background").animate({scrollTop:backgroundArray[currentNum].offsetTop+"px"},800);
-			$("#nav").animate({scrollTop:navArray[currentNum].offsetTop+"px"},800);
+			Scrolldiv.animate({scrollTop:cardsParent[currentNum].offsetTop+"px"},800);
+			Scrollbackground.animate({scrollTop:backgroundArray[currentNum].offsetTop+"px"},800);
+			Scrollnav.animate({scrollTop:navArray[currentNum].offsetTop+"px"},800);
 
 
 	}

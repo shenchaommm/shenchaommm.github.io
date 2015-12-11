@@ -17,15 +17,19 @@ body{
 	left:0px;
 	overflow:hidden;
 	}
-.background>div>div{
-	position:fixed;
+.background>div:first-child{
+	background-color:skyblue;
+	
+	}
+
+>span{
+	background-color:skyblue;
 	top:0px;
 	left:0px;
 	height:100%;
 	width:100%;
 	background-image:url(../pic/bg1.jpg);
 	background-size:100% 100%;
-	z-index:-1;
 	}
 .background>div{
 	width:100%;
