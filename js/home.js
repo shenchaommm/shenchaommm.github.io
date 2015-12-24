@@ -54,13 +54,15 @@ function addClass(element,value){
 		navArray=nav.children;
 		backgroundArray=background.children;
 		currentNum=0;
-		for(var i=1;i<backgroundArray.length;i++){
+		for(var i=1;i<backgroundArray.length-1;i++){
 			backgroundArray[i].style.backgroundImage="url(pic/hsz/j"+(i+1)+".jpg)";
 			//$(bc[i]).css("background-attachment","fixed");
 			}
+		
 		var fz = parseInt($("body").css("font-size"));
 		$("#mapPic").css({"height":0.7*wy-8*fz+"px","width":0.7*ww-2*fz+"px"});
 		$("#timeFoot").css("height",0.7*wy-11*fz+"px");
+		$("#sjx").css("border-right-width",ww+"px");
 	}
 	var wy;
 	var iy,y;
@@ -139,7 +141,7 @@ function showCards(){
 		cardsParent[i].style.opacity=1;
 		//cards[i].style.zIndex=cards.length-i;
 		var deg=Math.round((Math.random()-Math.random())*20);
-		if(i>1){
+		if(i>1&&i<cards.length-1){
 			$(cards[i]).css({"transform":"rotate("+deg+"deg)","-webkit-transform":"rotate("+deg+"deg)"});
 			
 		}
