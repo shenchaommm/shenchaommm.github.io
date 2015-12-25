@@ -1,4 +1,26 @@
 // JavaScript Document
+
+preloadimages(['../pic/hsz/j1.jpg', '../pic/hsz/j2.jpg', '../pic/hsz/j3.jpg','../pic/hsz/j4.jpg','../pic/hsz/j5.jpg','../pic/hsz/j6.jpg','../pic/bg1.jpg','../pic/logo.png','../pic/map1.png','../pic/QRcode.jpg','../pic/SJ.png','../pic/SJH.png','../pic/wedding.png'])
+function preloadimages(arr){   
+    var newimages=[], loadedimages=0
+    var arr=(typeof arr!="object")? [arr] : arr
+    function imageloadpost(){
+        loadedimages++
+        if (loadedimages==arr.length){
+			document.getElementById("loading").style.height="0%";
+        }
+    }
+    for (var i=0; i<arr.length; i++){
+        newimages[i]=new Image()
+        newimages[i].src=arr[i]
+        newimages[i].onload=function(){
+            imageloadpost()
+        }
+        newimages[i].onerror=function(){
+            imageloadpost()
+        }
+    }
+}
 function addLoadEvent(func){
 	var oldonload=window.onload;
 	if(typeof window.onload!="function"){
