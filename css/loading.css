@@ -36,26 +36,28 @@ overflow:hidden;
 		display:inline-block;
 	}
 .loadingIcon>span.left{
+	right:0px;
 	animation: loadingleft 2s ease infinite;
 	-webkit-animation: loadingleft 2s ease infinite;
 	
 	}
 .loadingIcon>span.right{
+	left:0px;
 	animation: loadingright 2s ease infinite;
 	-webkit-animation: loadingright 2s ease infinite;
 	}
 @keyframes loadingleft{
-	0%   {left: 0px;}
-	25%  {left: -50px;}
-	50%  {left: 0px;}
-	100% {left: 0px;}
+	0%   {right: 0px;}
+	25%  {right: 50px;}
+	50%  {right: 0px;}
+	100% {right: 0px;}
 }
 @-webkit-keyframes loadingleft
 {
-	0%   {left: 0px;}
-	25%  {left: -50px;}
-	50%  {left: 0px;}
-	100% {left: 0px;}
+	0%   {right: 0px;}
+	25%  {right: 50px;}
+	50%  {right: 0px;}
+	100% {right: 0px;}
 }
 @keyframes loadingright{
 	0%   {left: 0px;}
