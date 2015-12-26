@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+.heart{
+	
+	color:red;
+	}
+.loading{
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:100%;
+	background-color:skyblue;
+	z-index:10;
+	-webkit-transition:height 0.5s ease-in-out 4s;
+	transition:height 0.5s ease-in-out 4s;
+overflow:hidden;
+	}
+.loadingIcon{
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	width:250px;
+	height:50px;
+	-webkit-transition:top 0.5s ease-in-out;
+	transition:top 0.5s ease-in-out;
+	top:50%;
+	}
+
+	.loadingIcon>span{
+		height:50px;
+		width:50px;
+		background-color:gray;
+		border-radius:25px;
+		position:relative;
+		display:inline-block;
+	}
+.loadingIcon>span:first-child{
+	animation: loadingleft 2s ease-in-out infinite;
+	-webkit-animation: loadingleft 2s ease-in-out infinite;
+	
+	}
+.loadingIcon>span:last-child{
+	animation: loadingright 2s ease infinite;
+	-webkit-animation: loadingright 2s ease infinite;
+	}
+@keyframes loadingleft{
+	0%   {left: 0px;}
+	25%  {left: -50px;}
+	50%  {left: 0px;}
+	100% {left: 0px;}
+}
+@-webkit-keyframes loadingleft
+{
+	0%   {left: 0px;}
+	25%  {left: -50px;}
+	50%  {left: 0px;}
+	100% {left: 0px;}
+}
+@keyframes loadingright{
+	0%   {left: 0px;}
+	50%  {left: 0px;}
+	75%  {left: 50px;}
+	100% {left: 0px;}
+}
+@-webkit-keyframes loadingleft
+{
+	0%   {left: 0px;}
+	50%  {left: 0px;}
+	75%  {left: 50px;}
+	100% {left: 0px;}
+}
+.middle{
+	top:0px;
+	position:relative;
+	text-align:center;
+	opacity:0;
+	transition:all 0.5s ease-in-out;
+	-webkit-transition:all 0.5s ease-in-out;
+
+	}
+	h2.middle{
+		transition-delay:0.5s;
+		-webkit-transition-delay:0.5s;
+		}
+	h3.middle{
+		transition-delay:1.5s;
+		-webkit-transition-delay:1.5s;
+
+		}
+	p.middle{
+		transition-delay:2.5s;
+		-webkit-transition-delay:2.5s;
+		}

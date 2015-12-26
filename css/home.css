@@ -508,15 +508,3 @@ div.timeDay{
 	opacity:0.5;
 	margin:0px;
 }
-.loading{
-	position:absolute;
-	top:0px;
-	left:0px;
-	height:100%;
-	width:100%;
-	background-color:skyblue;
-	z-index:10;
-	-webkit-transition:height 0.5s ease-in-out;
-	transition:height 0.5s ease-in-out;
-overflow:hidden;
-	}

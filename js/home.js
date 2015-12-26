@@ -1,5 +1,15 @@
 // JavaScript Document
-
+function closeLoading(){
+	document.getElementById("loadingIcon").style.top="10px";
+	document.getElementById("loading").style.height="0%";	
+	var middle=document.getElementsByClassName("middle");
+	middle[0].style.top="10px";
+	middle[0].style.opacity=1;
+	middle[1].style.top="10px";
+	middle[1].style.opacity=1;
+	middle[2].style.top="10px";
+	middle[2].style.opacity=1;
+	};
 preloadimages(['../pic/hsz/j1.jpg', '../pic/hsz/j2.jpg', '../pic/hsz/j3.jpg','../pic/hsz/j4.jpg','../pic/hsz/j5.jpg','../pic/hsz/j6.jpg','../pic/bg1.jpg','../pic/logo.png','../pic/map1.png','../pic/QRcode.jpg','../pic/SJ.png','../pic/SJH.png','../pic/wedding.png'])
 function preloadimages(arr){   
     var newimages=[], loadedimages=0
@@ -7,7 +17,7 @@ function preloadimages(arr){
     function imageloadpost(){
         loadedimages++
         if (loadedimages==arr.length){
-			document.getElementById("loading").style.height="0%";
+			closeLoading();
         }
     }
     for (var i=0; i<arr.length; i++){
