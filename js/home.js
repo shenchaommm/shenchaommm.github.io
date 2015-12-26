@@ -90,15 +90,7 @@ function addClass(element,value){
 		iy=envelop.offsetTop;
 		cards=document.getElementsByClassName("card");
 		cardsParent=document.getElementsByClassName("cardP");
-		for(var i=1;i<cards.length;i++){
-		if(i%2==0){
-				cardsParent[i].style.top=-i*wy+"px";
-		}else {
-				cardsParent[i].style.top=-(wy*(i-0.1))+"px";
-		}
-		}
-		cards[0].style.zIndex=cardsParent.length;
-		envelop.style.zIndex=cardsParent.length+1;
+		cardsParent[0].style.zIndex=1;
 		window.addEventListener('popstate',goBack, false);
 		backState=new Array();
 		var background=document.getElementById("background");
@@ -198,9 +190,9 @@ function showCards(){
 			
 		}
 		if(i%2==0){
-				cardsParent[i].style.top=0+"px";
+				cardsParent[i].style.top=i*wy+"px";
 		}else {
-				cardsParent[i].style.top=0+"px";
+				cardsParent[i].style.top=(wy*(i-0.1))+"px";
 		}
 		}
 	var viewBox=document.getElementById("viewBox");
