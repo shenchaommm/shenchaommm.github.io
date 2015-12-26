@@ -20,16 +20,16 @@ overflow:hidden;
 	position:relative;
 	margin-left:auto;
 	margin-right:auto;
-	width:250px;
-	height:50px;
+	width:200px;
+	height:40px;
 	-webkit-transition:top 0.5s ease-in-out;
 	transition:top 0.5s ease-in-out;
 	top:50%;
 	}
 
 	.loadingIcon>span{
-		height:50px;
-		width:50px;
+		height:40px;
+		width:40px;
 		background-color:gray;
 		border-radius:25px;
 		position:relative;
