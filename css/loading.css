@@ -65,7 +65,7 @@ overflow:hidden;
 	75%  {left: 50px;}
 	100% {left: 0px;}
 }
-@-webkit-keyframes loadingleft
+@-webkit-keyframes loadingright
 {
 	0%   {left: 0px;}
 	50%  {left: 0px;}
