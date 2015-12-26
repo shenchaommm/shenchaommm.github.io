@@ -86,11 +86,11 @@ body{
 #invitation>.card{
 	box-shadow:none;
 	background-color:transparent;
-	transform-style: preserve-3d;
+/*	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 	perspective: 2000px; 
 	-webkit-perspective: 2000px; 
-
+*/
 	}
 #invitation>.card>div{
 	background-color:yellow;
