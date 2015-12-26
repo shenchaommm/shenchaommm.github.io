@@ -35,12 +35,12 @@ overflow:hidden;
 		position:relative;
 		display:inline-block;
 	}
-.loadingIcon>span:first-child{
-	animation: loadingleft 2s ease-in-out infinite;
-	-webkit-animation: loadingleft 2s ease-in-out infinite;
+.loadingIcon>span.left{
+	animation: loadingleft 2s ease infinite;
+	-webkit-animation: loadingleft 2s ease infinite;
 	
 	}
-.loadingIcon>span:last-child{
+.loadingIcon>span.right{
 	animation: loadingright 2s ease infinite;
 	-webkit-animation: loadingright 2s ease infinite;
 	}
