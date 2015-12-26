@@ -1,16 +1,28 @@
 // JavaScript Document
+function removeElement(_element){
+         var _parentElement = _element.parentNode;
+         if(_parentElement){
+                _parentElement.removeChild(_element);
+         }
+}
 function closeLoading(){
-	document.getElementById("loadingIcon").style.top="10px";
+	document.getElementById("loadingIcon").style.top="5%";
 	document.getElementById("loading").style.height="0%";	
 	var middle=document.getElementsByClassName("middle");
-	middle[0].style.top="10px";
+	middle[0].style.top="5%";
 	middle[0].style.opacity=1;
-	middle[1].style.top="10px";
+	middle[1].style.top="5%";
 	middle[1].style.opacity=1;
-	middle[2].style.top="10px";
+	middle[2].style.top="5%";
 	middle[2].style.opacity=1;
+	window.setTimeout(closedLoading,4500);
 	};
-preloadimages(['../pic/hsz/j1.jpg', '../pic/hsz/j2.jpg', '../pic/hsz/j3.jpg','../pic/hsz/j4.jpg','../pic/hsz/j5.jpg','../pic/hsz/j6.jpg','../pic/bg1.jpg','../pic/logo.png','../pic/map1.png','../pic/QRcode.jpg','../pic/SJ.png','../pic/SJH.png','../pic/wedding.png'])
+function closedLoading(){
+	
+	removeElement(	document.getElementById("loading"))
+	
+	}
+preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png','pic/map1.png','pic/QRcode.jpg','pic/SJ.png','pic/SJH.png','pic/wedding.png'])
 function preloadimages(arr){   
     var newimages=[], loadedimages=0
     var arr=(typeof arr!="object")? [arr] : arr
@@ -28,7 +40,8 @@ function preloadimages(arr){
         }
         newimages[i].onerror=function(){
             imageloadpost()
-        }
+			alert("error")
+		}
     }
 }
 function addLoadEvent(func){
