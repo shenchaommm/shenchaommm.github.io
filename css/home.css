@@ -408,8 +408,8 @@ div.sjx{
 	background:none;
 	box-shadow:none;
 	width:100%;
-	height:100%;
-	top:0px;
+	height:90%;
+	top:10%;
 	left:0px;
 	}
 .bigheart{
@@ -427,7 +427,18 @@ div.sjx{
 	background-position:center center;
 	opacity:0;
 	}
+.jan{
+	position:relative;
+	text-align:center;
+	opacity:0;
+	
+	}
+.sj{
+	position:relative;
+	text-align:center;
+	opacity:0;
 
+	}
 #audio{
 	display:block;
 	position:absolute;

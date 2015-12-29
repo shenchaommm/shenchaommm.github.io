@@ -84,13 +84,45 @@
 	h2.middle{
 		transition-delay:0.5s;
 		-webkit-transition-delay:0.5s;
+		color:white;
 		}
 	h3.middle{
-		transition-delay:1.5s;
-		-webkit-transition-delay:1.5s;
-
-		}
-	p.middle{
 		transition-delay:2.5s;
 		-webkit-transition-delay:2.5s;
+		margin:0px auto 0px auto;
+		color:skyblue;
+		background-color:white;
+		width:350px;
+		}
+	p.middle{
+		transition-delay:2s;
+		-webkit-transition-delay:2s;
+		color:gray;
+		font-weight:bold;
+		}
+hr{
+	border-style:solid;
+	border-color:white;
+	}
+hr.thin{
+	transition-delay:2.5s;
+	-webkit-transition-delay:2.5s;
+	border-width:10px;
+	width:350px;
+	}
+hr.slim{
+	transition-delay:1.5s;
+	-webkit-transition-delay:1.5s;
+
+	width:300px;
+	border-width:2px;
+	}
+img.middlePic{
+	width:300px;
+	}
+	div.middleTitle{
+		color:white;
+		position:relative;
+		top:20px;
+		
 		}
