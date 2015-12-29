@@ -194,7 +194,7 @@ function beginShow(){
 	}
 function showCards(){
 	for(var i=1;i<cards.length;i++){
-		cardsParent[i].style.display="block";
+		//cardsParent[i].style.display="block";
 		cardsParent[i].style.opacity=1;
 		//cards[i].style.zIndex=cards.length-i;
 		var deg=Math.round((Math.random()-Math.random())*20);
@@ -457,7 +457,7 @@ function initShowPic(){
 			var parent=images[i].parentNode;
 			parent.style.top=picH*0.5-0.5*images[i].offsetHeight+"px";
 			parent.style.left=left+15*(i+1)+"px";
-			parent.style.transform="rotate("+0+"deg)";
+			//parent.style.transform="rotate("+0+"deg)";
 
 			left+=parent.offsetWidth;
 			}
@@ -622,7 +622,7 @@ function showHeart(){
 		   var div=document.createElement("div");
 		   div.style.height=6.8*pos[i][2]+"%";
 		   div.style.width=6.8*pos[i][2]+"%";
-		   div.style.transform="rotate("+pos[i][3]+"deg)";
+		   $(div).css({"transform":"rotate("+pos[i][3]+"deg)","-webkit-transform":"rotate("+pos[i][3]+"deg)"});
 		   div.style.left=pos[i][0]+"%";
 		   div.style.top=pos[i][1]+"%";
 		   bgH.appendChild(div);
