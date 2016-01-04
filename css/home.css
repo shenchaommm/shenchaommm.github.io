@@ -456,12 +456,20 @@ div.sjx{
 	opacity:0;
 
 	}
-#audio{
-	display:block;
+.audio{
 	position:absolute;
 	top:0px;
 	width:3em;
 	height:2em;
+	right:0px;
+	z-index:2;
+	overflow:hidden;
+	}
+#audio{
+	position:absolute;
+	top:0px;
+	width:100%;
+	height:100%;
 	right:0px;
 	border-bottom-left-radius:1.5em;
 	background-color:gray;
@@ -469,7 +477,6 @@ div.sjx{
 	background-size:60%;
 	background-position:center right;
 	background-repeat:no-repeat;
-	z-index:2;
 	transition:right 0.5s ease-in-out;
 	-webkit-transition:right 0.5s ease-in-out;
 	}
