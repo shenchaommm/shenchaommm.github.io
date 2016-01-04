@@ -275,7 +275,6 @@ div.cardfront>h2:nth-child(2){
 		background-image:url(../pic/map1.png);
 		background-position:center;
 		background-repeat:no-repeat;
-		color:black;
 		}
 	.adr{
 		display:block;
@@ -285,6 +284,7 @@ div.cardfront>h2:nth-child(2){
 		width:100%;
 		padding:0px;
 		margin:0px;
+		color:black;
 		}
 	.navi{
 		height:4em;
