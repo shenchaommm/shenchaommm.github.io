@@ -150,10 +150,13 @@ div.cardfront>h2:nth-child(2){
 	top:22%;
 	left:14%;
 	overflow:hidden;
+	background-image:url(../pic/e1.png);
+	background-size:100% 100%;
+	background-repeat:no-repeat;
 	}
 	
-	#envelop>div{
-		background-color:pink;
+/*	#envelop>div{
+		background-color:skyblue;
 		width:100%;
 		position:absolute;
 		left:0;
@@ -212,7 +215,7 @@ div.cardfront>h2:nth-child(2){
 		background-repeat:no-repeat;
 		background-position:100% 100%;
 		}
-	.invitation{
+*/	.invitation{
 		font-weight:bolder;
 		position:absolute;
 		top:20%;
@@ -443,12 +446,18 @@ div.sjx{
 	display:block;
 	position:absolute;
 	top:0px;
-	width:4em;
+	width:3em;
 	height:2em;
 	right:0px;
-	border-bottom-left-radius:2em;
+	border-bottom-left-radius:1.5em;
 	background-color:gray;
-	box-shadow:1px 1px 5px black;
+	background-image:url(../pic/m1.png);
+	background-size:60%;
+	background-position:center right;
+	background-repeat:no-repeat;
+	z-index:2;
+	transition:right 0.5s ease-in-out;
+	-webkit-transition:right 0.5s ease-in-out;
 	}
 	.viewBox{
 		margin:0px;

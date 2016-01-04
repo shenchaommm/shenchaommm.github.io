@@ -16,7 +16,7 @@ function closeLoading(){
 	window.setTimeout(closedLoading,4500);
 	};
 function closedLoading(){
-	
+	init();
 	removeElement(	document.getElementById("loading"))
 	
 	}
@@ -84,9 +84,11 @@ function addClass(element,value){
 		}
 	}
 	
-	addLoadEvent(init);
+	addLoadEvent(preLoadImages);
+	function preLoadImages(){
+				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png','pic/map1.png','pic/QRcode.jpg','pic/SJ.png','pic/SJH.png','pic/e1.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png']);
+		}
 	function init(){
-		preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png','pic/map1.png','pic/QRcode.jpg','pic/SJ.png','pic/SJH.png','pic/wedding.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png']);
 		var ww=window.innerWidth;
 		wy=window.innerHeight;
 		$("body").css({"width":ww+"px","height":wy+"px"});
@@ -120,6 +122,9 @@ function addClass(element,value){
 		$("#mapPic").css({"height":0.7*wy-8*fz+"px","width":0.7*ww-2*fz+"px"});
 		$("#timeFoot").css("height",0.7*wy-11*fz+"px");
 		$("#sjx").css("border-right-width",ww+"px");
+		var audio=document.getElementById("audioPlay");
+		audio.play();
+		audioState();
 	}
 	var wy;
 	var iy,y;
@@ -131,7 +136,16 @@ function audioPlay(e){
 	var audio=this.getElementsByTagName("audio")[0];
 	if(audio.paused)audio.play();
 	else audio.pause();
-	
+	audioState();
+	}
+function audioState(){
+	var audio=document.getElementById("audioPlay");
+	//if(audio.paused)audio.play();
+	if(audio.paused)
+	$("#audio").css("right","-0.8em");
+	else 
+		$("#audio").css("right","0em");
+
 	}
 var audioNum=1;
 var showBigHeart=false;
@@ -188,8 +202,8 @@ function pullEnd(e){
 	}
 	
 function beginShow(){
-	
-	
+	var audio=document.getElementById("audioPlay");
+	if(audio.currentTime==0&& audio.paused) audio.play();
 	
 	}
 function showCards(){
@@ -292,7 +306,6 @@ function swipeMove(e){
 function swipeEnd(e){
 	this.removeEventListener("touchmove",swipeMove,false);
 	this.removeEventListener("mousemove",swipeMove,false);
-
 	}
 var st,bst,nst,ix,iy,isstart=false;
 var Scrollbackground,Scrollnav,Scrolldiv;
