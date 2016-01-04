@@ -1,5 +1,9 @@
 ﻿@charset "utf-8";
 /* CSS Document */
+a{color:white;
+	text-decoration:none;
+	
+	}
 body{
 	margin:0;
 	padding:0;
@@ -313,7 +317,7 @@ div.cardfront>h2:nth-child(2){
 
 			}
 		div#callm>a{
-			
+			vertical-align:top;
 			background-color:#3F0;
 			}
 		div#callw{
@@ -321,8 +325,12 @@ div.cardfront>h2:nth-child(2){
 			line-height:2em;
 			}
 		div#callw>a{
-			
+			vertical-align:top;
 			background-color:pink;
+			}
+		div#callw>a>img,div#callm>a>img{
+			height:100%;
+			
 			}
 #pic .Show{
 

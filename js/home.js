@@ -38,8 +38,8 @@ function preloadimages(arr){
             imageloadpost()
         }
         newimages[i].onerror=function(){
-            imageloadpost()
-			alert("error")
+            imageloadpost();
+			alert("loadImageError,Check netconnect");
 		}
     }
 }
@@ -55,7 +55,9 @@ function useingImage(arr){
 	janPic.src=arr[15].src;
 	var sjPic=document.getElementById("sjPic");
 	sjPic.src=arr[16].src;
-
+	var phonePic=document.getElementsByClassName("phone");
+	phonePic[0].src=arr[10].src;
+	phonePic[1].src=arr[10].src;
 	}
 function addLoadEvent(func){
 	var oldonload=window.onload;
@@ -86,7 +88,7 @@ function addClass(element,value){
 	
 	addLoadEvent(preLoadImages);
 	function preLoadImages(){
-				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png','pic/map1.png','pic/QRcode.jpg','pic/SJ.png','pic/SJH.png','pic/e1.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png']);
+				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png','pic/map1.png','pic/QRcode.jpg','pic/phone.png','pic/SJH.png','pic/e1.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png']);
 		}
 	function init(){
 		var ww=window.innerWidth;
