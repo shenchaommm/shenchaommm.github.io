@@ -55,9 +55,9 @@ function useingImage(arr){
 	janPic.src=arr[15].src;
 	var sjPic=document.getElementById("sjPic");
 	sjPic.src=arr[16].src;
-	var phonePic=document.getElementsByClassName("phone");
-	phonePic[0].src=arr[10].src;
-	phonePic[1].src=arr[10].src;
+//	var phonePic=document.getElementsByClassName("phone");
+//	phonePic[0].src=arr[10].src;
+//	phonePic[1].src=arr[10].src;
 	}
 function addLoadEvent(func){
 	var oldonload=window.onload;
@@ -125,7 +125,7 @@ function addClass(element,value){
 		$("#timeFoot").css("height",0.7*wy-11*fz+"px");
 		$("#sjx").css("border-right-width",ww+"px");
 		var audio=document.getElementById("audioPlay");
-		audio.play();
+		//audio.play();
 		audioState();
 	}
 	var wy;
@@ -156,6 +156,7 @@ function audioNext(){
 	audioNum++;
 	if(audioNum>10)audioNum=1;
 	audio.src="music/"+audioNum+".mp3";
+	audio.play();
 	}
 function pullTouchstart(e){
 	e.preventDefault();
@@ -206,7 +207,7 @@ function pullEnd(e){
 function beginShow(){
 	var audio=document.getElementById("audioPlay");
 	if(audio.currentTime==0&& audio.paused) audio.play();
-	
+	audioState();
 	}
 function showCards(){
 	for(var i=1;i<cards.length;i++){

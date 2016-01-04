@@ -275,7 +275,7 @@ div.cardfront>h2:nth-child(2){
 		background-image:url(../pic/map1.png);
 		background-position:center;
 		background-repeat:no-repeat;
-		
+		color:black;
 		}
 	.adr{
 		display:block;
@@ -308,7 +308,6 @@ div.cardfront>h2:nth-child(2){
 			line-height:4em;
 			}
 		div#navi>a{
-			
 			background-color:#09F;
 			}
 		div#callm{
@@ -330,6 +329,13 @@ div.cardfront>h2:nth-child(2){
 			}
 		div#callw>a>img,div#callm>a>img{
 			height:100%;
+			
+			}
+		div#callm>a,div#callw>a{
+			background-image:url(../pic/phone.png);
+			background-size:contain;
+			background-position:5px 50%;
+			background-repeat:no-repeat;
 			
 			}
 #pic .Show{
