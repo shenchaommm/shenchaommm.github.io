@@ -23,7 +23,8 @@ body{
 	}
 .background>div:first-child{
 	background-image:url(../pic/bg1.jpg);
-	
+	-webkit-transition:background 1s ease-in-out;
+	transition:background 1s ease-in-out;
 	}
 
 

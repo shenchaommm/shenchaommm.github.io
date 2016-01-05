@@ -88,7 +88,7 @@ function addClass(element,value){
 	
 	addLoadEvent(preLoadImages);
 	function preLoadImages(){
-				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png','pic/map1.png','pic/QRcode.jpg','pic/phone.png','pic/SJH.png','pic/e1.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png','pic/ht2.gif','pic/hsz/j11.jpg', 'pic/hsz/j12.jpg', 'pic/hsz/j13.jpg']);
+				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png','pic/map1.png','pic/QRcode.jpg','pic/phone.png','pic/SJH.png','pic/e1.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png','pic/ht2.gif','pic/hsz/j10.jpg','pic/hsz/j11.jpg', 'pic/hsz/j12.jpg', 'pic/hsz/j13.jpg']);
 		}
 	function init(){
 		var ww=window.innerWidth;
@@ -242,7 +242,7 @@ function showCards(){
 	invitationCard.addEventListener("touchend",swipeEnd,false);
 	invitationCard.addEventListener("mousedown",swipeStart,false);
 	invitationCard.addEventListener("mouseup",swipeEnd,false);
-
+	
 /*	$("#invitationCard").on("swipeleft",function(){
 		var div=this.children;
 		div[0].style.transform="rotateY(-"+180+"deg)";
@@ -262,6 +262,7 @@ function showCards(){
 	Scrollbackground=$("#background");
 	Scrollnav=$("#nav");
 	Scrolldiv=$("#viewBox");
+	Scrollbackground.children("div:first").css("background-image","url(pic/hsz/j10.jpg)");
 	//window.addEventListener("touchstart",scrollStart,false);
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);
@@ -454,7 +455,8 @@ function initPic(){
 			parent.style.left=picW*0.5-0.5*images[i].offsetWidth+"px";
 			var deg=Math.round((Math.random()-Math.random())*30);
 			//parent.style.transform="rotate("+deg+"deg)";
- 
+			if(i<4)
+ 			parent.style.display="none";
 			
 			}
 			picture.style.overflowX="visible";
@@ -471,6 +473,7 @@ function initShowPic(){
 	var left=0;
 	for(var i=0;i<images.length;i++){
 			var parent=images[i].parentNode;
+			parent.style.display="block";
 			parent.style.top=picH*0.5-0.5*images[i].offsetHeight+"px";
 			parent.style.left=left+15*(i+1)+"px";
 			//parent.style.transform="rotate("+0+"deg)";
