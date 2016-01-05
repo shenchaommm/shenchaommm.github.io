@@ -88,7 +88,7 @@ function addClass(element,value){
 	
 	addLoadEvent(preLoadImages);
 	function preLoadImages(){
-				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png','pic/map1.png','pic/QRcode.jpg','pic/phone.png','pic/SJH.png','pic/e1.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png']);
+				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png','pic/map1.png','pic/QRcode.jpg','pic/phone.png','pic/SJH.png','pic/e1.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png','pic/hsz/j11.jpg', 'pic/hsz/j12.jpg', 'pic/hsz/j13.jpg']);
 		}
 	function init(){
 		var ww=window.innerWidth;
@@ -117,7 +117,7 @@ function addClass(element,value){
 		backgroundArray=background.children;
 		currentNum=0;
 		for(var i=1;i<backgroundArray.length-1;i++){
-			backgroundArray[i].style.backgroundImage="url(pic/hsz/j"+(i+1)+".jpg)";
+			backgroundArray[i].style.backgroundImage="url(pic/hsz/j1"+i+".jpg)";
 			//$(bc[i]).css("background-attachment","fixed");
 			}
 		var fz = parseInt($("body").css("font-size"));
