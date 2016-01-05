@@ -36,6 +36,14 @@ body{
 	background-position:center center;
 	background-color:pink;
 	}
+.blur{
+		-webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -ms-filter: blur(5px);    
+    filter: blur(5px);
+
+	
+	}
 .background>div:last-child{
 	
 	}
@@ -413,7 +421,7 @@ div.cardfront>h2:nth-child(2){
 	}
 div.sjx{
 	position:relative;
-	top:-150px;
+	top:-145px;
 	height:0px;
 	width:0px;
 	border-color:transparent pink transparent transparent;
