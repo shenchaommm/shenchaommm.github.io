@@ -35,9 +35,8 @@ body{
 	background-attachment:fixed;
 	background-position:center center;
 	background-color:pink;
-	background-size:400px 600px;
-	-webkit-background-size:cover;
 	background-size:cover;
+	-webkit-background-size:cover;
 	}
 .background>div:last-child{
 	
