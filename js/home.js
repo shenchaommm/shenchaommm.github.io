@@ -92,7 +92,7 @@ function addClass(element,value){
 	function preLoadImages(){
 		var map="pic/map1.png";
 		var temp=goBack();
-		if(temp=="w"){
+		if(temp=="#w"){
 			map="pic/map2.png";
 			$(".mapPic").attr("href","http://api.map.baidu.com/marker?location=29.990492,120.889937&title=王洁家&content=上虞梁湖外梁湖村新路230号&output=html ");
 		}
