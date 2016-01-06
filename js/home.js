@@ -55,6 +55,8 @@ function useingImage(arr){
 	janPic.src=arr[15].src;
 	var sjPic=document.getElementById("sjPic");
 	sjPic.src=arr[16].src;
+	var mapPic=$("#mapPic").children("a").css("background-image","url("+arr[8].src+")");
+	
 //	var phonePic=document.getElementsByClassName("phone");
 //	phonePic[0].src=arr[10].src;
 //	phonePic[1].src=arr[10].src;
@@ -88,7 +90,13 @@ function addClass(element,value){
 	
 	addLoadEvent(preLoadImages);
 	function preLoadImages(){
-				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png','pic/map1.png','pic/QRcode.jpg','pic/phone.png','pic/SJH.png','pic/e1.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png','pic/ht2.gif','pic/hsz/j10.jpg','pic/hsz/j11.jpg', 'pic/hsz/j12.jpg', 'pic/hsz/j13.jpg']);
+		var map="pic/map1.png";
+		var temp=goBack();
+		if(temp=="w"){
+			map="pic/map2.png";
+			$(".mapPic").attr("href","http://api.map.baidu.com/marker?location=29.990492,120.889937&title=王洁家&content=上虞梁湖外梁湖村新路230号&output=html ");
+		}
+				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png',map,'pic/QRcode.jpg','pic/phone.png','pic/SJH.png','pic/e1.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png','pic/ht2.gif','pic/hsz/j10.jpg','pic/hsz/j11.jpg', 'pic/hsz/j12.jpg', 'pic/hsz/j13.jpg']);
 		}
 	function init(){
 		var ww=window.innerWidth;
@@ -561,14 +569,13 @@ function setBack(state,title,url){
 	var history=window.history;
 	history.pushState(state, title, url);		
 	}
-function goBack(e){
+function goBack(){
 	var history=window.history;
 	var location=window.location;
   
   if (location.hash){
     //do something(state.url, state.title);
-	if(location.hash=="showPic"){
-		}
+	return location.hash;
   }else{
 	  //closePicture();
 	  }
