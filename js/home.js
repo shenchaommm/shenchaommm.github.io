@@ -101,7 +101,7 @@ function addClass(element,value){
 	function init(){
 		var ww=window.innerWidth;
 		wy=window.innerHeight;
-		$("body").css({"width":ww+"px","height":wy+"px"});
+		//$("body,html").css({"width":ww+"px","height":wy+"px"});
 		$(".image").css({"max-height":0.6*wy+"px","max-width":0.8*ww+"px"});
 		var invitation=document.getElementById("invitation");
 		invitation.addEventListener("mousedown",pullstart,false);																												
