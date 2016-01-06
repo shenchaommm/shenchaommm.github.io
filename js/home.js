@@ -94,7 +94,7 @@ function addClass(element,value){
 		var temp=goBack();
 		if(temp=="#w"){
 			map="pic/map2.png";
-			$(".mapPic").attr("href","http://map.baidu.com/?latlng=29.990492,120.889937&title=%E7%8E%8B%E6%B4%81%E5%AE%B6&content=%E4%B8%8A%E8%99%9E%E6%A2%81%E6%B9%96%E5%A4%96%E6%A2%81%E6%B9%96%E6%9D%91%E6%96%B0%E8%B7%AF230%E5%8F%B7&autoOpen=true&l");
+			$(".mapPic").attr("href","http://api.map.baidu.com/marker?location=29.990492,120.889937&title=洁儿家&content=上虞梁湖外梁湖村新路230号&output=html ");
 		}
 				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png',map,'pic/QRcode.jpg','pic/phone.png','pic/SJH.png','pic/e1.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png','pic/ht2.gif','pic/hsz/j10.jpg','pic/hsz/j11.jpg', 'pic/hsz/j12.jpg', 'pic/hsz/j13.jpg']);
 		}
