@@ -37,12 +37,13 @@ body{
 	height:140%;
 	background-repeat:no-repeat;
 	background-attachment:fixed;
+	-webkit-background-attachment:fixed;
 	background-position:center center;
 	background-size:cover;
 	-webkit-background-size:cover;
 	}
 .background>div:last-child{
-	
+	background-color:pink;
 	}
 .nav{
 	width:100%;
