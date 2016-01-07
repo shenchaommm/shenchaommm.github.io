@@ -275,7 +275,8 @@ function showCards(){
 	//window.addEventListener("touchend",scrollEnd,false);
 	//window.addEventListener("mousedown",scrollStart,false);
 	//window.addEventListener("mouseup",scrollEnd,false);
-
+	var bgh=Scrollbackground.children("div:first").css("background-size");
+	alert(navigator.userAgent);
 	}
 var sx,sy;
 function swipeStart(e){
