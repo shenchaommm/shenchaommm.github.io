@@ -99,6 +99,10 @@ function addClass(element,value){
 				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png',map,'pic/QRcode.jpg','pic/phone.png','pic/SJH.png','pic/e1.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png','pic/ht2.gif','pic/hsz/j10.jpg','pic/hsz/j11.jpg', 'pic/hsz/j12.jpg', 'pic/hsz/j13.jpg']);
 		}
 	function init(){
+		if(navigator.userAgent.indexOf("Android")>-1){
+			$(".bg").css("background-attachment","scroll");
+			
+			}
 		var ww=window.innerWidth;
 		wy=window.innerHeight;
 		//$("body,html").css({"width":ww+"px","height":wy+"px"});
@@ -276,7 +280,6 @@ function showCards(){
 	//window.addEventListener("mousedown",scrollStart,false);
 	//window.addEventListener("mouseup",scrollEnd,false);
 	var bgh=Scrollbackground.children("div:first").css("background-size");
-	alert(navigator.userAgent);
 	}
 var sx,sy;
 function swipeStart(e){
