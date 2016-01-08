@@ -59,17 +59,17 @@
 	}
 	.loadingIcon>span:nth-child(2){
 		animation-delay:0.1s;
-		-webkit-animation:0.1s;
+		-webkit-animation-delay:0.1s;
 		
 		}
 	.loadingIcon>span:nth-child(3){
 		animation-delay:0.2s;
-		-webkit-animation:0.2s;
+		-webkit-animation-delay:0.2s;
 		
 		}
 		.loadingIcon>span:nth-child(4){
 		animation-delay:0.3s;
-		-webkit-animation:0.3s;
+		-webkit-animation-delay:0.3s;
 		
 		}
 
