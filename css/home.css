@@ -86,6 +86,8 @@ body{
 	width:70%;
 	background-color:yellow;
 	box-shadow:1px 1px 5px 2px black;
+	transform:rotate(0deg);
+	-webkit-transform:rotate(0deg);
 	transition:transform 0.5s ease-in-out;
 	-webkit-transition:-webkit-transform 0.5s ease-in-out;
 
