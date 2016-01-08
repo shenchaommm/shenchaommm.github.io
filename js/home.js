@@ -6,19 +6,57 @@ function removeElement(_element){
          }
 }
 function closeLoading(){
-	document.getElementById("loadingIcon").style.top="5%";
-	document.getElementById("loading").style.height="0%";	
-	var middle=document.getElementsByClassName("middle");
-	for(var i=0;i<middle.length;i++){
-	middle[i].style.top="10%";
-	middle[i].style.opacity=1;
-		}
-	window.setTimeout(closedLoading,4500);
+	//document.getElementById("loadingIcon").style.top="5%";
+	//var middle=document.getElementsByClassName("middle");
+	//for(var i=0;i<middle.length;i++){
+	//middle[i].style.top="10%";
+	//middle[i].style.opacity=1;
+		//}
+	var t=document.getElementsByClassName("dot")[0];
+	t.addEventListener("webkitAnimationIteration", function(){ //动画结束时事件 
+		removeElement(	document.getElementById("loadingIcon"));
+		showLoading();
+	}, false);
+	init();
+	
 	};
 function closedLoading(){
-	init();
-	removeElement(	document.getElementById("loading"))
-	
+	document.getElementById("loading").style.opacity="0";	
+	window.setTimeout(closedLoadingT,1500);
+	}
+function closedLoadingT(){
+	removeElement(	document.getElementById("loading"));
+	$("#invitation").css("top","0%");
+	}
+	function showLoading(){
+		$("#loadingText").css("opacity","1");
+		$("#loadingTextCover").animate({left:"100%"},1000,function(){
+			$("#loadingTexth2").animate({opacity:"0"},1000,function(){
+				$("#loadingTexth2").text("2.21");
+				$("#loadingTexth2").animate({opacity:1},500,function(){
+					$("#loadingTexth2").animate({opacity:0},1000,function(){
+						$("#loadingTexth2").text("一 起");
+						$("#loadingTexth2").animate({opacity:1},500,function(){
+							$("#loadingTexth2").animate({opacity:0},1000,function(){
+								$("#loadingTexth2").text("见证幸福");
+									$("#loadingTexth2").animate({opacity:1},500,function(){
+										$("#loadingTexth2").animate({opacity:0},1000,function(){
+											$("#loadingTexth2").text("").css({"background-image":"url(pic/jqgl.png)"
+											});
+											$("#loadingText").css({"-webkit-transform":"rotate(10deg)","transform":"rotate(10deg)"});
+											$("#loadingTexth2").animate({opacity:1},200,function(){
+												closedLoading();
+											})
+										})
+									})
+
+							})
+						})
+					})
+				})
+			})
+		});
+		
 	}
 
 function preloadimages(arr){   
@@ -49,8 +87,8 @@ function useingImage(arr){
 		imagesPic[i].src=arr[i].src;
 		}
 	var middlePic=document.getElementsByClassName("middlePic");
-	middlePic[0].src=arr[13].src;
-	middlePic[1].src=arr[14].src;
+	//middlePic[0].src=arr[13].src;
+	//middlePic[1].src=arr[14].src;
 	var janPic=document.getElementById("janPic");
 	janPic.src=arr[15].src;
 	var sjPic=document.getElementById("sjPic");
@@ -96,7 +134,7 @@ function addClass(element,value){
 			map="pic/map2.png";
 			$(".mapPic").attr("href","http://api.map.baidu.com/marker?location=29.990492,120.889937&title=洁儿家&content=上虞梁湖外梁湖村新路230号&output=html ");
 		}
-				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png',map,'pic/QRcode.jpg','pic/phone.png','pic/SJH.png','pic/e1.png','pic/p1.png','pic/p2.png','pic/jan.png','pic/t1.png','pic/ht2.gif','pic/hsz/j10.jpg','pic/hsz/j11.jpg', 'pic/hsz/j12.jpg', 'pic/hsz/j13.jpg']);
+				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png',map,'pic/QRcode.jpg','pic/phone.png','pic/SJH.png','pic/e1.png','pic/jqgl.png','pic/p2.png','pic/t1.png','pic/ht2.gif','pic/hsz/j10.jpg','pic/hsz/j11.jpg', 'pic/hsz/j12.jpg', 'pic/hsz/j13.jpg']);
 		}
 	function init(){
 		if(navigator.userAgent.indexOf("Android")>-1){
