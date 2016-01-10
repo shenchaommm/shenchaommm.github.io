@@ -109,6 +109,49 @@ div#invitation{
 	-webkit-perspective: 2000px; 
 */
 	}
+.tip>span{
+	display:block;
+	font-size:0.5em;
+	}
+.tipdown{
+	bottom:5px;
+	width:100%;
+	}
+.tipright{
+	position:absolute;
+	right:1px;
+	top:49%;
+	text-shadow:none;
+	}
+.tip{
+	position:absolute;
+	color:#CCC;
+	text-align:center;
+	animation:tipShow 0.8s linear infinite;
+	-webkit-animation:tipShow 0.8s linear infinite;
+	}
+@keyframes tipShow{
+	0%{
+		opacity:1
+		}
+	50%{
+		opacity:0.2;
+		}
+	100%{
+		opacity:1;
+		}
+	}
+@-webkit-keyframes tipShow{
+	0%{
+		opacity:1
+		}
+	50%{
+		opacity:0.2;
+		}
+	100%{
+		opacity:1;
+		}
+	}
 #invitation>.card>div{
 	background-color:yellow;
 		width:100%;
@@ -241,19 +284,9 @@ div.cardfront>h2:nth-child(2){
 		writing-mode:tb-rl;
 		-webkit-writing-mode:vertical-rl;
 		}
-		.showTip{
-			color:white;
-			text-shadow:0 0 2px black;
-			position:absolute;
-			bottom:0;
-			left:40%;
-			width:20%;
-			height:2em;
-			opacity:0.4;
-			text-align:center;
-			}
-		
-
+.tip{
+	
+	}
 .image{
 
 	}
