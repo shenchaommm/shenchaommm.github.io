@@ -188,19 +188,29 @@ div.cardfront>h2:nth-child(2){
 	transform:rotateY(180deg);
 	color:darkred;
 	}
-.cardback>p>span{
+.cardback>p span{
 	color:black;
-	padding:0em 1em;
+	padding:0em 0.5em;
+	}
+sub,sup{
+	font-size:1em;
+	}
+sub{
+	margin-top:0.5em;
+	}
+sup{
+	margin-top:-0.5em;
+	}
+.cardback>p sub:nth-child(2){
+	
 	}
 .cardback>p{
 	font-size:1em;
 	padding:0em 1em;
 	}
-.cardback>p:nth-child(1){
-	font-size:1.5em;
-	text-align:center;
-	
-	
+.cardback>p.cardbackP{
+	font-size:0.8em;	
+	line-height:2em;
 	}
 #envelop{
 	width:72%;
