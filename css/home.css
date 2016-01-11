@@ -208,6 +208,8 @@ div.cardfront>h2:nth-child(2){
 
 .Pright{
 	text-align:right;
+	line-height:2em;
+	padding-bottom:1em;
 	}
 .cardbackP{
 	padding-top:2em;
