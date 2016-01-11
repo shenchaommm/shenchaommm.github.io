@@ -111,7 +111,7 @@ div#invitation{
 	}
 .tip>span{
 	display:block;
-	font-size:0.5em;
+	font-size:0.7em;
 	}
 .tipdown{
 	bottom:5px;
@@ -188,28 +188,28 @@ div.cardfront>h2:nth-child(2){
 	transform:rotateY(180deg);
 	color:darkred;
 	}
-.cardback>p span{
+.cardback span{
 	color:black;
 	padding:0em 0.5em;
 	}
-sub,sup{
-	font-size:1em;
+.sbp{
+	display:inline-block;
+	position:relative;
+	height:2em;
+	top:0.5em;
+	line-height:1em;
 	}
-sub{
-	margin-top:0.5em;
+.sbp>span{
+		
 	}
-sup{
-	margin-top:-0.5em;
-	}
-.cardback>p sub:nth-child(2){
-	
-	}
+
 .cardback>p{
 	font-size:1em;
 	padding:0em 1em;
 	}
-.cardback>p.cardbackP{
-	font-size:0.8em;	
+.cardbackP{
+	font-size:1em;
+	padding:0em 1em;
 	line-height:2em;
 	}
 #envelop{
