@@ -512,7 +512,7 @@ function initPic(){
 			var deg=Math.round((Math.random()-Math.random())*30);
 			//parent.style.transform="rotate("+deg+"deg)";
 			if(i<4){
-				$(parent).hide(500);
+				parent.style.display="none";
 				}
 		}
 			picture.style.overflowX="visible";
