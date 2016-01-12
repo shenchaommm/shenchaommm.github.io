@@ -22,7 +22,8 @@
 	height:100px;
 	-webkit-transition:top 0.5s ease-in-out;
 	transition:top 0.5s ease-in-out;
-	top:250px;
+	top:50%;
+	margin-top:-50px;
 	overflow:hidden;
 	}
 .loadingText{

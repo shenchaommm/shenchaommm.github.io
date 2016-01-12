@@ -511,14 +511,13 @@ function initPic(){
 			parent.style.left=picW*0.5-0.5*images[i].offsetWidth+"px";
 			var deg=Math.round((Math.random()-Math.random())*30);
 			//parent.style.transform="rotate("+deg+"deg)";
-			if(i<4)
- 			parent.style.display="none";
-			
-			}
+			if(i<4){
+				$(parent).hide(500);
+				}
+		}
 			picture.style.overflowX="visible";
 	//picture.addEventListener("click",showPicture,false);
 	$(picture).on("tap",showPicture);
-	
 	}
 	var showpic=false;
 	var picH1;
@@ -560,9 +559,10 @@ function showPicture(e){
 	}
 function closePicture(){
 	var picture=document.getElementById("image");
-	showpic=false;
+	
 	//picture.class="card";
 	initPic();
+	showpic=false;
 	//$(picture).off("touchstart",picStartScroll);
 	//$(picture).off("touchend",picEndScroll);
 		//$(this).off("mousedown",picStartScroll);
