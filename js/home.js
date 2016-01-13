@@ -507,13 +507,13 @@ function initPic(){
 		var images=picture.getElementsByTagName("img");
 		for(var i=0;i<images.length;i++){
 			var parent=images[i].parentNode;
-			parent.style.top=picH*0.5-0.5*images[i].offsetHeight+"px";
-			parent.style.left=picW*0.5-0.5*images[i].offsetWidth+"px";
-			var deg=Math.round((Math.random()-Math.random())*30);
-			//parent.style.transform="rotate("+deg+"deg)";
 			if(i<4){
 				parent.style.display="none";
-				}
+			}
+			parent.style.top=picH*0.5-0.5*images[i].offsetHeight+"px";
+			parent.style.left=picW*0.5-0.5*images[i].offsetWidth+"px";
+			//parent.style.transform="rotate("+deg+"deg)";
+			
 		}
 			picture.style.overflowX="visible";
 	//picture.addEventListener("click",showPicture,false);
@@ -542,11 +542,7 @@ function initShowPic(){
 function showPicture(e){
 	if(showpic==true) return;
 	picH1=this.parentNode.offsetTop;
-	$('#viewBox').animate({scrollTop:picH1},{ duration: 600, complete: function(){
-		
-		showpic=true;
-		
-		}});
+	showpic=true;
 	initShowPic();
 	//$(this).on("touchstart",picStartScroll);
 	//$(this).on("touchend",picEndScroll);
@@ -559,10 +555,10 @@ function showPicture(e){
 	}
 function closePicture(){
 	var picture=document.getElementById("image");
-	
+	showpic=false;
 	//picture.class="card";
 	initPic();
-	showpic=false;
+	
 	//$(picture).off("touchstart",picStartScroll);
 	//$(picture).off("touchend",picEndScroll);
 		//$(this).off("mousedown",picStartScroll);
