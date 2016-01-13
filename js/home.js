@@ -502,6 +502,7 @@ function initMap(){
 
 function initPic(){
 	var picture=document.getElementById("image");
+	$(picture).scrollLeft(0);
 		picH=picture.offsetHeight;
 		picW=picture.offsetWidth;
 		var images=picture.getElementsByTagName("img");
@@ -511,7 +512,7 @@ function initPic(){
 			parent.style.top=picH*0.5-0.5*images[i].offsetHeight+"px";
 			parent.style.left=picW*0.5-0.5*images[i].offsetWidth+"px";
 			if(i<4){
-				
+				parent.style.display="none";
 			}
 			//parent.style.transform="rotate("+deg+"deg)";
 			
