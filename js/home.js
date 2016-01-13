@@ -507,11 +507,12 @@ function initPic(){
 		var images=picture.getElementsByTagName("img");
 		for(var i=0;i<images.length;i++){
 			var parent=images[i].parentNode;
-			if(i<4){
-				parent.style.display="none";
-			}
+			
 			parent.style.top=picH*0.5-0.5*images[i].offsetHeight+"px";
 			parent.style.left=picW*0.5-0.5*images[i].offsetWidth+"px";
+			if(i<4){
+				
+			}
 			//parent.style.transform="rotate("+deg+"deg)";
 			
 		}
