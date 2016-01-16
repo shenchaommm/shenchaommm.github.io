@@ -32,7 +32,7 @@ function closedLoadingT(){
 		$("#loadingText").css("opacity","1");
 		$("#loadingTextCover").animate({left:"100%"},1000,function(){
 			$("#loadingTexth2").animate({opacity:"0"},1000,function(){
-				$("#loadingTexth2").text("2●21");
+				$("#loadingTexth2").text("2.21");
 				$("#loadingTexth2").animate({opacity:1},500,function(){
 					$("#loadingTexth2").animate({opacity:0},1000,function(){
 						$("#loadingTexth2").text("一 起");
@@ -133,7 +133,7 @@ function addClass(element,value){
 		if(temp=="#w"){
 			map="pic/map2.png";
 			$(".mapPic").attr("href","http://api.map.baidu.com/marker?location=29.990492,120.889937&title=洁儿家&content=上虞梁湖外梁湖村新路230号&output=html ");
-			$("#invitationTime").text("中午10点");
+			$("#invitationTime").text("中午十点二十八分");
 		}
 				preloadimages(['pic/hsz/j1.jpg', 'pic/hsz/j2.jpg', 'pic/hsz/j3.jpg','pic/hsz/j4.jpg','pic/hsz/j5.jpg','pic/hsz/j6.jpg','pic/bg1.jpg','pic/logo.png',map,'pic/QRcode.jpg','pic/phone.png','pic/SJH.png','pic/e1.png','pic/jqgl.png','pic/m1.png','pic/jan.png','pic/t1.png','pic/ht2.gif','pic/hsz/j10.jpg','pic/hsz/j11.jpg', 'pic/hsz/j12.jpg', 'pic/hsz/j13.jpg']);
 		}
