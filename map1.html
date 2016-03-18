@@ -15,22 +15,25 @@
 
 <div id="container"></div>
 <div id="tip"></div>
-
+<div id="info"></div>
 <script>
     var map = new AMap.Map('container', {
         resizeEnable: true,        
     });
+var i=0;
 var geolocation;
-
+var gpsEr;
  map.plugin('AMap.Geolocation', function() {
         geolocation = new AMap.Geolocation({
             enableHighAccuracy: true,//是否使用高精度定位，默认:true
             buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
-            zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+            
+			showMarker: true,
+			zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
             buttonPosition:'RB'
         });
         map.addControl(geolocation);
-        geolocation.getCurrentPosition();
+        geolocation.watchPosition();
         AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
         AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
     });
@@ -53,12 +56,37 @@ var geolocation;
         str.push('纬度：' + data.position.getLat());
         str.push('精度：' + data.accuracy + ' 米');
         str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
+		str.push("count:"+(i++));
         document.getElementById('tip').innerHTML = str.join('<br>');
+		gpsTrack(data);
+		gpsEr=data.position;
     }
     //解析定位错误信息
     function onError(data) {
         document.getElementById('tip').innerHTML = '定位失败';
     }
+	function gpsTrack(data){
+		if(i>1) {
+		var lineArr=new Array();
+    	lineArr.push(gpsEr);
+    	lineArr.push(data.position);
+		draw(lineArr)
+		};
+		}
+	function draw(lineArr){
+		
+		var polyline = new AMap.Polyline({
+        path: lineArr,          //设置线覆盖物路径
+        strokeColor: "#3366FF", //线颜色
+        strokeOpacity: 1,       //线透明度
+        strokeWeight: 5,        //线宽
+        strokeStyle: "solid",   //线样式
+        strokeDasharray: [10, 5] //补充线样式
+    });
+    polyline.setMap(map);
+		
+		}
+	
 </script>
 </body>
 </html>
