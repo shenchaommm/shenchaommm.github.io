@@ -71,6 +71,9 @@ function getLocation()
 */		
 		str.push('经度：' + data.coords.longitude);
         str.push('纬度：' + data.coords.latitude);
+		str.push('精度：' + data.coords.accuracy + ' 米');
+		str.push("速度: "+data.coords.speed+"m/s");
+		str.push("方向: "+data.coords.heading);
 		str.push("count:"+(i++));
         document.getElementById('tip').innerHTML = str.join('<br>');
 		
