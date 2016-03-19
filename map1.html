@@ -45,7 +45,7 @@ function getLocation()
 	 onComplete(pos);
 	 Pos=transform(pos.coords.latitude, pos.coords.longitude);
 	 gpsTrack([Pos[1],Pos[0]]);
-	 map.setZoomAndCenter(14, [Pos[1],  Pos[0]]);
+	 map.setCenter([Pos[1],  Pos[0]]);
 	 GPSmarker.setPosition([Pos[1],Pos[0]]);
 	 gpsEr=[Pos[1],  Pos[0]];
 	 }
