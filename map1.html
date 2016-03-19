@@ -26,7 +26,10 @@ var ee = 0.00669342162296594323;
 var i=0;
 var gpsEr;
 var gpsTime;
+var tripTime;
 var GPSmaker;
+var GPSdis=0;
+var GPSspeed=0;
 GPSmarker = new AMap.Marker({
             map: map,
         });
@@ -35,19 +38,20 @@ function getLocation()
   {
   if (navigator.geolocation)
     {
-    navigator.geolocation.watchPosition(showPosition,{enableHighAccuracy:true});
+    navigator.geolocation.watchPosition(showPosition,handle_error,{enableHighAccuracy:true,maximumAge:5000});
     }
   else{
 	  onError(data);
 	  }
   }
  function showPosition(pos){
-	 onComplete(pos);
+	 
 	 Pos=transform(pos.coords.latitude, pos.coords.longitude);
-	 gpsTrack([Pos[1],Pos[0]]);
+	 gpsTrack([Pos[1],Pos[0]],pos.timestamp);
 	 map.setCenter([Pos[1],  Pos[0]]);
 	 GPSmarker.setPosition([Pos[1],Pos[0]]);
-	 gpsEr=[Pos[1],  Pos[0]];
+	 
+	 onComplete(pos);
 	 }
 /* map.plugin('AMap.Geolocation', function() {
        geolocation = new AMap.Geolocation({
@@ -63,6 +67,8 @@ function getLocation()
         AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
     });*/
     function onComplete(data) {
+		var d = new Date()
+		d.setTime(gpsTime);
         var str=['定位成功'];
 /*        str.push('经度：' + data.position.getLng());
         str.push('纬度：' + data.position.getLat());
@@ -71,9 +77,12 @@ function getLocation()
 */		
 		str.push('经度：' + data.coords.longitude);
         str.push('纬度：' + data.coords.latitude);
+        str.push('海拔：' + data.coords.altitude);
 		str.push('精度：' + data.coords.accuracy + ' 米');
-		str.push("速度: "+data.coords.speed+"m/s");
 		str.push("方向: "+data.coords.heading);
+		str.push("时间: "+d.getHours()+":"+d.getMinutes());
+		str.push("距离: "+GPSdis);
+		str.push("速度: "+GPSspeed);
 		str.push("count:"+(i++));
         document.getElementById('tip').innerHTML = str.join('<br>');
 		
@@ -82,13 +91,21 @@ function getLocation()
     function onError(data) {
         document.getElementById('tip').innerHTML = '定位失败';
     }
-	function gpsTrack(data){
+	function gpsTrack(data,t){
 		if(i>1) {
+		//speed
+		var dis=gpsEr.distance([data[0],data[1]]);
+		GPSdis=GPSdis+dis;
+		var time=0.001*(t-gpsTime);
+		GPSspeed=dis/time;
+		
 		var lineArr=new Array();
     	lineArr.push(gpsEr);
     	lineArr.push(data);
 		draw(lineArr);
 		}
+		gpsTime=t;
+		gpsEr=new AMap.LngLat(data[0],data[1]);
 		}
 	function draw(lineArr){
 		
@@ -128,6 +145,23 @@ function transformLon(x,y) {
         ret += (150.0 * Math.sin(x / 12.0 * pi) + 300.0 * Math.sin(x / 30.0 * pi)) * 2.0 / 3.0;
         return ret;
     }
+function handle_error(err){
+ //错误处理
+ switch(err.code){
+  case 1 :
+   alert("permission denied");
+   break;
+  case 2:
+   alert("the network is down or the position satellites can't be contacted");
+   break;
+  case 3:
+   alert("time out");
+   break;
+  default:
+   alert("unknown error");
+   break;
+ }
+}
 </script>
 </body>
 </html>
