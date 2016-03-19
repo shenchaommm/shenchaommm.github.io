@@ -44,9 +44,10 @@ function getLocation()
  function showPosition(pos){
 	 onComplete(pos);
 	 Pos=transform(pos.coords.latitude, pos.coords.longitude);
+	 gpsTrack([Pos[1],Pos[0]]);
 	 map.setZoomAndCenter(14, [Pos[1],  Pos[0]]);
 	 GPSmarker.setPosition([Pos[1],Pos[0]]);
-	 
+	 gpsEr=[Pos[1],  Pos[0]];
 	 }
 /* map.plugin('AMap.Geolocation', function() {
        geolocation = new AMap.Geolocation({
@@ -72,8 +73,7 @@ function getLocation()
         str.push('纬度：' + data.coords.latitude);
 		str.push("count:"+(i++));
         document.getElementById('tip').innerHTML = str.join('<br>');
-		gpsTrack(data.coords);
-		gpsEr=data.coords;
+		
     }
     //解析定位错误信息
     function onError(data) {
