@@ -72,7 +72,7 @@ function getLocation()
         str.push('纬度：' + data.coords.latitude);
 		str.push("count:"+(i++));
         document.getElementById('tip').innerHTML = str.join('<br>');
-		//gpsTrack(data.coords);
+		gpsTrack(data.coords);
 		gpsEr=data.coords;
     }
     //解析定位错误信息
