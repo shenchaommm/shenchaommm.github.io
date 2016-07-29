@@ -1,7 +1,25 @@
 @charset "utf-8";
 /* CSS Document */
-
+*{
+	margin:0;
+	padding:0;
+	}
+bady,html{
+	background-color:black;
+	}
 header{
 	background-color:black;
-	min-height:80px;
+	height:6em;
+	}
+header>div{
+	float:left;
+	}
+header .logo{
+	padding:1.2em;
+	padding-left:1.2em;
+	height:60%;
+	}
+header .logo img{
+	height:100%;
+	
 	}
