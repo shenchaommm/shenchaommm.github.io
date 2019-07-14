@@ -1,0 +1,34 @@
+.productslist{
+    width: 100%;
+}
+.productslist >div{
+    width:calc(50% - 14px);
+    margin: 5px;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    background-color: #e6e6e6;
+    border:2px solid #e6e6e6;
+}
+.productslist >div >img{
+    width:100%;
+}
+.productslist >div >p{
+    margin: 0px auto;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    padding: 0.5em 0em;
+    width:90%;
+    overflow: hidden;
+}
+.productslist >div >a{
+    display: block;
+    margin: 1em;
+    padding: 0.5em 1em;
+    background-color: #ff5000;
+    color: white;
+    text-decoration: none;
+}
+.pkeywords{
+    padding-left: 1em;
+}

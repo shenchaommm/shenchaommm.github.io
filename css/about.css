@@ -1,0 +1,18 @@
+.main{
+    overflow: hidden;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+.main >div>img{
+    width: 100%;
+}
+.maintxt{
+    padding: 3em 2em;
+}
+.list >div{
+    padding: 2em 1em 0em 1em;
+}
+a{
+    text-decoration: none;
+}

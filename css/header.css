@@ -1,0 +1,89 @@
+header{
+    widows: 100%;
+    height:54px;
+    overflow: hidden;
+    border-bottom: 1px solid rgb(240,240,240);
+}
+.header{
+    height:54px;
+    clear: both;
+}
+.manu_left{
+    display: block-inline;
+    float:left;
+}
+.manu_right{
+    display: block-inline;
+    float:right;
+}
+button.manu_button{
+    display: block-inline;
+    position: relative;
+    background: transparent;
+    border: 2px solid transparent;
+    outline: 1px solid transparent;
+    height:50px;
+    margin: 2px;
+    font-size: 20px;
+    vertical-align: bottom;
+    text-align: center;
+    width: 50px;
+}
+button.nav_button{
+    
+}
+.logo_middle{
+height:54px;
+padding-top:7px;
+width:120px;
+position: absolute;
+left: calc(50% - 60px);
+text-align: center;
+
+}
+ul.menulist{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top:54px;
+    left:0px;
+    width: 100%;
+    height: calc(100% - 54px);
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    overflow: auto;
+}
+ul.menulist li{
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #e6e6e6;
+    overflow: hidden;
+
+}
+ul.menulist li a{
+    display: block;
+    padding-left: 4em;
+    padding: 1em 0em 1em 2em;
+    color: black;
+    text-decoration-line: none;
+    text-decoration-color: black;
+}
+ul.menulistshow{
+    display:block;
+}
+.searchinput{
+    border-width:0px;
+    opacity: 0;
+    height:36px;
+    position: absolute;
+    right: 60px;
+    top:6px;
+    width: 0px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.searchinputshow{
+    width: calc(100% - 120px);
+    opacity: 1;
+    border-width:2px;
+}

@@ -1,0 +1,98 @@
+@font-face {
+  font-family: "iconfont";
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+      url('iconfont.woff2') format('woff2'),
+      url('iconfont.woff') format('woff'),
+      url('iconfont.ttf') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-close-circle:before {
+  content: "\e77d";
+}
+
+.icon-setting:before {
+  content: "\e78e";
+}
+
+.icon-appstore:before {
+  content: "\e792";
+}
+
+.icon-like:before {
+  content: "\e7c8";
+}
+
+.icon-heart:before {
+  content: "\e7df";
+}
+
+.icon-right:before {
+  content: "\e7eb";
+}
+
+.icon-left:before {
+  content: "\e7ec";
+}
+
+.icon-menu:before {
+  content: "\e7f4";
+}
+
+.icon-close:before {
+  content: "\e7fc";
+}
+
+.icon-alipay:before {
+  content: "\e87c";
+}
+
+.icon-taobao:before {
+  content: "\e87d";
+}
+
+.icon-zhihu:before {
+  content: "\e87e";
+}
+
+.icon-dingtalk:before {
+  content: "\e881";
+}
+
+.icon-QQ:before {
+  content: "\e882";
+}
+
+.icon-weibo:before {
+  content: "\e883";
+}
+
+.icon-wechat-fill:before {
+  content: "\e884";
+}
+
+.icon-aliwangwang-fill:before {
+  content: "\e885";
+}
+
+.icon-zoomout:before {
+  content: "\e897";
+}
+
+.icon-zoomin:before {
+  content: "\e898";
+}
+
+.icon-search:before {
+  content: "\e8ef";
+}
+
