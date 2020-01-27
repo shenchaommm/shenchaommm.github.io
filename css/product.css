@@ -1,0 +1,23 @@
+#productatt{
+    width:100%;
+}
+#productatt span{
+    color:#bbbbbb;
+    width:33%;
+    height:3em;
+    text-align: center;
+    line-height: 3em;
+    display: inline-block;
+}
+span.leftborder{
+    border-left: 1px #eeeeee solid;
+}
+span.topborder{
+    border-top:1px #eeeeee solid;
+}
+span.bottomborder{
+    border-bottom: 1px #eeeeee solid;
+}
+span.rightborder{
+    border-right:1px #eeeeee solid;
+}

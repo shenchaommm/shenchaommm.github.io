@@ -65,8 +65,8 @@ function closeMenu(){
     menuicon.setAttribute("data-menutype","menu");
     var menulist=document.getElementById("menulist");
     removeClass(menulist,"menulistshow");
-    document.documentElement.style.overflow='scroll';
-    document.body.style.overflow='scroll';
+    document.documentElement.style.overflow='auto';
+    document.body.style.overflow='auto';
 }
 function onkeyPress(e){
     var evt = window.event || e; 

@@ -13,6 +13,9 @@
 .list >div{
     padding: 2em 1em 0em 1em;
 }
+.list img{
+    max-width: 100%;
+}
 a{
     text-decoration: none;
 }

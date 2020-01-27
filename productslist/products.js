@@ -1,15 +1,17 @@
 function getProductsData(){
     var productsArray=[];
-    productsArray[0]=["591707103172","夏季薄款网眼宝宝棉袜婴儿中筒透气男童女童袜彩棉无骨儿童袜子",
-    "O1CN01DgnPwN1m4hevFuMr0","O1CN01Z3keuC1m4herzmqoa","O1CN01snR0ex1m4hesodXKo","O1CN01vERjhY1m4heh8hvZx","彩棉"];
-    productsArray[1]=["589403973487","夏季超薄天然有机彩棉宝宝袜子儿童新生婴儿袜无骨网眼透气短袜",
-    "O1CN01VU5fFm1m4hehuAMJl","O1CN01EMJibc1m4her3ThYe","O1CN01dczh7z1m4hehx7IgR","O1CN01LCypxZ1m4hduzBEWX","彩棉"];
-    productsArray[2]=["589938573629","夏季薄款网眼透气短袜天然有机彩棉新生婴儿宝宝船袜花边纯棉袜子",
-    "O1CN01CafofD1m4heitz8Jh","O1CN01LMYIk21m4herAocOE","O1CN01H7kAPD1m4hedS0ZEM","O1CN01HBO5Mx1m4heYtSWEk","彩棉"];
-    productsArray[3]=["590925473308","夏季薄款宝宝防蚊袜网眼透气新生儿长筒过膝超薄儿童彩棉婴儿袜",
-    "O1CN01scyeCj1m4hdvod1SO","O1CN01nUnF4B1m4he0Bew3B","O1CN01C190BA1m4hdFrpNM1","彩棉"];
-    productsArray[4]=["595180536672","夏季薄款新生儿宝宝短袜婴儿网眼袜全棉纯色松口透气无骨儿童袜子",
-    "O1CN01FDKjYQ1m4heQoslOv","O1CN01YVvN0b1m4heNrwRaW","O1CN01hMctag1m4hePxdLsj","O1CN01YT5bxS1m4heGnG8Wa","O1CN01cdrFV31m4heRHhHS1","精梳棉"];
+    productsArray[0]={id:"607508532845",
+        title:"创思照明国AA级智能调光LED护眼台灯显指Ra98专业读写台灯45分钟定时休息小夜灯",
+        img:["O1CN01JikepV2HXmwOCcufL","O1CN01zVWgAA2HXmvkWlN6a","O1CN012IiR7o2HXmvi6kxNQ","O1CN01Td8mg02HXmvm5DVx4"],
+        att:["国AA级","全光谱","Ra98","19W","SOFT柔光技术","小夜灯","智能感光","45定时休息"]};
+    productsArray[1]={id:"609852422088",
+        title:"创思照明国A级LED护眼台灯书桌小学生阅读学习儿童写字灯保视力折叠调光",
+        img:["O1CN01uWCXGb2HXmwUrn1mW","O1CN01msrwn12HXmw4GBDjW","O1CN01sMzfcs2HXmvuavs7e","O1CN01jXxlGW2HXmw2gvvwl"],
+        att:["国A级照度","全光谱","Ra97","9W","滑动调光","柔和自然光"]};
+    productsArray[2]={id:"611068352761",
+        title:"创思照明国AA级专业读写台灯学生书桌阅读护眼台灯儿童学习全光谱写字灯",
+        img:["O1CN018ZiCoH2HXmwOZdr46","O1CN01msrwn12HXmw4GBDjW","O1CN01sMzfcs2HXmvuavs7e","O1CN01jXxlGW2HXmw2gvvwl"],
+        att:["国AA级照度","全光谱","Ra95","13W","SOFT柔和自然光","三档调光","60s延迟关灯"]};
     return productsArray;
 }
 function getProductData(idn){
@@ -19,7 +21,7 @@ function getProductData(idn){
 
     var product=null;
     for(i=0;i<data.length;i++){
-        if(data[i][0]==idn) {
+        if(data[i].id==idn) {
             product=data[i];
             break;
         }
@@ -35,7 +37,7 @@ function getProductDataByKeywords(key){
     var products=[];
     for(i=0;i<data.length;i++){
         var m=0;
-        var datastr=data[i].join(" ");
+        var datastr=JSON.stringify(data[i]);
         for(j=0;j<keywords.length;j++){
             if(datastr.match(keywords[j])){
                 m++;
