@@ -32,16 +32,16 @@ function onMenuClick(){
         var menulist=document.getElementById("menulist");
         addClass(menulist,"menulistshow");
         
-        document.documentElement.style.overflow='hidden';
-        document.body.style.overflow='hidden';
+        //document.documentElement.style.overflow='hidden';
+        //document.body.style.overflow='hidden';
 
     }else if(type=="close"){
         menuicon.className="iconfont icon-menu";
         menuicon.setAttribute("data-menutype","menu");
         var menulist=document.getElementById("menulist");
         removeClass(menulist,"menulistshow");
-        document.documentElement.style.overflow='';
-        document.body.style.overflow='';
+        //document.documentElement.style.overflow='';
+        //document.body.style.overflow='';
     }else if(type=="search"){
         var searchinput=document.getElementById("searchinput");
         if(hasClass(searchinput,"searchinputshow")){
@@ -65,8 +65,8 @@ function closeMenu(){
     menuicon.setAttribute("data-menutype","menu");
     var menulist=document.getElementById("menulist");
     removeClass(menulist,"menulistshow");
-    document.documentElement.style.overflow='auto';
-    document.body.style.overflow='auto';
+    //document.documentElement.style.overflow='auto';
+    //document.body.style.overflow='auto';
 }
 function onkeyPress(e){
     var evt = window.event || e; 
