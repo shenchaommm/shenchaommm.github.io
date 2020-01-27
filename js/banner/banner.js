@@ -8,7 +8,7 @@ function initbanner(){
         var divimagediv=document.createElement("div");
         addClass(divimagediv,"bannerliimgdiv")
         var divimageimg=document.createElement("img");
-        divimageimg.src=data[i][2];
+        divimageimg.src="https://img.alicdn.com/imgextra/i1/2200740969161/"+data[i][2]+"_!!2200740969161.jpg";
         divimagediv.appendChild(divimageimg);
         li.appendChild(divimagediv);
         var divdiscript=document.createElement("div");
