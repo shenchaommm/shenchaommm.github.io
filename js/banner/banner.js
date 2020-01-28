@@ -32,17 +32,29 @@ function initbanner(){
 
 }
 function onDown(e){
-    mouseBX=e.clientX||e.touches[0].clientX;
-    mouseBY=e.clientY||e.touches[0].clientX;
-    this.addEventListener("mousemove",onMove,false);
-    this.addEventListener("mouseup",onEnd,false);
-    this.addEventListener("touchmove",onMove,false);
-    this.addEventListener("touchend",onEnd,false);
+    if(e.targetTouches){
+        mouseBX=e.targetTouches[0].clientX;
+        mouseBY=e.targetTouches[0].clientY;
+        this.addEventListener("touchmove",onMove,false);
+        this.addEventListener("touchend",onEnd,false);
+    }else{
+        mouseBX=e.clientX;
+        mouseBY=e.clientY;
+        this.addEventListener("mousemove",onMove,false);
+        this.addEventListener("mouseup",onEnd,false);
+    }
+    
+    
 }
 function onMove(e){
-    mouseMX=e.clientX||e.touches[0].clientX;
-    mouseMY=e.clientY||e.touches[0].clientX;
-    if(event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+    if(e.targetTouches){
+        mouseMX=e.targetTouches[0].clientX;
+        mouseMY=e.targetTouches[0].clientY;
+        if(event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
+    }else{
+        mouseMX=e.clientX;
+        mouseMY=e.clientY;
+    }
     var x=Math.abs(mouseBX-mouseMX);
     var y=Math.abs(mouseBY-mouseMY);
     if(x>y){
@@ -50,8 +62,13 @@ function onMove(e){
     }
 }
 function onEnd(e){
-    var x=e.clientX||e.touches[0].clientX;
-    var y=e.clientY||e.touches[0].clientX;
+    if(e.targetTouches){
+        x=e.targetTouches[0].clientX;
+        y=e.targetTouches[0].clientY;
+    }else{
+        x=e.clientX;
+        y=e.clientY;
+    }
     if(Math.abs(mouseBX-x)>Math.abs(mouseBY-y)){
         if(mouseBX>x){
             BannerSlide("f");
