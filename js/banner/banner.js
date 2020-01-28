@@ -48,7 +48,8 @@ function onDown(e){
 }
 function onMove(e){
     if(e.targetTouches){
-        alert(e.targetTouches);
+        //alert(e.targetTouches);
+        //alert(e.targetTouches[0].clientX);
         mouseMX=e.targetTouches[0].clientX;
         mouseMY=e.targetTouches[0].clientY;
         if(event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
@@ -64,8 +65,9 @@ function onMove(e){
 }
 function onEnd(e){
     if(e.targetTouches){
-        x=e.targetTouches[0].clientX;
-        y=e.targetTouches[0].clientY;
+        console.log(e);
+        x=e.changedTouches[0].clientX;
+        y=e.changedTouches[0].clientY;
     }else{
         x=e.clientX;
         y=e.clientY;
