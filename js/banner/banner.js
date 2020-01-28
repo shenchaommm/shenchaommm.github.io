@@ -48,6 +48,7 @@ function onDown(e){
 }
 function onMove(e){
     if(e.targetTouches){
+        alert(e.targetTouches);
         mouseMX=e.targetTouches[0].clientX;
         mouseMY=e.targetTouches[0].clientY;
         if(event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
