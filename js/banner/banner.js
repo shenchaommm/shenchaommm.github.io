@@ -50,8 +50,8 @@ function onMove(e){
     }
 }
 function onEnd(e){
-    var x=e.clientX;
-    var y=e.clientY;
+    var x=e.clientX||e.touches[0].clientX;
+    var y=e.clientY||e.touches[0].clientX;
     if(Math.abs(mouseBX-x)>Math.abs(mouseBY-y)){
         if(mouseBX>x){
             BannerSlide("f");
