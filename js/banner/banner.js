@@ -65,7 +65,6 @@ function onMove(e){
 }
 function onEnd(e){
     if(e.targetTouches){
-        console.log(e);
         x=e.changedTouches[0].clientX;
         y=e.changedTouches[0].clientY;
     }else{
