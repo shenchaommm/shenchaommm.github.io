@@ -2,6 +2,7 @@ addLoadEvent(initbanner);
 function initbanner(){
     var div=document.getElementById("banner2");
     div.addEventListener("mousedown",onDown,false);
+    div.addEventListener("touchstart",onDown,false);
     var div2=document.getElementById("bannerdot");
     var data=getbannercontent();
     for(i=0;i<data.length;i++){
@@ -31,14 +32,17 @@ function initbanner(){
 
 }
 function onDown(e){
-    mouseBX=e.clientX;
-    mouseBY=e.clientY;
+    mouseBX=e.clientX||e.touches[0].clientX;
+    mouseBY=e.clientY||e.touches[0].clientX;
     this.addEventListener("mousemove",onMove,false);
     this.addEventListener("mouseup",onEnd,false);
+    this.addEventListener("touchmove",onMove,false);
+    this.addEventListener("touchend",onEnd,false);
 }
 function onMove(e){
-    mouseMX=e.clientX;
-    mouseMY=e.clientY;
+    mouseMX=e.clientX||e.touches[0].clientX;
+    mouseMY=e.clientY||e.touches[0].clientX;
+    if(event.targetTouches.length > 1 || event.scale && event.scale !== 1) return;
     var x=Math.abs(mouseBX-mouseMX);
     var y=Math.abs(mouseBY-mouseMY);
     if(x>y){
@@ -57,6 +61,8 @@ function onEnd(e){
     }
     this.removeEventListener("mousemove",onMove);
     this.removeEventListener("mouseup",onEnd);
+    this.removeEventListener("touchmove",onMove);
+    this.removeEventListener("touchend",onEnd);
 }
 function onBannerClick(){
     var num=this.getAttribute("data-num");
