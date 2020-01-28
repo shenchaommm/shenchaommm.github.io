@@ -40,7 +40,7 @@ function initProduct(){
             var span=document.createElement("span");
             span.innerText=productdata["att"][i];
             productatt.appendChild(span);
-            if(i<productdata.att.length-parseInt(productdata.att.length/3)+1){
+            if(i<(Math.ceil(productdata.att.length/3)-1)*3){
                 addClass(span,"bottomborder");
             }
             if(i%3!=2){

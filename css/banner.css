@@ -1,10 +1,12 @@
 .banner{
     position: relative;
     width:100%;
+    overflow: hidden;
 }
 .banner1{
     height:100%;
     width:100%;
+    overflow: hidden;
 }
 button.banner_button{
     height:42px;

@@ -1,6 +1,7 @@
 addLoadEvent(initbanner);
 function initbanner(){
     var div=document.getElementById("banner2");
+    div.addEventListener("mousedown",onDown,false);
     var div2=document.getElementById("bannerdot");
     var data=getbannercontent();
     for(i=0;i<data.length;i++){
@@ -29,8 +30,40 @@ function initbanner(){
     document.getElementById("banner_right").addEventListener("click",onBannerClick,false);
 
 }
+function onDown(e){
+    mouseBX=e.clientX;
+    mouseBY=e.clientY;
+    this.addEventListener("mousemove",onMove,false);
+    this.addEventListener("mouseup",onEnd,false);
+}
+function onMove(e){
+    mouseMX=e.clientX;
+    mouseMY=e.clientY;
+    var x=Math.abs(mouseBX-mouseMX);
+    var y=Math.abs(mouseBY-mouseMY);
+    if(x>y){
+        e.preventDefault();
+    }
+}
+function onEnd(e){
+    var x=e.clientX;
+    var y=e.clientY;
+    if(Math.abs(mouseBX-x)>Math.abs(mouseBY-y)){
+        if(mouseBX>x){
+            BannerSlide("f");
+        }else{
+            BannerSlide("b");
+        }
+    }
+    this.removeEventListener("mousemove",onMove);
+    this.removeEventListener("mouseup",onEnd);
+}
 function onBannerClick(){
     var num=this.getAttribute("data-num");
+    BannerSlide(num);
+}
+function BannerSlide(a){
+    var num=a;
     var nowshow=document.getElementsByClassName("bannerdotshow")[0];
     var nownum=nowshow.getAttribute("data-num");
     if(num==nownum) return;
