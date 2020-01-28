@@ -40,7 +40,7 @@ function onDown(e){
     }else{
         mouseBX=e.clientX;
         mouseBY=e.clientY;
-        this.addEventListener("mousemove",onMove,false);
+        this.addEventListener("mousemove",onMove,{passive: false, capture: false});
         this.addEventListener("mouseup",onEnd,false);
     }
     
@@ -61,6 +61,8 @@ function onMove(e){
     var y=Math.abs(mouseBY-mouseMY);
     if(x>y){
         e.preventDefault();
+        //e.stopPropagation(); 
+        this.removeEventListener("touchmove",onMove);
     }
 }
 function onEnd(e){
