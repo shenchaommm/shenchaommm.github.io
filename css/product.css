@@ -16,12 +16,7 @@
         vertical-align: top;
         padding: 0em;
         width:50vw;
-        height:40vw;
         position: relative;
-    }
-    .productlink{
-       position: absolute;
-       bottom: 0px;
     }
 }
 @media screen and (orientation: portrait){
@@ -56,7 +51,7 @@
     margin-right: 0.5em;
 }
 .productatt{
-    padding-top: 2em;
+    padding-top: 1em;
     font-size:0.8em;
     width:100%;
 }
