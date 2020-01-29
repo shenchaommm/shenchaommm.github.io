@@ -5,22 +5,30 @@
     overflow-y: hidden;
 }
 .productimagebanner{
-    overflow:scroll;
     white-space: nowrap;
     left: 0vw;
-    width: 100vw;
     position: relative;
     list-style: none;
     padding: 0px;
     margin: 0px;
     transition: left 0.5s;
     -webkit-transition: left 0.5s;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
 }
+@supports (scroll-snap-type: x mandatory){
+
+    .productimagebanner{
+        overflow:scroll;
+        -webkit-overflow-scrolling: touch;
+        width: 100vw;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+    }
+    .productimagebanner li{
+        scroll-snap-stop: always;
+        scroll-snap-align: start;
+    }
+  }
 .productimagebanner li{
-    scroll-snap-stop: always;
-    scroll-snap-align: start;
     width:100vw;
     display: inline-block;
 }
