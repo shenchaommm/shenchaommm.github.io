@@ -62,7 +62,6 @@ function onMove(e){
     if(x>y){
         e.preventDefault();
         //e.stopPropagation(); 
-        this.removeEventListener("touchmove",onMove);
     }
 }
 function onEnd(e){

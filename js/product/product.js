@@ -16,7 +16,7 @@ function initProduct(){
     var tblink="https://item.taobao.com/item.htm?id="+productdata.id;
     document.getElementById("productimageleft").addEventListener("click",onimagebannershow,false);
     document.getElementById("productimageright").addEventListener("click",onimagebannershow,false);
-    productimagebanner.style.width=(productdata.img.length)*100+"vw";
+    //productimagebanner.style.width=(productdata.img.length)*100+"vw";
     for(i=0;i<productdata.img.length;i++){
         var tblinkimg="https://img.alicdn.com/imgextra/i1/2200740969161/"+productdata["img"][i]+"_!!2200740969161.jpg";
         var img=document.createElement("img");
@@ -31,7 +31,7 @@ function initProduct(){
         }
         span.setAttribute("data-num",i);
         span.addEventListener("click",onimagebannershow,false);
-        productimagespan.appendChild(span);
+        //productimagespan.appendChild(span);
     }
     var p=document.getElementById("producttitle");
     p.innerText=productdata.title;
@@ -53,26 +53,27 @@ function initProduct(){
 }
 function onimagebannershow(){
     var num=this.getAttribute("data-num");
-    var nowshow=document.getElementsByClassName("imagebannerdotshow")[0];
-    var nownum=nowshow.getAttribute("data-num");
-    if(num==nownum) return;
-    nowshow.className="";
-    var span=document.getElementById("productimagespan").getElementsByTagName("span");
+    //var nowshow=document.getElementsByClassName("imagebannerdotshow")[0];
+    //var nownum=nowshow.getAttribute("data-num");
+    //if(num==nownum) return;
+    //nowshow.className="";
     var ul=document.getElementById("productimagebanner");
-
-    var direction="b";
+    var li=ul.getElementsByTagName("li");
+    //var direction="b";
+    var nownum=0;
     if(num=="b"){
-        nownum--;
-        if(nownum<0) nownum=span.length-1;
+        nownum=ul.scrollLeft-ul.clientWidth;
+        if(nownum<0) nownum=(li.length-1)*ul.clientWidth;
     }
     else if(num=="f"){
-        direction="f"
-        nownum++;
-        if(nownum>span.length-1)nownum=0;
+        //direction="f"
+        nownum=ul.scrollLeft+ul.clientWidth;
+        if(nownum>(li.length-1)*ul.clientWidth)nownum=0;
     }else{
-        if(nownum<num) direction="f";
-        nownum=num;
+        //if(nownum<num) direction="f";
+        //nownum=num;
     }
-    ul.style.left="-"+nownum*100+"vw";
-    span[nownum].className="imagebannerdotshow";
+    //alert(nownum);
+    ul.scrollLeft=nownum;
+    //span[nownum].className="imagebannerdotshow";
 }
