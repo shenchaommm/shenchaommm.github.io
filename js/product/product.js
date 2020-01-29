@@ -86,7 +86,8 @@ function onimagebannershow(){
         //nownum=num;
     }
     //alert(nownum);
-    ul.scrollLeft=nownum;
+    $(ul).stop().animate({scrollLeft:nownum},300,"linear");
+    //ul.scrollLeft=nownum;
     //span[nownum].className="imagebannerdotshow";
 }
 function onimagebannershow1(){
