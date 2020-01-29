@@ -1,7 +1,66 @@
-#productatt{
+@media screen and (orientation: landscape){
+    .product{
+        white-space: nowrap;
+        overflow: hidden;
+        padding-top: 5vw;
+        padding-bottom: 5vw;
+    }
+    .productimage{
+        margin-left: 5vw;
+        display: inline-block;
+        vertical-align: top;
+        width:40vw;
+    }
+    .productstitle{
+        display: inline-block;
+        vertical-align: top;
+        padding: 0em;
+        width:50vw;
+        height:40vw;
+        position: relative;
+    }
+    .productlink{
+       position: absolute;
+       bottom: 0px;
+    }
+}
+@media screen and (orientation: portrait){
+    .productimage{
+        width:100vw;
+    }
+    .productstitle{
+        padding: 1em;
+    }
+}
+.product{
+    white-space: nowrap;
+    overflow: hidden;
+}
+.product div {
+    white-space: normal;
+}
+#producttitle{
+    font-size:1.2em;
+}
+.productlink{
+    width: 100%;
+    display: block;
+    padding: 1em 0em;
+    background-color: #ff5000;
+    text-align: center;
+    color: white;
+}
+.icontb{
+    color: white;
+    background-color: #ff5000;
+    margin-right: 0.5em;
+}
+.productatt{
+    padding-top: 2em;
+    font-size:0.8em;
     width:100%;
 }
-#productatt span{
+.productatt span{
     color:#bbbbbb;
     width:33%;
     height:3em;

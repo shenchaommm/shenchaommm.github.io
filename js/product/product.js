@@ -17,7 +17,6 @@ function initProduct(){
     var support=1;
     if(!CSS.supports("(scroll-snap-type: x mandatory)")){
         support=0;
-        productimagebanner.style.width=(productdata.img.length)*100+"vw";
         document.getElementById("productimageleft").addEventListener("click",onimagebannershow1,false);
         document.getElementById("productimageright").addEventListener("click",onimagebannershow1,false);
     }
@@ -75,7 +74,7 @@ function onimagebannershow(){
     var nownum=0;
     if(num=="b"){
         nownum=ul.scrollLeft-ul.clientWidth;
-        if(nownum<0) nownum=(li.length-1)*ul.clientWidth;
+        if(nownum<-5) nownum=(li.length-1)*ul.clientWidth;
     }
     else if(num=="f"){
         //direction="f"
@@ -98,7 +97,7 @@ function onimagebannershow1(){
     nowshow.className="";
     var span=document.getElementById("productimagespan").getElementsByTagName("span");
     var ul=document.getElementById("productimagebanner");
-
+    var width=ul.clientWidth;
     var direction="b";
     if(num=="b"){
         nownum--;
@@ -112,6 +111,6 @@ function onimagebannershow1(){
         if(nownum<num) direction="f";
         nownum=num;
     }
-    ul.style.left="-"+nownum*100+"vw";
+    ul.style.left="-"+nownum*100+"%";
     span[nownum].className="imagebannerdotshow";
 }

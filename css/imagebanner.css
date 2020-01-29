@@ -1,12 +1,12 @@
 .productimage{
-    width:100%;
+    /*width:100%*/
     position: relative;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 .productimagebanner{
     white-space: nowrap;
     left: 0vw;
+    width:100%;
     position: relative;
     list-style: none;
     padding: 0px;
@@ -17,9 +17,8 @@
 @supports (scroll-snap-type: x mandatory){
 
     .productimagebanner{
-        overflow:scroll;
+        overflow-x:scroll;
         -webkit-overflow-scrolling: touch;
-        width: 100vw;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
     }
@@ -29,7 +28,7 @@
     }
   }
 .productimagebanner li{
-    width:100vw;
+    width:100%;
     display: inline-block;
 }
 .productimagebanner li img{
@@ -80,20 +79,4 @@
     background-color: black;
 }
 
-.productstitle{
-    padding: 1em;
-}
-.productlink{
-    width: 100%;
-    display: block;
-    padding: 1em 0em;
-    background-color: #ff5000;
-    text-align: center;
-    color: white;
-    position: relative;
-}
-.icontb{
-    color: white;
-    background-color: #ff5000;
-    margin-right: 0.5em;
-}
+
