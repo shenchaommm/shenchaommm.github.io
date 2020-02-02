@@ -2,26 +2,26 @@
     .product{
         white-space: nowrap;
         overflow: hidden;
-        padding-top: 5vw;
-        padding-bottom: 5vw;
+        padding-top: 5%;
+        padding-bottom: 5%;
     }
     .productimage{
-        margin-left: 5vw;
+        margin-left: 5%;
         display: inline-block;
         vertical-align: top;
-        width:40vw;
+        width:40%;
     }
     .productstitle{
         display: inline-block;
         vertical-align: top;
         padding: 0em;
-        width:50vw;
+        width:50%;
         position: relative;
     }
 }
 @media screen and (orientation: portrait){
     .productimage{
-        width:100vw;
+        width:100%;
     }
     .productstitle{
         padding: 1em;

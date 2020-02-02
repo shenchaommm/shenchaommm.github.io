@@ -82,14 +82,14 @@ ul.banner2>li.bannershow{
         vertical-align: top;
         display:inline-block;
         width: 60%;
-        height:36vw;
+        height:auto;
     }
     .bannerlidiscript{
         vertical-align: top;
         display:inline-block;
         width:40%;
-        top: 10vw;
-        height:26vw;
+        padding-top: 10%;
+        height:auto;
     }
 }
 @media screen and (orientation: portrait){
@@ -101,7 +101,6 @@ ul.banner2>li.bannershow{
         position: relative;
         padding: 30px 0px 60px 0px;
         text-align: center;
-        
     }
 }
 .bannerliimgdiv{

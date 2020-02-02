@@ -34,10 +34,10 @@ a{
 
     }
     .mainimg{
-        width:60vw;
+        width:60%;
     }
     .maintxt{
-        width:40vw;
+        width:40%;
         padding:3em 0em;
     }
     .maintxt > p{
@@ -50,11 +50,11 @@ a{
     .list >div{
         vertical-align: top;
         display: inline-block;
-        width:30vw;
+        width:30%;
         white-space: normal;
         padding-bottom: 2em 0em;
-        margin-left:10vw;
-        margin-right: 10vw;
+        margin-left:10%;
+        margin-right: 10%;
 
     }
     .aboutcontant >div{
