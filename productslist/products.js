@@ -30,6 +30,12 @@ function getProductData(idn){
 
 }
 function getProductDataByKeywords(key){
+    if(!key) key="所有产品";
+    var productslistData;
+    if(key=="所有产品"||key=="创思照明"||key=="Chance"||key=="创思"){
+        return getProductsData();
+    }else{
+        
     var keywords=key.split(" ");
     var data=getProductsData();
     if(!data) return null;
@@ -39,7 +45,8 @@ function getProductDataByKeywords(key){
         var m=0;
         var datastr=JSON.stringify(data[i]);
         for(j=0;j<keywords.length;j++){
-            if(datastr.match(keywords[j])){
+            
+            if(datastr.match(eval("/"+keywords[j]+"/i"))){
                 m++;
             }else{
                 break;
@@ -51,5 +58,5 @@ function getProductDataByKeywords(key){
     }
     if(products.length==0)return false;
     return products;
-
+    }
 }

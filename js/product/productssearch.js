@@ -1,23 +1,17 @@
 function productsSearch(keywords,num){
-    if(!keywords) keywords="所有产品";
-    var productslistData;
-    if(keywords=="所有产品"||keywords=="创思照明"||keywords=="Chance"||keywords=="创思"){
-        productslistData=getProductsData();
-    }else{
-        productslistData=getProductDataByKeywords(keywords);
-    }
-    
+    var productslistData=getProductDataByKeywords(keywords);
     if(!productslistData) {
         return false;
     }
     if(!Array.isArray(productslistData)) {
         return false;
     }
-    if(productslistData.length>num & num>0){
-        productslistData.length=num;
-    }
     var productslist=document.getElementById("productslist");
-    for(i=0;i<productslistData.length;i++){
+    var l=productslistData.length;
+    if(l>num && num>0){
+        l=num;
+    }
+    for(i=0;i<l;i++){
         //if(!Array.isArray(productslistData[i])) continue;
         //if(productslistData[i].length<3) continue;
         var productdiv=document.createElement("div");
@@ -33,5 +27,15 @@ function productsSearch(keywords,num){
         productdiv.appendChild(productbutton);
         productslist.appendChild(productdiv);
     }
+    if(productslistData.length>num && num>0){
+        var div=document.createElement("div");
+        var a=document.createElement("a");
+        a.href="productslist.html?keywords="+keywords;
+        a.innerHTML="<p><span class='iconfont icon-right'></span></p>查看更多";
+        div.appendChild(a);
+        div.className="searchmoreproducts";
+        productslist.appendChild(div);
+    }
+
     return true;
 }
