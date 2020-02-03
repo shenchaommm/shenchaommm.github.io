@@ -1,18 +1,5 @@
 addLoadEvent(initbanner);
 function initbanner(){
-    var fs=require("fs");
-    var path = require('path');
-    var commonfilenum=0;
-    fs.readdir('./js/common', function (error, files) {
-        if (err) {
-            return console.error(err);
-        }
-        files.forEach( function (file){
-            commonfilenum++;
-            console.log( file );
-            alert(commonfilenum);
-        });
-    });
     var div=document.getElementById("banner2");
     div.addEventListener("mousedown",onDown,false);
     div.addEventListener("touchstart",onDown,false);
