@@ -9,6 +9,15 @@ function getEventData(para,num){
         event:"k",
         top:"t"
     }
+    eventData[1]={
+        title:"您的“护眼”灯真的护眼吗？",
+        sub:"#护眼知识#蓝光、色温、亮度是购买台灯时，要考量的指标。",
+        date:"2020.1.06",
+        surface:"",
+        link:"2",
+        event:"k",
+        top:"t"
+    }
     
     var eventsData=eventData.reverse();
     if(para=="s") return eventsData;

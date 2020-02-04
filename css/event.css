@@ -16,3 +16,7 @@
 .eventContant >p{
     text-indent:2em;
 }
+.eventContant >img{
+    width:100%;
+    margin-bottom: 0.5em;
+}

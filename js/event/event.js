@@ -18,9 +18,8 @@ function initEvent(){
             var c=contant.split("&#10");
             for(i=0;i<c.length;i++){
                 if(c[i].match("&#12")){
-                    c[i].replace("&#12","");
                     var img=document.createElement("img");
-                    img.src="https://img.alicdn.com/imgextra/i1/2200740969161/"+c[i]+"_!!2200740969161.jpg";
+                    img.src="https://img.alicdn.com/imgextra/i1/2200740969161/"+c[i].replace("&#12","")+"_!!2200740969161.jpg";
                     eventContant.appendChild(img);
                 }else{
                     var cp=document.createElement("p");
