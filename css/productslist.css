@@ -1,8 +1,9 @@
-.productslist{
+.productslist, .eventlist{
     width: 100%;
 }
-.productslist >div{
+.productslist >div,.eventlist >div{
     margin: 5px;
+    padding-bottom: 1em;
     display: inline-block;
     overflow: hidden;
     text-align: center;
@@ -28,16 +29,35 @@
     color: white;
     text-decoration: none;
 }
+.eventlist >div >h3{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.eventlist >div >p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-height: 1.1em;
+    max-height: 2.2em;
+}
+.eventlist >div >span{
+    margin-right: 2em;
+}
+.eventlist >div >a{
+    background-color: #333333;
+    color:white;
+    padding: 0.5em;
+}
 .pkeywords{
     padding-left: 1em;
 }
 @media screen and (orientation: landscape){
-    .productslist >div{
+    .productslist >div,.eventlist >div{
         width:calc(25% - 14px);
     }
 }
 @media screen and (orientation: portrait){
-    .productslist >div{
+    .productslist >div, .eventlist >div{
         width:calc(50% - 14px);
     }
 }

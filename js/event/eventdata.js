@@ -9,42 +9,7 @@ function getEventData(para,num){
         event:"k",
         top:"t"
     }
-    eventData[1]={
-        title:"",
-        sub:"",
-        date:"",
-        surface:"",
-        link:"",
-        event:"c",
-        top:"n"
-    }
-    eventData[2]={
-        title:"",
-        sub:"",
-        date:"",
-        surface:"",
-        link:"",
-        event:"c",
-        top:"n"
-    }
-    eventData[3]={
-        title:"",
-        sub:"",
-        date:"",
-        surface:"",
-        link:"",
-        event:"c",
-        top:"n"
-    }
-    eventData[4]={
-        title:"",
-        sub:"",
-        date:"",
-        surface:"",
-        link:"",
-        event:"c",
-        top:"n"
-    }
+    
     var eventsData=eventData.reverse();
     if(para=="s") return eventsData;
     var events=[];
