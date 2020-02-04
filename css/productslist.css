@@ -41,12 +41,17 @@
     max-height: 2.2em;
 }
 .eventlist >div >span{
-    margin-right: 2em;
+    padding: 0.5em;
+    float: left;
+    vertical-align: middle;
 }
 .eventlist >div >a{
+    float: right;
     background-color: #333333;
     color:white;
     padding: 0.5em;
+    margin-right: 1em;
+    vertical-align: middle;
 }
 .pkeywords{
     padding-left: 1em;

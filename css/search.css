@@ -1,9 +1,14 @@
-div.searchresult >div >div{
+div.productslist >div,div.eventlist >div{
     width: calc(25% - 14px);
     max-width: 350px;
 }
 @media screen and (max-width:800px){
-    div.productslist >div,div.eventlist >div{
+    div.productslist >div{
+        width: calc(25% - 14px);
+        max-width: 350px;
+        font-size: 0.5em;
+    }
+    div.eventlist >div{
         width: calc(25% - 14px);
         max-width: 350px;
         font-size: 0.5em;
