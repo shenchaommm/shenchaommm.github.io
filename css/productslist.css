@@ -3,7 +3,6 @@
 }
 .productslist >div,.eventlist >div{
     margin: 5px;
-    padding-bottom: 1em;
     display: inline-block;
     overflow: hidden;
     text-align: center;
@@ -41,17 +40,16 @@
     max-height: 2.2em;
 }
 .eventlist >div >span{
-    padding: 0.5em;
-    float: left;
-    vertical-align: middle;
+    color: #999999;
+    padding: 0em 1em 1em 1em;
+    display: block;
+    text-align: left;
 }
 .eventlist >div >a{
-    float: right;
+    display: block;
     background-color: #333333;
     color:white;
     padding: 0.5em;
-    margin-right: 1em;
-    vertical-align: middle;
 }
 .pkeywords{
     padding-left: 1em;
