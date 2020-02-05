@@ -7,9 +7,10 @@
     width:100%;
 }
 .hotproductslist>div{
+    width:calc(25% - 12px);
     display: inline-block;
     vertical-align: top;
-    margin:12px 6px;
+    margin:12px 5px;
     position: relative;
 }
 .hotproductslist>div>div{
@@ -17,7 +18,7 @@
     width:100%;
     padding: 0em 0em 1em 0em;
     bottom: 0px;
-    background-color: RGBA(255,255,255,0.85);
+    background-color: RGBA(255,255,255,0.95);
     max-height: 100%;
 }
 .hotproductslist>div>div >*{
@@ -29,13 +30,15 @@
     width:100%;
     
 }
-@media screen and (orientation: landscape){
-    .hotproductslist>div{
-        width:calc(25% - 12px);
+@media screen and (max-width: 520px){
+    div.hotproductslist>div{
+        width:80%;
+        margin:24px 10% 24px 10%;
     }
 }
-@media screen and (orientation: portrait){
-    .hotproductslist>div{
-        width:calc(50% - 12px);
+@media screen and (min-width: 521px) and (max-width: 1060px){
+    div.hotproductslist>div{
+        width:calc(50% - 24px);
+        margin:24px 12px;
     }
 }

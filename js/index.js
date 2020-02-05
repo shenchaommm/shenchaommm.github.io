@@ -2,7 +2,8 @@ addLoadEvent(initIndex);
 function initIndex(){
         loadJS("productslist/products.js",inithotproduct);
         loadCSS("css/hotproduct.css");
-    
+        loadJS("js/event/eventdata.js",initeventlist);
+        loadCSS("css/eventlist.css");
         //for(i=0;i<4;i++){
             //alert(hp[i]);
             //var productdata=getProductData(hp[i]);
@@ -31,9 +32,7 @@ function inithotproduct(){
     hp=gethotcontent();
     if(!hp) return;
     var hpdiv=document.getElementById("hotproductslist");
-    console.log(hp);
     var productdata=getProductData(hp);
-    console.log(productdata);
     if(productdata||productdata.length>0){
         for(i=0;i<productdata.length;i++){
             var div=document.createElement("div");
@@ -53,6 +52,41 @@ function inithotproduct(){
             div1.appendChild(a);
             div.appendChild(div1);
             hpdiv.appendChild(div);
+        }
+    }
+}
+function initeventlist(){
+    var para=["c","k"];
+    var events=[];
+    events=getEventData(para,5);
+    if(!events) return;
+    var eventdiv=[]
+    eventdiv[0]=document.getElementById("ceventlist");
+    eventdiv[1]=document.getElementById("keventlist");
+    if(Array.isArray(events)){
+        console.log(events);
+        for(i=0;i<events.length;i++){
+            if(Array.isArray(events[i])){
+                for(j=0;j<events[i].length;j++){
+                    var div=document.createElement("div");
+                    var a=document.createElement("a");
+                    a.href="event.html?id="+events[i][j].link;
+                    a.className="a";
+                    var h=document.createElement("h3");
+                    h.innerText=events[i][j].title;
+                    var span=document.createElement("span");
+                    span.innerText=events[i][j].date;
+                    var p=document.createElement("p");
+                    p.innerText=events[i][j].sub;
+                    
+                    div.appendChild(a);
+                    a.appendChild(h);
+                    a.appendChild(span);
+                    a.appendChild(p);
+
+                    eventdiv[i].appendChild(div);
+                }
+            }
         }
     }
 }
