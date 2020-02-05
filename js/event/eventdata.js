@@ -22,22 +22,21 @@ function getEventData(para,num){
     var eventsData=eventData.reverse();
     if(para=="s") return eventsData;
     var events=[];
-    if(num>eventsData.length||num==0) return eventsData;
+    //if(num>eventsData.length||num==0) return eventsData;
     if(para=="a"){
         events=eventsData;
     }else if(isNaN(para)){
         for(i=0;i<eventsData.length;i++){
+            if (events.length>num) break;
             if(eventsData[i].event==para||eventsData[i].top==para){
                 events.push(eventsData[i]);
             }else if(para==eventsData[i].event+eventsData[i].top){
                 events.push(eventsData[i]);
-            }else{
-                events=eventsData;
             }
         }
 
     }
-    if(events.length<=num){
+    if(events.length<=num||num==0){
         return events;
     }else{
         return events.slice(0,num);

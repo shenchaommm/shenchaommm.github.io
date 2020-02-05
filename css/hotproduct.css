@@ -1,0 +1,41 @@
+.hotproducts{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    width:100%;
+}
+.hotproductslist{
+    width:100%;
+}
+.hotproductslist>div{
+    display: inline-block;
+    vertical-align: top;
+    margin:12px 6px;
+    position: relative;
+}
+.hotproductslist>div>div{
+    position: absolute;
+    width:100%;
+    padding: 0em 0em 1em 0em;
+    bottom: 0px;
+    background-color: RGBA(255,255,255,0.85);
+    max-height: 100%;
+}
+.hotproductslist>div>div >*{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.hotproductslist>div>img{
+    width:100%;
+    
+}
+@media screen and (orientation: landscape){
+    .hotproductslist>div{
+        width:calc(25% - 12px);
+    }
+}
+@media screen and (orientation: portrait){
+    .hotproductslist>div{
+        width:calc(50% - 12px);
+    }
+}

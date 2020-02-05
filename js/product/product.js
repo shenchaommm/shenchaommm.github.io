@@ -3,7 +3,8 @@ function initProduct(){
     var id=getQueryVariable("id");
     
     if(!id) return;
-    var productdata=getProductData(id);
+    var temp=getProductData(id);
+    var productdata=temp[0];
     if(!productdata) return;
     //if(!Array.isArray(productdata)) return;
     //if(productdata.length<3) return;
