@@ -9,7 +9,7 @@
     color:#dddddd;
 }
 .eventContant{
-    padding: 0 1em;
+    padding: 0em 1em 1em 1em;
     max-width:600px;
     margin: auto;
 }
@@ -17,6 +17,8 @@
     text-indent:2em;
 }
 .eventContant >img{
-    width:100%;
-    margin-bottom: 0.5em;
+    text-align: center;
+    max-width:100%;
+    margin: 0 auto 1em auto;
+    display: block;
 }

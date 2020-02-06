@@ -1,11 +1,10 @@
 header{
     widows: 100%;
     height:54px;
-    overflow: visible;
+    overflow: hidden;
     border-bottom: 1px solid rgb(240,240,240);
 }
 .header{
-    position: relative;
     height:54px;
     clear: both;
 }
@@ -40,17 +39,21 @@ left: calc(50% - 80px);
 text-align: center;
 
 }
+.logo_middle img{
+    height:40px;
+}
 ul.menulist{
     display: none;
     z-index: 1;
     position: absolute;
     top:54px;
+    left: 0;
     width: 100%;
-    
     margin: auto;
     padding: 0px;
     list-style: none;
     overflow: auto;
+    background-color: #f6f6f6;
 }
 ul.menulist li{
     background-color: #f6f6f6;
@@ -68,6 +71,13 @@ ul.menulist li a{
 }
 ul.menulistshow{
     display:block;
+}
+.searchinputdiv{
+    position: relative;
+    width:100%;
+    height:0px;
+    overflow: visible;
+    z-index: 1;
 }
 .searchinput{
     border-width:0px;

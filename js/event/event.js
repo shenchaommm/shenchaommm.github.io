@@ -21,6 +21,10 @@ function initEvent(){
                     var img=document.createElement("img");
                     img.src="https://img.alicdn.com/imgextra/i1/2200740969161/"+c[i].replace("&#12","")+"_!!2200740969161.jpg";
                     eventContant.appendChild(img);
+                }else if(c[i].match("&#11")){
+                    var img=document.createElement("img");
+                    img.src=c[i].replace("&#11","");
+                    eventContant.appendChild(img);
                 }else{
                     var cp=document.createElement("p");
                     cp.innerText=c[i];
