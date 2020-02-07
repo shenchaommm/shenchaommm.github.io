@@ -6,15 +6,20 @@
 
 }
 .footermenu{
-    padding: 2em 1em;
+    padding: 1em 1em;
 }
-.footermenu>a{
+.footermenu>div{
+    display: inline-block;
+    margin-bottom: 1em;
+}
+.footermenu>div>a{
+    white-space: nowrap;
     margin: 0em 1em 0em 0em;
     padding: 0.5em 0.5em;
     color: black;
     text-decoration: none;
 }
-.footermenu>a img{
+.footermenu>div>a img{
     height:2em;
     vertical-align:middle;
 }
