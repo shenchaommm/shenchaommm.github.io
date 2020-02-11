@@ -45,6 +45,15 @@ function getEventData(para,num){
         event:"k",
         top:"t"
     }
+    eventData[5]={
+        title:"2020年春节上班说明",
+        sub:"因疫情影响，2020年节后上班作如下调整",
+        date:"2020.2.11",
+        surface:"",
+        link:"6",
+        event:"c",
+        top:"t"
+    }
     
     var eventsData=eventData.reverse();
     if(para=="s") return eventsData;

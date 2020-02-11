@@ -6,12 +6,12 @@ function getProductsData(){
         des:"给孩子一个明亮有趣保护视力的学习环境",
         img:["O1CN01JikepV2HXmwOCcufL","O1CN01zVWgAA2HXmvkWlN6a","O1CN012IiR7o2HXmvi6kxNQ","O1CN01Td8mg02HXmvm5DVx4"],
         att:["国AA级","全光谱","Ra98","19W","SOFT柔光技术","小夜灯","智能感光","45定时休息"]};
-    productsArray[3]={id:"607508532845",
-        title:"国AA级智能伴睡LED护眼台灯显指Ra98专业读写台灯45分钟定时休息小夜灯",
-        model:"高品质国AA级",
-        des:"可以伴您入睡的专业级阅读写字台灯",
-        img:["O1CN01JikepV2HXmwOCcufL","O1CN01zVWgAA2HXmvkWlN6a","O1CN012IiR7o2HXmvi6kxNQ","O1CN01Td8mg02HXmvm5DVx4"],
-        att:["国AA级","全光谱","Ra98","19W","SOFT柔光技术","小夜灯","智能伴睡","45定时休息"]};
+    productsArray[3]={id:"612180362322",
+        title:"国AA级专业读写台灯LED护眼台灯定时蜂窝棱镜漫反射柔光儿童台灯",
+        model:"国AA级专利棱镜技术",
+        des:"柔光新体验 专为学生设计",
+        img:["O1CN01I0D4FE2HXmwVjZ10g","O1CN01OXdlwr2HXmwZu2h3X","O1CN01yegxYk2HXmwVtXmYc","O1CN019v4OB82HXmwXjHXNa"],
+        att:["国AA级","全光谱","Ra98","13W","SOFT柔光技术","棱镜技术","60s延迟关灯","45定时休息"]};
     productsArray[1]={id:"609852422088",
         title:"创思照明国A级LED护眼台灯书桌小学生阅读学习儿童写字灯保视力折叠调光",
         model:"高色显读写台灯",
@@ -23,7 +23,7 @@ function getProductsData(){
         model:"AA级入门",
         des:"身体虽小但能量巨大",
         img:["O1CN018ZiCoH2HXmwOZdr46","O1CN01msrwn12HXmw4GBDjW","O1CN01sMzfcs2HXmvuavs7e","O1CN01jXxlGW2HXmw2gvvwl"],
-        att:["国AA级照度","全光谱","Ra95","13W","SOFT柔和自然光","三档调光","60s延迟关灯"]};
+        att:["国AA级照度","全光谱","Ra95","13W","SOFT柔光技术","三档调光","60s延迟关灯"]};
     return productsArray;
 }
 function getProductData(idn){
