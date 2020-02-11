@@ -5,11 +5,3 @@ function getbannercontent(){
     temp[2]=["专业读写台灯推荐","性价比之王，学霸之选","O1CN01KYW8bY2HXmwTkQyZq","立即查看","productslist.html?keywords=国AA级"];
     return temp;
 }
-function gethotcontent(){
-    var temp=[];
-    temp[0]="609852422088";
-    temp[1]="611068352761";
-    temp[2]="607508532845";
-    temp[3]="607508532845";
-    return temp;
-}

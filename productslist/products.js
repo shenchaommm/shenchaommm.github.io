@@ -26,6 +26,14 @@ function getProductsData(){
         att:["国AA级照度","全光谱","Ra95","13W","SOFT柔光技术","三档调光","60s延迟关灯"]};
     return productsArray;
 }
+function gethotcontent(){
+    var temp=[];
+    temp[0]="609852422088";
+    temp[1]="611068352761";
+    temp[2]="607508532845";
+    temp[3]="612180362322";
+    return temp;
+}
 function getProductData(idn){
     var data=getProductsData();
     var id=idn;
