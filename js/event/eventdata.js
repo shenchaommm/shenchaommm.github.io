@@ -54,6 +54,15 @@ function getEventData(para,num){
         event:"c",
         top:"t"
     }
+    eventData[6]={
+        title:"#护眼知识#LED台灯护眼么 几瓦合适",
+        sub:"#护眼知识#LED台灯优缺点分析，帮助你更好的了解您的台灯。",
+        date:"2020.2.13",
+        surface:"",
+        link:"7",
+        event:"k",
+        top:"t"
+    }
     
     var eventsData=eventData.reverse();
     if(para=="s") return eventsData;
