@@ -28,7 +28,7 @@ function getProductsData(){
         title:"国双A级专业读写台灯滑动调光触摸调色无线充电学习工作书桌台灯",
         model:"AA级高颜值",
         des:"无线充电调光调色高颜值高性能",
-        img:["O1CN01sJfxgz2HXmwZjGIH4","O1CN01pF5i0c2HXmwY1I6U8","O1CN01CSKchp2HXmwb3pUx5","O1CN01W51IMy2HXmwZX55jT","O1CN011VdJUR2HXmwXWpTRD"],
+        img:["O1CN01sJfxgz2HXmwZjGIH4","O1CN01pF5i0c2HXmwY1I6U8","O1CN01CSKchp2HXmwb3pUx5","O1CN01W51IMy2HXmwZX55jT","O1CN011VdJUR2HXmwXWpTRD","O1CN01yKzMVZ2HXmwQIVWhk"],
         att:["国AA级照度","全光谱","15W","可视化触控","SOFT柔光技术","滑动调光","护眼模式","USB&无线充电","定时休息"]};
     return productsArray;
 }
