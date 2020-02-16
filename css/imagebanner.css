@@ -30,6 +30,7 @@
 .productimagebanner li{
     width:100%;
     display: inline-block;
+    vertical-align: middle;
 }
 .productimagebanner li img{
     width:100%;
