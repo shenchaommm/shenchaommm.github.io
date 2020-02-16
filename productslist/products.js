@@ -24,6 +24,12 @@ function getProductsData(){
         des:"身体虽小但能量巨大",
         img:["O1CN018ZiCoH2HXmwOZdr46","O1CN01msrwn12HXmw4GBDjW","O1CN01sMzfcs2HXmvuavs7e","O1CN01jXxlGW2HXmw2gvvwl"],
         att:["国AA级照度","全光谱","Ra95","13W","SOFT柔光技术","三档调光","60s延迟关灯"]};
+    productsArray[4]={id:"612108237498",
+        title:"国双A级专业读写台灯滑动调光触摸调色无线充电学习工作书桌台灯",
+        model:"AA级高颜值",
+        des:"无线充电调光调色高颜值高性能",
+        img:["O1CN01sJfxgz2HXmwZjGIH4","O1CN01pF5i0c2HXmwY1I6U8","O1CN01CSKchp2HXmwb3pUx5","O1CN01W51IMy2HXmwZX55jT","O1CN011VdJUR2HXmwXWpTRD"],
+        att:["国AA级照度","全光谱","15W","可视化触控","SOFT柔光技术","滑动调光","护眼模式","USB&无线充电","定时休息"]};
     return productsArray;
 }
 function gethotcontent(){
