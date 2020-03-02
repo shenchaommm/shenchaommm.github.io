@@ -58,7 +58,7 @@ function inithotproduct(){
 function initeventlist(){
     var para=["c","k"];
     var events=[];
-    events=getEventData(para,5);
+    events=getEventData(para,3);
     if(!events) return;
     var eventdiv=[]
     eventdiv[0]=document.getElementById("ceventlist");

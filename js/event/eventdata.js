@@ -63,6 +63,24 @@ function getEventData(para,num){
         event:"k",
         top:"t"
     }
+    eventData[7]={
+        title:"#护眼知识#儿童爱眼护眼小知识之食物篇",
+        sub:"我们日常的饮食中，一些蔬菜对眼睛以致其他生理机能的保养都有很大的益处。",
+        date:"2020.3.2",
+        surface:"",
+        link:"8",
+        event:"k",
+        top:"t"
+    }
+    eventData[8]={
+        title:"全面复工通知",
+        sub:"因疫情影响，做好防疫工作的同时，我们已经全面复工，欢迎新老朋友莅临。",
+        date:"2020.3.2",
+        surface:"",
+        link:"9",
+        event:"c",
+        top:"t"
+    }
     
     var eventsData=eventData.reverse();
     if(para=="s") return eventsData;
@@ -82,7 +100,6 @@ function getEventData(para,num){
         }
 
     }
-    console.log(events);
     if(events.length<=num||num==0){
         return events;
     }else{
@@ -94,9 +111,9 @@ function getEventData(para,num){
         }
         var l=0;
         for(i=0;i<eventsData.length;i++){
-            if(l>para.length*num && num>0) break;
+            if(l>=para.length*num && num>0) break;
             for(j=0;j<para.length;j++){
-                if (events[j].length>num && num>0) break;
+                if (events[j].length>=num && num>0) break;
                 if(eventsData[i].event==para[j]||eventsData[i].top==para[j]){
                     events[j].push(eventsData[i]);
                     l++;
