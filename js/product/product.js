@@ -14,6 +14,8 @@ function initProduct(){
     var productimagespan=document.getElementById("productimagespan");
     var productlink=document.getElementById("productlink");
     var productatt=document.getElementById("productatt");
+    var productsp=document.getElementById("productsp");
+    var productdes=document.getElementById("productdes");
     var tblink="https://item.taobao.com/item.htm?id="+productdata.id;
     var support=1;
     if(!CSS.supports("(scroll-snap-type: x mandatory)")){
@@ -52,14 +54,33 @@ function initProduct(){
             var span=document.createElement("span");
             span.innerText=productdata["att"][i];
             productatt.appendChild(span);
-            if(i<(Math.ceil(productdata.att.length/3)-1)*3){
-                addClass(span,"bottomborder");
-            }
-            if(i%3!=2){
-                addClass(span,"rightborder");
+        }
+    }
+    if(productdata.spe!=null && productdata.spe.length>0){
+        var divsp1=document.createElement("div");
+        var divsp2=document.createElement("div");
+        productsp.appendChild(divsp1);
+        productsp.appendChild(divsp2);
+        for(i=0;i<productdata.spe.length;i++){
+            
+            var span=document.createElement("p");
+            span.innerText=productdata["spe"][i];
+            if(i%2==0){
+                divsp1.appendChild(span);
+            }else{
+                divsp2.appendChild(span);
             }
         }
-    } 
+    }
+    if(productdata.text!=null && productdata.text.length>0){
+        var div=document.createElement("div");
+        productdes.appendChild(div);
+        for(i=0;i<productdata.text.length;i++){
+            var span=document.createElement("p");
+            span.innerText=productdata["text"][i];
+            div.appendChild(span);
+        }
+    }
     productlink.href=tblink;
 
 }

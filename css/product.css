@@ -1,23 +1,34 @@
 @media screen and (orientation: landscape){
     .product{
-        white-space: nowrap;
         overflow: hidden;
-        padding-top: 5%;
-        padding-bottom: 5%;
+        margin-top: 5%;
+    }
+    .product > div{
+        
+        vertical-align: top;
     }
     .productimage{
-        margin-left: 5%;
         display: inline-block;
-        vertical-align: top;
+        margin-left: 5%;
         width:40%;
     }
     .productstitle{
-        display: inline-block;
-        vertical-align: top;
-        padding: 0em;
-        width:50%;
+        margin-right: 2%;
+        padding: 0em 2em;
+        width:calc(50% - 4em);
+        height:100%;
         position: relative;
+        float:right;
     }
+    .productdes{
+        margin-left: 5%;
+        width:calc(40% - 2em);
+        margin-top: 5%;
+    }
+    .productsp >div{
+        display: inline-block;
+    }
+
 }
 @media screen and (orientation: portrait){
     .productimage{
@@ -28,14 +39,13 @@
     }
 }
 .product{
-    white-space: nowrap;
-    overflow: hidden;
+    margin-bottom: 2em;
 }
 .product div {
     white-space: normal;
 }
-#producttitle{
-    font-size:1.2em;
+.productstitle >*{
+    margin-bottom: 2em;
 }
 .productlink{
     width: 100%;
@@ -51,17 +61,40 @@
     margin-right: 0.5em;
 }
 .productatt{
-    padding-top: 1em;
-    font-size:0.8em;
+    padding-bottom: 2em;
+    font-size:0.5em;
     width:100%;
 }
 .productatt span{
-    color:#bbbbbb;
-    width:33%;
-    height:3em;
-    text-align: center;
-    line-height: 3em;
+    color:white;
+    background-color: #333333;
+    padding: 1em;
+    margin:0em 0.5em 1em 0.5em;
+    border-radius: 2em;
     display: inline-block;
+}
+.productsp >div{
+    margin-left: 2em;
+}
+.productserviceP{
+    padding-left: 3em;
+    color: #bbbbbb;
+    font-size: 0.75em;
+}
+.productdes{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.productdes>div{
+    padding-left: 2em;
+    padding-right: 2em;
+    text-indent:-1em;
+}
+.productitem > div{
+    color: #aaaaaa;
+}
+.productT{
+    border-bottom: 1px solid #333333;
 }
 span.leftborder{
     border-left: 1px #eeeeee solid;

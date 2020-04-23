@@ -12,20 +12,25 @@
     vertical-align: top;
     margin:12px 5px;
     position: relative;
+    background-color: #EEEEEE;
 }
 .hotproductslist>div>div{
-    position: absolute;
     width:100%;
-    padding: 0em 0em 1em 0em;
     bottom: 0px;
-    background-color: RGBA(255,255,255,0.95);
     max-height: 100%;
 }
-.hotproductslist>div>div >*{
-    padding-left: 1em;
-    padding-right: 1em;
+.hotproductslist>div>div>a >*{
+    margin-left: 1em;
+    margin-right: 1em;
 }
-
+.hotproductslist>div>div >a{
+    color: #333333;
+    width:100%;
+    height:100%;
+}
+.hotproductslist>div>div >a>span{
+    color: white;
+}
 .hotproductslist>div>img{
     width:100%;
     

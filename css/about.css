@@ -22,7 +22,18 @@
 }
 a{
     text-decoration: none;
+    font-weight: bold;
 }
+.list{
+    overflow: hidden;
+}
+.list >div{
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    padding: 2em 0em;
+}
+
 @media screen and (orientation: landscape){
     .main{
         white-space: nowrap;
@@ -43,26 +54,28 @@ a{
     .maintxt > p{
         padding:2em;
     }
-    .list{
-        overflow: hidden;
-        white-space: nowrap;
-    }
-    .list >div{
-        vertical-align: top;
-        display: inline-block;
-        width:30%;
-        white-space: normal;
-        padding-bottom: 2em 0em;
-        margin-left:10%;
-        margin-right: 10%;
-
-    }
     .aboutcontant >div{
         padding: 2em 4em 0em 4em;
     }
+
 }
 @media screen and (orientation: portrait){
+    
+}
+@media screen and (max-width: 520px){
     .list >div{
         padding: 2em 1em 2em 1em;
+    }
+}
+@media screen and (min-width: 521px) and (max-width: 1060px){
+    .list >div{
+        width:40%;
+        margin:2.5% 5%;
+    }
+}
+@media screen and (min-width: 1061px){
+    .list >div{
+        width:20%;
+        margin:2.5%;
     }
 }

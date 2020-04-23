@@ -17,3 +17,8 @@ a{
 .a:link,.a:hover,.a:active,.a:visited{
     color:#333333;
 }
+a.button{
+        padding: 10px 20px;
+        background-color:#333333;
+        color:white;
+}

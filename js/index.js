@@ -45,10 +45,10 @@ function inithotproduct(){
             img.src="https://img.alicdn.com/imgextra/i1/2200740969161/"+productdata[i]["img"][0]+"_!!2200740969161.jpg";
             var a=document.createElement("a");
             a.href="product.html?id="+productdata[i].id;
-            a.innerText="立即购买";
+            
             div.appendChild(img);
-            div1.appendChild(h);
-            div1.appendChild(p);
+            a.appendChild(h);
+            a.appendChild(p);
             div1.appendChild(a);
             div.appendChild(div1);
             hpdiv.appendChild(div);
