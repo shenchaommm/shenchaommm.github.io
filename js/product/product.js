@@ -2,10 +2,10 @@ addLoadEvent(initProduct);
 function initProduct(){
     var id=getQueryVariable("id");
     
-    if(!id) return;
+    if(!id) goto404();
     var temp=getProductData(id);
     var productdata=temp[0];
-    if(!productdata) return;
+    if(!productdata) goto404();
     //if(!Array.isArray(productdata)) return;
     //if(productdata.length<3) return;
     

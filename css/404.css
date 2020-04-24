@@ -1,0 +1,23 @@
+.m{
+    position: relative;
+    padding: 2em 0em;
+    text-align: center;
+}
+.m404{
+    font-size: 100px;
+}
+.mL{
+    padding: 2em 0em
+}
+.mLi{
+    padding: 0.5em 1em;
+    margin-right: 1em;
+    background-color: #333333;
+    color:white;
+}
+.mLb{
+    padding: 0.5em 1em;
+    margin-left: 1em;
+    background-color: #333333;
+    color:white;
+}

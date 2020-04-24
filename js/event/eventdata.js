@@ -109,7 +109,7 @@ function getEventData(para,num){
         top:"t"
     };
     eventData[12]={
-        title:"我们的实验室",
+        title:"技术驱动",
         sub:"了解我们的科研实验室，探索LED的精彩世界。",
         date:"2020.3.12",
         surface:"",
@@ -141,6 +141,24 @@ function getEventData(para,num){
         date:"2020.3.12",
         surface:"",
         link:"16",
+        event:"c",
+        top:"t"
+    };
+    eventData[16]={
+        title:"售后服务须知",
+        sub:"坚持以顾客为中心的服务原则，了解最新的售后服务政策。",
+        date:"2020.4.20",
+        surface:"",
+        link:"17",
+        event:"c",
+        top:"t"
+    };
+    eventData[17]={
+        title:"常见问题",
+        sub:"自助获取大家常见问题和解答。",
+        date:"2020.4.22",
+        surface:"",
+        link:"18",
         event:"c",
         top:"t"
     };

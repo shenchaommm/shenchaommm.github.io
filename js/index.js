@@ -1,8 +1,8 @@
 addLoadEvent(initIndex);
 function initIndex(){
-        loadJS("productslist/products.js",inithotproduct);
+        loadJS("productslist/products.js",inithotproduct,errorloadjs);
         loadCSS("css/hotproduct.css");
-        loadJS("js/event/eventdata.js",initeventlist);
+        loadJS("js/event/eventdata.js",initeventlist,errorloadjs);
         loadCSS("css/eventlist.css");
         //for(i=0;i<4;i++){
             //alert(hp[i]);
@@ -26,6 +26,9 @@ function initIndex(){
             //div.appendChild(a);
             //hpdiv.appendChild(div);
             //alert(hp[i]);
+}
+function errorloadjs(){
+    
 }
 function inithotproduct(){
     var hp=[];

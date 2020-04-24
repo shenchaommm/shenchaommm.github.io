@@ -51,9 +51,9 @@ function getQueryVariable(variable)
        }
        return(false);
 }
-function loadJS( url, callback ){
+function loadJS( url, callback ,errorfn){
     var script = document.createElement('script'),
-        fn = callback || function(){};
+        fn = callback || function(){}, efn=errorfn || function(){};
     script.type = 'text/javascript';
     //IE
     if(script.readyState){
@@ -61,6 +61,9 @@ function loadJS( url, callback ){
             if( script.readyState == 'loaded' || script.readyState == 'complete' ){
                 script.onreadystatechange = null;
                 fn();
+            }else if(script.readyState == 'loaded'){
+                script.onreadystatechange = null;
+                efn();
             }
         };
     }else{
@@ -68,9 +71,13 @@ function loadJS( url, callback ){
         script.onload = function(){
             fn();
         };
+        script.onerror=function(){
+            efn();
+        }
     }
     script.src = url;
     document.body.appendChild(script);
+
 }
 function loadCSS(url) {
     var link = document.createElement('link');
@@ -78,4 +85,7 @@ function loadCSS(url) {
     link.rel = 'stylesheet';
     link.href = url;
     document.body.appendChild(link);
+}
+function goto404(){
+    window.location.href="404.html"
 }
